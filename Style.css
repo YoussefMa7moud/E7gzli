@@ -260,11 +260,16 @@ display: flex;
 
 
 
+      
+
+
+
+
+
       .holder{
          display: flex;
          padding: 2%;
-         justify-content: space-between;
-         
+         justify-content: center;
       }
 
       .creat-acc h1{
@@ -272,11 +277,18 @@ display: flex;
          color: white;
          font-family: "Domine", serif;
          font-size:80px;
+         justify-content: center;
+         padding-top: 39px;
       }
       .holder h3{
         
          color: white;
+         padding-right: 2%;
          
+      }
+
+      #emailholder{
+         margin-left: 50px;
       }
 
 
@@ -287,8 +299,16 @@ display: flex;
          width: 360px;
          height: 59px;
          border-style: none;
-         margin-left: 75%;
-         margin-bottom: 150px;
+         margin-bottom: 130px;
+         margin-left: 42%;
+         
+      }
+
+      .creat-acc button:hover{
+         cursor: pointer;
+         background-color: white;
+         color: black;
+         border-color: black;
       }
 
 
@@ -298,11 +318,58 @@ display: flex;
       }
       
 
+   #agree{
+      margin-left: 90px;
+   }
 
 
 
 
 
+
+
+
+
+
+   .contact-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center; 
+      justify-content: center; 
+      height: 600px;
+      background-color: white;
+  }
+
+  .contactus h1{
+      text-align: center; 
+      font-family: "Domine", serif;
+      font-size: 108px;
+      font-weight: lighter;
+  }
+
+  .contactus  h2 {
+   text-align: center; 
+   font-family: "Open Sans", sans-serif;
+   font-weight: lighter;
+}
+
+  .contactus input {
+      width: 60%;
+      margin-bottom: 10px; 
+      height: 54px;
+  }
+
+  .contactus button {
+     
+      background-color: #EC4899;
+         color: #E7E5E4;
+         border-radius: 6px;
+         width: 160px;
+         height: 59px;
+         border-style: none;
+     
+  }
+   
       
 
 
