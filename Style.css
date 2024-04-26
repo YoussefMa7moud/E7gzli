@@ -3,6 +3,7 @@ html,body
 padding: 0%;
 margin: 0%;
 background-color: #1C1917;
+scroll-behavior: smooth;
 }
  .navbar{
 background-color: #FFFFFF;
@@ -105,19 +106,21 @@ width: 99%;
 }
 
 
-.Starting-Home button{
+.Starting-Home a{
+   display: inline-block; 
    background-color: #EC4899;
    color: #E7E5E4;
    border-radius: 6px;
-   width: 360px;
-   height: 59px;
-   border-style: none;
-}
-
-.Starting-Home button:hover{
-   cursor: pointer;
-}
-
+   width: 360px; 
+   height: 59px; 
+   text-align: center; 
+   line-height: 59px; 
+   text-decoration: none;
+   }
+   
+   .Starting-Home a:hover{
+      cursor: pointer;
+   }
 
 
 
