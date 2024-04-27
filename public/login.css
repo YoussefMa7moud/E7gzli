@@ -2,7 +2,7 @@ html,
 body {
    padding: 0%;
    margin: 0%;
-   background-color: #1C1917;
+background-image: url(/public/materials/fan2.jpg);
 }
 
 .navbar {
@@ -76,58 +76,54 @@ body {
 
 
 .form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; 
-    background-size: cover;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh; 
+   background-image: url(/public/materials/fan2.jpg);
+   background-size: cover;
+   background-color: rgb(18, 13, 13); 
+ }
  
-  }
-
-  .form form {
-    width: 300px; 
-    height: 400px;
-    padding: 100px;
-    border: 1px solid #150e0e;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center; 
-    background-color: white; 
-  }
- 
-  .form h1 {
-    color: #EC4899;
-    margin-bottom: 30px;
-    margin-top: 0; 
-    
-  }
-  .form div {
-    margin-bottom: 65px;
-  }
-  
-  .form input[type="text"],
-  .form input[type="password"],
-  .form input[type="submit"] {
-    width: 100%;
-    padding: 20px;
-    border: 1px solid #000000;
-    border-radius: 5px;
-    box-sizing: border-box;
-    background-color: #000000;
-    color: #fff;
-    font-size: 15px;
-  }
-  
-  .form input[type="submit"] {
-    background-color:#EC4899 ;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
- .error{
-    color:red;
+ .form form {
+   width: 300px; 
+   height: 200px;
+   padding: 100px;
+   border: 1px solid #150e0e;
+   border-radius: 10px;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   text-align: center; 
+   background-color: rgba(0, 0, 0, 0.8); 
  }
 
+ .form h1 {
+   color: #EC4899;
+   margin-bottom: 90px;
+   margin-top: -80px; 
+ }
+ .form div {
+   margin-bottom: 15px;
+ }
+ 
+ .form input[type="text"],
+ .form input[type="password"],
+ .form input[type="submit"] {
+   width: 100%;
+   padding: 20px;
+   border: 1px solid #000000;
+   border-radius: 5px;
+   box-sizing: border-box;
+   background-color: #000000;
+   color: #fff;
+   font-size: 15px;
+ }
+ 
+ .form input[type="submit"] {
+   background-color:#EC4899 ;
+   color: #fff;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+ }
 
 

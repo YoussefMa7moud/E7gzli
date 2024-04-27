@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <script src="/public/script/loginval.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>E7gzli-Login</title>
@@ -34,13 +35,14 @@
 
 
   <div class="form">
-    <form name="valform" method="post" onsubmit="return validate()">
+    <form name="valform" method="POST" onsubmit="return validate()">
       <h1>Sign in</h1>
-      <div><input type="text" id="user"name="email" placeholder="Enter your email"required></div>
-      <div><input type="password" id="pass"name="password" placeholder="Enter your password"required></div>
+      <div class="inputs">
+      <div><input type="text" id="user"name="email" placeholder="Enter your email"></div>
+      <div><input type="password" id="pass"name="password" placeholder="Enter your password"></div>
       <input type="submit" value="Login">
+    </div>
     </form>
   </div>
-
 </body>
 </html>
