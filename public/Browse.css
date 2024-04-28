@@ -1,4 +1,3 @@
-/* index */
 html,body
 {
 padding: 0%;
@@ -72,37 +71,40 @@ width: 99%;
     transform: translate(-50%, -50%);
  }
 
+ .Starting-Home{
+  padding: 90px;
 
-.three-steps{
-   background-color: #E7E5E4;
-   padding-top: 18px;
-   padding-left: 75PX;
-
-}
+ }
 
 
 
-.main-title h1{
-   font-family: "Domine", serif;
-   font-size: 74px;
-   font-weight: lighter;
-}
 
  
-/* tickets */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .header_title{
    text-align: center;
-   color: white;
-   position: relative;
-   top: 100px;
-   margin-bottom: 10px;
+   color: white; 
+   padding-top: 90px;
 }
 
-.content-wrapper{
-    background-image: url(fan2.jpg);
-    background-size: cover;
-    
- }
+
  .content{
     
     display: grid;
@@ -111,15 +113,14 @@ width: 99%;
     flex-direction: row;
     flex-wrap: wrap;
     margin-top: 60px;
+    
  }
  
  .card {
-    background-color: rgb(223, 221, 221);
+    background-color: white;
     width: 55em;
-    box-shadow: 0 5px 25px rgba(1 1 1 /15%);
     border-radius: 10px;
-    padding: 0px/*top*/ 10px/*right*/ 0px/*bottom*/ 0px/*left*/;
-    
+    padding: 0px/*top*/ 100px/*right*/ 90px/*bottom*/ 500px/*left*/;
     transition: 0.7s ease;
    margin-top: 60px;
    display: grid;
@@ -129,30 +130,34 @@ width: 99%;
  .side_info{
    margin-top: 50px;
  }
- .card:hover{
-    transform: scale(1.1);
- }
+
  .icon{
     text-align: center;
  }
  .side_img img {
 
     border-radius: 3%;
-    width: 100%; /* Set the width of the image to 100% of the parent container */
-    height: 100%; /* Set the height of the image to auto to maintain the aspect ratio */
+    width: 600px; 
+    height: 125%; 
+    
   
+}
+
+#pic{
+   position: relative;
+   right: 499px;
 }
   
  .info{
-    padding-left: 32px;
-    padding-bottom: 27px;
-    padding-right: 27px;
-    text-align: center;
+    
+   font-size: 29px;
+   position: relative;
+   right: 410px;
  }
  .info i {
     margin-right: 10px;
     font-size: 1.5em;
-    color: #04AA6D;
+    color: #EC4899;
   }
  .info h3{
    
@@ -163,37 +168,64 @@ width: 99%;
 
  .button_dist{
    padding-left: 180px;
+   position: relative;
+    left: 99px;
+    top: 99px;
+    padding-bottom: 29px;
+ }
+
+ .button_dist h4{
+   position: relative;
+   top: 69px;
+   right: 220px;
+
+
  }
 
  .booking-btn {
 
     display: inline-block;
-    padding: 10px 60px;    
+    padding: 20px 100px;    
     background-color: #EC4899;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s ease;
-    width: 4 rem;
+    ;
+   
   
    }
   
   .booking-btn:hover {
-    background-color: red;
-  }
-  .booking-btn:active {
-    background-color: red;
-  }
-  .booking-btn:focus {
-    outline: none;
-  }
-  .booking-btn:disabled {
     background-color: white;
-    cursor: not-allowed;
+    color: black;
   }
-  .booking-btn:disabled:hover {
-    background-color: white;
-  }
+
+
+  .booking-btn2 {
+
+   display: inline-block;
+   padding: 20px 90px;    
+   border: none;
+   border-radius: 5px;
+   transition: 0.3s ease;
+   cursor:no-drop;
   
  
+  }
+ 
+  #finishbtn{
+   background-color: black;
+   color: white;
+   
+   
+   
+  }
+ 
+
+.secndcard{
+   padding-bottom: 99px;
+
+}
+
