@@ -17,4 +17,19 @@ else if (a == "admin" && b == "admin") {
 else{
 }
 }
+function togglePasswordVisibility() {
+  const passwordField = document.getElementById("pass");
+  const togglePassword = document.querySelector(".password-toggle-icon i");
+  if (passwordField.type === "password") {
+      passwordField.type = "text";
+      togglePassword.classList.remove("fa-eye");
+      togglePassword.classList.add("fa-eye-slash");
+  } else {
+      passwordField.type = "password";
+      togglePassword.classList.remove("fa-eye-slash");
+      togglePassword.classList.add("fa-eye");
+  }
+}
+
+
 
