@@ -100,6 +100,8 @@ width: 99%;
 
 .header_title{
    text-align: center;
+   font-size: 30px;
+   font-weight: bold;
    color: white; 
    padding-top: 90px;
 }
@@ -120,11 +122,11 @@ width: 99%;
     background-color: white;
     width: 55em;
     border-radius: 10px;
-    padding: 0px/*top*/ 100px/*right*/ 90px/*bottom*/ 500px/*left*/;
+    padding: 0px/*top*/ 100px/*right*/ 60px/*bottom*/ 500px/*left*/;
     transition: 0.7s ease;
-   margin-top: 60px;
-   display: grid;
-   grid-template-columns: auto auto;
+    margin-top: 60px;
+    display: grid;
+   grid-template-columns: auto auto ;
  }
 
  .side_info{
@@ -134,14 +136,13 @@ width: 99%;
  .icon{
     text-align: center;
  }
- .side_img img {
+.side_img img {
 
     border-radius: 3%;
     width: 600px; 
-    height: 125%; 
-    
-  
+    height: 117.5%;  
 }
+
 
 #pic{
    position: relative;
@@ -149,13 +150,13 @@ width: 99%;
 }
   
  .info{
-    
+   
    font-size: 29px;
-   position: relative;
+   position: absolute;
    right: 410px;
  }
  .info i {
-    margin-right: 10px;
+    
     font-size: 1.5em;
     color: #EC4899;
   }
@@ -163,15 +164,16 @@ width: 99%;
    
     font-size: 1.2em;
     font-weight: 700;
-    margin: 10px;
+    
  }
 
  .button_dist{
-   padding-left: 180px;
+   
    position: relative;
-    left: 99px;
-    top: 99px;
+    left: 20px;
+    top: 130px;
     padding-bottom: 29px;
+   
  }
 
  .button_dist h4{
