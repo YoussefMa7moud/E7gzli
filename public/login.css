@@ -120,7 +120,7 @@ background-image: url(/public/materials/fan2.jpg);
    letter-spacing: 0.1ch;
  }
  
- .form input[type="submit"] {
+ .form input {
    font-size: 140%;
    background-color:#EC4899 ;
    color: #fff;
@@ -128,6 +128,8 @@ background-image: url(/public/materials/fan2.jpg);
    border-radius: 7px;
    cursor: pointer;
    margin-top: 17px;
+   width: 209px;
+   height: 60px;
  }
  .inputs{
    width: 510px;

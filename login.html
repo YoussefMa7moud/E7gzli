@@ -37,14 +37,14 @@
 
 
   <div class="form">
-    <form name="valform" method="POST" onsubmit="return validate()">
+    <form name="valform" method="POST" >
       <h1>Sign in</h1>
       <div class="inputs">
       <div><input type="text" id="user"name="email" placeholder="Enter your Email"></div>
       <div class="password"><input type="password" id="pass"name="password" placeholder="Enter your Password">
         <span class="password-toggle-icon"><i class="fas fa-eye" onclick="togglePasswordVisibility()"></i></span>
       </div>
-      <input type="submit" value="Login">
+      <input type="button" value="Login" onclick="validate()">
     </div>
     </form>
   </div>

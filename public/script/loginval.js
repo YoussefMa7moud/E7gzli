@@ -12,11 +12,24 @@ else if(b ==""){
   alert("Please Enter your Password");
 }
 else if (a == "admin" && b == "admin") {
-  window.location.href ="Browse.html"
+  window.location.href ="Browse.html";
 }
+
+else if (a == "user" && b == "user") {
+  window.location.href ="Browse.html";
+}
+
+else if (a == "master" && b == "master") {
+  window.location.href ="Browse.html";
+}
+
 else{
+  alert("Incorrect Email or Password")
 }
 }
+
+
+
 function togglePasswordVisibility() {
   const passwordField = document.getElementById("pass");
   const togglePassword = document.querySelector(".password-toggle-icon i");
