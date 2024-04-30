@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E7gzli</title>
     <link href="/public/BookNow.css" rel="stylesheet">
-
+    <script src="/public/script/totalpayment.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
@@ -48,7 +48,7 @@
 
         <div class="cat">
         <label id="Cat3" for="cat3">CAT 3: (100 EGP)</label>
-        <select name="NUMBER" id="NO3">
+        <select name="NUMBER" id="NO3" onchange="calculatePayment()">
         <option value="0">0</option>
         <option value="1">1</option>
         <option value="2">2</option>
@@ -60,7 +60,7 @@
 
         <div class="cat">
             <label id="Cat2" for="cat 2">CAT 2: (200 EGP)</label>
-            <select name="NUMBER" id="NO2">
+            <select name="NUMBER" id="NO2"  onchange="calculatePayment()">
             <option value="0">0</option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -73,7 +73,7 @@
 
         <div class="cat">
             <label id="Cat1" for="cat 1">CAT 1: (400 EGP)</label>
-            <select name="NUMBER" id="NO1">
+            <select name="NUMBER" id="NO1"  onchange="calculatePayment()">
             <option value="0">0</option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -84,7 +84,7 @@
 
 
         <div class="Payment">
-            <h1>Total Payment = 0 EGP</h1>
+            <h1 id="Paymenth1">Total Payment = 0 EGP</h1>
         </div>
 
 
