@@ -20,7 +20,7 @@ else if (a == "user" && b == "user") {
 }
 
 else if (a == "master" && b == "master") {
-  window.location.href ="Browse.html";
+  window.location.href ="Master.html";
 }
 
 else{
