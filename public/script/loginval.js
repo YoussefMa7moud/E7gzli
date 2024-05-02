@@ -12,11 +12,11 @@ else if(b ==""){
   alert("Please Enter your Password");
 }
 else if (a == "admin" && b == "admin") {
-  window.location.href ="Browse.html";
+  window.location.href ="admin.html";
 }
 
 else if (a == "user" && b == "user") {
-  window.location.href ="Browse.html";
+  window.location.href ="index.html";
 }
 
 else if (a == "master" && b == "master") {

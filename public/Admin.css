@@ -1,6 +1,6 @@
 body{
 
-background-color: #3A3838 ;
+background-color: #1C1917 ;
 
 
 }
@@ -8,11 +8,10 @@ background-color: #3A3838 ;
  
  .card {
     background-color: white;
-    
-    width: 1000px;
-     height: 300px;
+    width: 1300px;
+    height: 300px;
     border-radius: 10px;
-    padding: 0px/*top*/ 50px/*right*/ 90px/*bottom*/ 0px/*left*/;
+    padding: 10px/*top*/ 50px/*right*/ 90px/*bottom*/ 0px/*left*/;
     transition: 0.7s ease;
     margin-left: 500px;
     margin-top: 100px;
@@ -21,6 +20,8 @@ background-color: #3A3838 ;
 
 
  }
+
+
 
  .side_info{
     margin-top: 50px;
@@ -459,15 +460,46 @@ background: black;
    right: 650px;
 }
 
-#priceDropdown {
-   background-color: #EC4899;
+
+
+
+
+.tickets1{
+   display: flex;
    color: white;
-   padding: 5px 1px;
-   border: none;
-   border-radius: 5px;
+   padding: 8px 0px;
+
 }
 
-#priceDropdown option {
-   background-color:#EC4899;
-   color:black;
+.tickets2{
+   display: flex;
+   color: white;
+   padding: 8px 0px;
+}
+
+.tickets3{
+   display: flex;
+   color: white;
+   padding: 8px 0px;
+}
+
+
+#numTickets{
+   width: 120px;
+   border-radius: 5px;
+   padding: 6px 1px;
+   border: none;
+   position: relative;
+   left: 20px;
+   
+}
+
+#priceDropdown{
+   width: 60px;
+   padding: 9px 1px;
+   border-radius: 5px;
+   border: none;
+   position: relative;
+   left: 40px;
+   
 }
