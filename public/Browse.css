@@ -120,9 +120,9 @@ width: 99%;
  
  .card {
     background-color: white;
-    width: 55em;
+    width: 80em;
     border-radius: 10px;
-    padding: 0px/*top*/ 100px/*right*/ 60px/*bottom*/ 500px/*left*/;
+    padding: 0px/*top*/ 100px/*right*/ 60px/*bottom*/ 0px/*left*/;
     transition: 0.7s ease;
     margin-top: 60px;
     display: grid;
@@ -144,22 +144,32 @@ width: 99%;
 }
 
 
-#pic{
-   position: relative;
-   right: 499px;
-}
+
   
  .info{
    
    font-size: 29px;
-   position: absolute;
+ 
    right: 410px;
+ }
+ .info2 {
+   
+   font-size: 29px;
+   position: relative;
+   left: 30px;
  }
  .info i {
     
     font-size: 1.5em;
     color: #EC4899;
   }
+
+  .info2 i{
+   
+   font-size: 1.5em;
+   color: #EC4899;
+ }
+
  .info h3{
    
     font-size: 1.2em;
@@ -167,22 +177,47 @@ width: 99%;
     
  }
 
+ .info2 h3{
+   
+   font-size: 1.2em;
+   font-weight: 700;
+   
+}
+
+
  .button_dist{
    
    position: relative;
-    left: 20px;
-    top: 130px;
+   left: 450px;
+    top: 70px;
     padding-bottom: 29px;
    
  }
 
- .button_dist h4{
+ .button_dist h3{
    position: relative;
-   top: 69px;
-   right: 220px;
+   top: 65px;
+   right: 250px;
 
 
  }
+ 
+ .button_dist2{
+   
+   position: relative;
+   left: 470px;
+    top: 70px;
+    padding-bottom: 29px;
+   
+ }
+
+ .button_dist2 h3{
+   position: relative;
+   top: 65px;
+   right: 220px;
+ }
+
+
 
  .booking-btn {
 
