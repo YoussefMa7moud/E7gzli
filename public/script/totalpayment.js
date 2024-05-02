@@ -9,7 +9,7 @@ function calculatePayment() {
     var cat2numberOfTickets = parseInt(document.getElementById("NO2").value);
     totalPayment += cat2price * cat2numberOfTickets;
 
-    var cat1price = 300;
+    var cat1price = 400;
     var cat1numberOfTickets = parseInt(document.getElementById("NO1").value);
     totalPayment += cat1price * cat1numberOfTickets;
 
