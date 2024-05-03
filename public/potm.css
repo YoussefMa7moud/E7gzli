@@ -239,3 +239,9 @@ width: 99%;
       border-radius: 8px;
       cursor: pointer;
 }
+
+
+.card-back p{
+  font-size: 15px;
+  font-family: "Open Sans", sans-serif;
+}
