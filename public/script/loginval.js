@@ -16,7 +16,9 @@ else if (a == "admin" && b == "admin") {
 }
 
 else if (a == "user" && b == "user") {
+  localStorage.setItem('isLoggedIn', 'true');
   window.location.href ="index.html";
+  changeButton();
 }
 
 else if (a == "master" && b == "master") {
@@ -27,6 +29,52 @@ else{
   alert("Incorrect Email or Password")
 }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+if(localStorage.getItem('isLoggedIn') === 'true'){
+window.onload = function() {
+  function changeButton() {
+    if(localStorage.getItem('isLoggedIn') === 'true') {
+      var createAccBtn = document.getElementById('CREATACC');
+      createAccBtn.textContent = 'Vote For POTM';
+      createAccBtn.setAttribute('href', 'potm.html');
+
+
+
+
+      var logbutton = document.getElementById('loginbutton');
+      logbutton.textContent = 'Log out';
+      logbutton.onclick = function() {
+        localStorage.setItem('isLoggedIn', 'false');
+      };
+    }
+  }
+  changeButton();
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
