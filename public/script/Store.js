@@ -9,3 +9,21 @@ function expand(card) {
 
 
 
+
+if(localStorage.getItem('isLoggedIn') === 'true'){
+    window.onload = function() {
+      function changeButton() {
+        if(localStorage.getItem('isLoggedIn') === 'true') {
+    
+    
+          var logbutton = document.getElementById('loginbutton');
+          logbutton.textContent = 'My Account';
+          logbutton.onclick = function() {
+          logbutton.setAttribute('href', 'MyAccount.html');
+            
+          };
+        }
+      }
+      changeButton();
+    }
+    }
