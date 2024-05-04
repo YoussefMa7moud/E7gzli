@@ -78,26 +78,6 @@ width: 99%;
 
 
 
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .header_title{
    text-align: center;
    font-size: 30px;
@@ -138,18 +118,18 @@ width: 99%;
 
     border-radius: 3%;
     width: 600px; 
-    height: 117.5%;  
+    height: 120.5%;  
 }
 
 
-
-  
+ 
  .info{
-   
    font-size: 29px;
+   position: relative;
+   left: 30px;
  }
+
  .info2 {
-   
    font-size: 29px;
    position: relative;
    left: 30px;
@@ -253,7 +233,6 @@ width: 99%;
   #finishbtn{
    background-color: black;
    color: white;
-   
    
    
   }

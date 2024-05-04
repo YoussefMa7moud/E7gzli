@@ -32,6 +32,15 @@ else{
 
 
 
+const passwordInput = document.querySelector('#pass');
+passwordInput.addEventListener('keydown', function(event) {
+  if (event.key === 'Enter') {
+    event.preventDefault();
+    const button = document.querySelector('input[type="button"]');
+    button.click();
+  }
+});
+
 
 
 
