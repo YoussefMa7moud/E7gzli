@@ -103,14 +103,12 @@ width: 99%;
    font-size: 30px;
    font-weight: bold;
    color: white; 
-   padding-top: 90px;
+   padding-top: 10px;
 }
 
 
  .content{
-    
-    display: grid;
-    grid-template-columns: auto;
+    padding-left: 15%;
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
@@ -120,13 +118,13 @@ width: 99%;
  
  .card {
     background-color: white;
-    width: 80em;
+    width: 70%;
     border-radius: 10px;
-    padding: 0px/*top*/ 100px/*right*/ 60px/*bottom*/ 0px/*left*/;
+    padding: 0px/*top*/ 160px/*right*/ 70px/*bottom*/ 0px/*left*/;
     transition: 0.7s ease;
     margin-top: 60px;
     display: grid;
-   grid-template-columns: auto auto ;
+    grid-template-columns: auto auto ;
  }
 
  .side_info{
@@ -149,8 +147,6 @@ width: 99%;
  .info{
    
    font-size: 29px;
- 
-   right: 410px;
  }
  .info2 {
    
@@ -188,8 +184,8 @@ width: 99%;
  .button_dist{
    
    position: relative;
-   left: 450px;
-    top: 70px;
+   left: 70%;
+    top: 7%;
     padding-bottom: 29px;
    
  }
@@ -197,7 +193,7 @@ width: 99%;
  .button_dist h3{
    position: relative;
    top: 65px;
-   right: 250px;
+   right: 60%;
 
 
  }
@@ -205,9 +201,9 @@ width: 99%;
  .button_dist2{
    
    position: relative;
-   left: 470px;
-    top: 70px;
-    padding-bottom: 29px;
+   left:65%;
+   top: 70px;
+   padding-bottom: 29px;
    
  }
 
@@ -221,8 +217,8 @@ width: 99%;
 
  .booking-btn {
 
-    display: inline-block;
     padding: 20px 100px;    
+    display:ruby;
     background-color: #EC4899;
     color: white;
     border: none;
@@ -230,6 +226,8 @@ width: 99%;
     cursor: pointer;
     transition: 0.3s ease;
     text-decoration: none;
+    position: relative;
+    top: 22px;
    
   
    }

@@ -18,7 +18,7 @@ else if (a == "admin" && b == "admin") {
 else if (a == "user" && b == "user") {
   localStorage.setItem('isLoggedIn', 'true');
   window.location.href ="index.html";
-  changeButton();
+  checkav()
 }
 
 else if (a == "master" && b == "master") {
@@ -34,6 +34,10 @@ else{
 
 
 
+
+function checkav(){
+  onload.changeButton();
+}
 
 
 
@@ -55,7 +59,8 @@ window.onload = function() {
       var logbutton = document.getElementById('loginbutton');
       logbutton.textContent = 'Log out';
       logbutton.onclick = function() {
-        localStorage.setItem('isLoggedIn', 'false');
+      localStorage.setItem('isLoggedIn', 'false');
+        
       };
     }
   }
