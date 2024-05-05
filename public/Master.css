@@ -809,3 +809,154 @@ main {
   overflow: hidden;
   height: 1100px;
 }
+
+/* mezo was here */
+
+#container1 {
+  display: none;
+  background-color:white;
+  right : 700px ;
+width: 360px;
+height:500px ;
+margin-left: 100px;
+margin-top: 40px;
+position:absolute; 
+border-radius: 8px;
+}
+
+.contaniner1 from {
+  width: 180px;
+  height: 500px;
+  top: 300px;
+  left: 40px;
+  
+  }
+  form input[type="text"]{
+  width: 95%;
+  padding: 10px 5px ;
+  margin: 5px 0px;
+  border: 0;
+  border-bottom: 1px solid #999;
+  background:  transparent;
+  outline:black ;
+  
+  
+  }
+  form input[type="password"]{
+    width: 95%;
+    padding: 10px 5px ;
+    margin: 5px 0px;
+    border: 0;
+    border-bottom: 1px solid #999;
+    background:  transparent;
+    outline:black ;
+    
+    
+  
+    }
+    form input[type="email"]{
+      width: 95%;
+      padding: 10px 5px ;
+      margin: 5px 0px;
+      border: 0;
+      border-bottom: 1px solid #999;
+      background:  transparent;
+      outline:black ;
+      }
+      form input[type="number"]{
+        width: 95%;
+        padding: 10px 5px ;
+        margin: 5px 0px;
+        border: 0;
+        border-bottom: 1px solid #999;
+        background:  transparent;
+        outline:black ;
+        }
+  ::placeholder{
+  
+  color: black;
+  
+  }
+  .button22 {
+    display: flex; /* Use flexbox to arrange buttons in a row */
+    gap: 10px; /* Add some space between buttons */
+  }
+  
+  .Container1 .button22{
+  display: flex;
+    width: 100px;
+  margin:30px auto ;
+ 
+  
+  }
+  form button{
+  width: 110px;
+  height: 35px;
+  margin: 0 10px ;
+  background: linear-gradient(to right,#ff10ff,#0634ff);
+  border: 0;
+  
+  
+  margin-bottom: 10px;
+   margin-left:130px ;
+  
+  
+  }
+  
+  .AdminContainer{
+  
+  right: 200px;
+  display:block;
+  width: 900px;
+  margin-left: 350px;
+  
+  height: 600px;
+  
+  }
+  .radiobuttons{
+    display: inline-flex;
+  overflow: hidden;
+  border-radius: 15px;
+  
+  box-shadow: 0 0 5px  rgba(0, 0, 0, 0.25);
+  position: center;
+  margin-left: 120px;
+  }
+  .radio{
+  
+  display: none;
+  position: center;
+  }
+  .label{
+  
+  
+    padding: 8px ;
+  
+  font-size: 14px;
+  padding: 8px 14px;
+  font-family: sans-serif;
+  color: white ;
+  background: #9a1b87;
+  cursor: pointer;
+  transition:0.1s ;
+  position: center;
+  
+  }
+  
+  .label:not(:last-of-type){
+  border-radius:1px solid #FFC0CB;
+  
+  position: center;
+  
+  
+  }
+  .label:hover{
+  background-color: #f2f2f2;
+    transition: all .3s ease;
+  position: center;
+  }
+  .radio:checked +.label {
+  
+  background: black;
+  }
+  
