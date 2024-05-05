@@ -85,7 +85,7 @@
 
 
         <div class="Payment">
-            <h1 id="Paymenth1">Total Payment = 0 EGP</h1>
+            <h1 id="Paymenth1">Total = 0EGP</h1>
         </div>
 
 
@@ -99,10 +99,13 @@
 
         <div class="PaymentStyle">
             <label id="PS" for="PS">Payment Style :</label>
-            <select name="Payment" id="PS">
-                <option value="Cash">Cash</option>
-                <option value="Visa">Visa</option>
+            <select name="Payment" id="PS"  onchange="ps(this.value)">
+                <option disabled selected></option>
+                <option value="1">Cash</option>
+                <option value="2">Visa</option>
             </select>   
+
+            <div class="output" id="output"></div>
         </div>
 
 
