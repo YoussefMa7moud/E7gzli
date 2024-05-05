@@ -103,13 +103,16 @@ width: 99%;
    font-size: 30px;
    font-weight: bold;
    color: white; 
-   padding-top: 10px;
+   padding-top: 3%;
 }
 
 
  .content{
-    padding-left: 15%;
+
+    display: grid;
+    grid-template-columns: auto;
     justify-content: center;
+    padding-left: 11%;
     flex-direction: row;
     flex-wrap: wrap;
     margin-top: 60px;
@@ -120,7 +123,7 @@ width: 99%;
     background-color: white;
     width: 70%;
     border-radius: 10px;
-    padding: 0px/*top*/ 160px/*right*/ 70px/*bottom*/ 0px/*left*/;
+    padding: 0px/*top*/ 200px/*right*/ 70px/*bottom*/ 0px/*left*/;
     transition: 0.7s ease;
     margin-top: 60px;
     display: grid;
@@ -138,7 +141,7 @@ width: 99%;
 
     border-radius: 3%;
     width: 600px; 
-    height: 117.5%;  
+    height: 120.5%;  
 }
 
 
@@ -147,12 +150,14 @@ width: 99%;
  .info{
    
    font-size: 29px;
+   position: relative;
+   left: 5%;
  }
  .info2 {
    
    font-size: 29px;
    position: relative;
-   left: 30px;
+   left: 5%;
  }
  .info i {
     
@@ -193,7 +198,7 @@ width: 99%;
  .button_dist h3{
    position: relative;
    top: 65px;
-   right: 60%;
+   right: 50%;
 
 
  }
@@ -201,7 +206,7 @@ width: 99%;
  .button_dist2{
    
    position: relative;
-   left:65%;
+   left:67.5%;
    top: 70px;
    padding-bottom: 29px;
    
@@ -210,7 +215,7 @@ width: 99%;
  .button_dist2 h3{
    position: relative;
    top: 65px;
-   right: 220px;
+   right: 47%;
  }
 
 
