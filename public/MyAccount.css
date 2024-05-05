@@ -400,8 +400,6 @@ button {
 
 .ongoing-tickets{
 padding-left: 340px;
-position: relative;
-bottom: 120px;
 }
 
 
@@ -424,12 +422,12 @@ bottom: 120px;
 
 
 
-.image img{
-	height: 350px;
-	width: 350px;
+.image {
+	height: 250px;
+	width: 250px;
+	background-image: url("../public/materials/Wegz-f.jpg");
 	background-size: contain;
 	opacity: 0.85;
-	
 }
 
 .admit-one {
