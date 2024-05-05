@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="./public/Master.css">
     <script src="./public/script/Master.js"></script>
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
 <body>
@@ -59,9 +60,191 @@
 </div>
 </div>
       </div>
-      <div id="container2">
-        <p>This is the container akram</p>
+
+<div id="container2">
+
+    
+  <section class="main">
+    <div class="main-top">
+      <h1>Active Users</h1>
+     
     </div>
+    <div class="users">
+      <div class="card">
+        <h6>&nbsp;</h6>
+        <img src="/public/materials/user_man.jpg">
+        <h4>Sam David</h4>
+        <p>Ui designer</p>
+        <h6>&nbsp;</h6>
+        <div class="test1">
+          <form id="userDetailsForm"> 
+            <h3>User Details</h3>
+            <div>
+                <strong>Name:</strong> John Doe
+            </div>
+            <div>
+                <strong>Age:</strong> 30
+            </div>
+            <div>
+                <strong>Gender:</strong> Male
+            </div>
+            <h3 id="text_card1">Press anywhere around the card to close</h3>
+          </form>
+        </div>
+        <button id="Profile1" onclick="enlarge1(this)">Profile</button>
+      </div>
+      <div class="card">
+        <h6>&nbsp;</h6>
+        <img src="/public/materials/user_man.jpg">
+        <h4>Balbina kherr</h4>
+        <p>Progammer</p>
+        <h6>&nbsp;</h6>
+        <div class="test1">
+          <form id="userDetailsForm"> 
+            <h3>User Details</h3>
+            <div>
+                <strong>Name:</strong> Cypher
+            </div>
+            <div>
+                <strong>Age:</strong> 35
+            </div>
+            <div>
+                <strong>Gender:</strong> Male
+            </div>
+            <h3 id="text_card1">Press anywhere around the card to close</h3>
+          </form>
+        </div>
+        <button id="Profile2" onclick="enlarge1(this)">Profile</button>
+      </div>
+      <div class="card">
+        <h6>&nbsp;</h6>
+        <img src="/public/materials/user_man.jpg">
+        <h4>Badan John</h4>
+        <p>tester</p>
+        <h6>&nbsp;</h6>
+        <div class="test1">
+          <form id="userDetailsForm"> 
+            <h3>User Details</h3>
+            <div>
+                <strong>Name:</strong> Sage
+            </div>
+            <div>
+                <strong>Age:</strong> 39
+            </div>
+            <div>
+                <strong>Gender:</strong> Male
+            </div>
+            <h3 id="text_card1">Press anywhere around the card to close</h3>
+          </form>
+        </div>
+        <button id="Profile3" onclick="enlarge1(this)">Profile</button>
+      </div>
+      <div class="card">
+        <h6>&nbsp;</h6>
+        <img src="/public/materials/user_man.jpg">
+        <h4>Salina micheal</h4>
+        <p>Ui designer</p>
+        <h6>&nbsp;</h6>
+        <div class="test1">
+          <form id="userDetailsForm"> 
+            <h3>User Details</h3>
+            <div>
+                <strong>Name:</strong> Pheonix 
+            </div>
+            <div>
+                <strong>Age:</strong> 20
+            </div>
+            <div>
+                <strong>Gender:</strong> Male
+            </div>
+            <h3 id="text_card1">Press anywhere around the card to close</h3>
+          </form>
+        </div>
+        <button id="Profile4" onclick="enlarge1(this)">Profile</button>
+      </div>
+    </div>
+    <section class="User">
+      <div class="Users-list">
+        <h1>Users List</h1>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Age</th>
+              <th>Gender</th>
+              <th>Email</th>
+              <th>Password</th>
+              <th>History</th>
+              <th>Ban</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>01</td>
+              <td>Sam David</td>
+              <td>20</td>
+              <td>male</td>
+              <td>Example@gmail.com</td>
+              <td>123456</td>
+              <td><button onclick="toggleForm1();enlarge10(this)">View</button></td>
+              <td><button id="ban">Ban</button></td>
+            </tr>
+            <tr class="active">
+              <td>02</td>
+              <td>Balbina Kherr</td>
+              <td>25</td>
+              <td>Female</td>
+              <td>Example@gmail.com</td>
+              <td>123456</td>
+              <td><button>View</button></td>
+              <td><button id="ban">Ban</button></td>
+            </tr>
+            <tr>
+              <td>03</td>
+              <td>Badan John</td>
+              <td>33</td>
+              <td>male</td>
+              <td>Example@gmail.com</td>
+              <td>123456</td>
+              <td><button>View</button></td>
+              <td><button id="ban">Ban</button></td>
+            </tr>
+            <tr>
+              <td>04</td>
+              <td>Sara David</td>
+              <td>35</td>
+              <td>Female</td>
+              <td>Example@gmail.com</td>
+              <td>123456</td>
+              <td><button>View</button></td>
+              <td><button id="ban">Ban</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </section>
+  <div class="history-container" id="userHistory">
+    <h2>User History</h2>
+    <ul>
+        <li>
+            <strong>Login Time:</strong> January 1, 2024 10:00 AM
+            <span class="ticket-status">Ticket1 Purchased: Yes</span>
+        </li>
+        <li>
+            <strong>Login Time:</strong> January 2, 2024 11:30 AM
+            <span class="ticket-status">Ticket2 Purchased: No</span>
+        </li>
+        <!-- add more login history here -->
+    </ul>
+</div>
+
+     
+</div>
+
+
+    
     <div id="container3">
       <div class="Store">
         <main>
