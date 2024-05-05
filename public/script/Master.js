@@ -21,13 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 });
-// document.getElementById('popupBtn').addEventListener('click', function() {
-//   document.getElementById('popupContainer').style.display = 'block';
-// });
 
-// document.getElementById('closeBtn').addEventListener('click', function() {
-//   document.getElementById('popupContainer').style.display = 'none';
-// });
 
 document.addEventListener("DOMContentLoaded", function() {
   let Admin = document.getElementById("Admin");
@@ -55,21 +49,42 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 });
-// document.addEventListener("DOMContentLoaded", function() {
-//   let showButton = document.getElementById("User");
-//   let container = document.getElementById("container2");
+/* Store  Section */
+document.addEventListener("DOMContentLoaded", function() {
+  var profileCards = document.querySelectorAll('.profile');
+  profileCards.forEach(function(card) {
+    card.classList.add('profile--expanded');
+  });
+});
+function toggleEdit(button) {
+  var profile = button.closest('.profile');
+  var editForm = profile.querySelector('.edit-form');
+  editForm.style.display = editForm.style.display === 'none' ? 'block' : 'none';
+}
 
-//   showButton.addEventListener("click", function() {
-//     container.style.display = "block";
-  
-//   });
-// });
-// document.addEventListener("DOMContentLoaded", function() {
-//   let showButton = document.getElementById("Store");
-//   let container = document.getElementById("container3");
+function saveChanges(button) {
+  var profile = button.closest('.profile');
+  var inputs = profile.querySelectorAll('.edit-input');
+  inputs.forEach(function(input) {
+    console.log(input.value);
+  });
+  profile.classList.toggle('editing');
+};
+function enlarge(A){
+let F=document.getElementsByClassName('form-container')[0];
+F.classList.add('enlarge_form');
+document.body.style.overflow='hidden';
+}
+function closeForm() {
+  var formContainer = document.getElementById("addProfileForm");
+  formContainer.style.display = "none";
+}
 
-//   showButton.addEventListener("click", function() {
-//     container.style.display = "block";
-  
-//   });
-// });
+function toggleForm() {
+  var formContainer = document.getElementById("addProfileForm");
+  if (formContainer.style.display === "none") {
+    formContainer.style.display = "block";
+  } else {
+    formContainer.style.display = "none";
+  }
+}
