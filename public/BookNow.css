@@ -184,18 +184,21 @@ width: 99%;
 
  .output{
    position: relative;
-   right: 34%;
+   right: 30%;
    bottom: 500px;
+   margin-right: 199px;
    
  }
 
  .output input{
+   
    border-radius: 6px;
    width: 15%; 
    height:30px; 
    text-decoration: none;
    cursor: pointer;
    position: relative;
+
  }
  input::-webkit-outer-spin-button,
  input::-webkit-inner-spin-button {
@@ -207,9 +210,24 @@ width: 99%;
 #timer{
    color: green;
    font-size: 40px;
+   margin-bottom: 30px;
 }
 
 #Titleps{
-   font-size: 20px;
+   font-size: 15px;
    font-family: "Open Sans", sans-serif;
+}
+
+
+#NO3{
+   padding: 2px;
+   margin: 4px;
+}
+#NO2{
+   padding: 2px;
+   margin: 4px;
+}
+#NO1{
+   padding: 2px;
+   margin: 4px;
 }

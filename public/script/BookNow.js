@@ -43,11 +43,11 @@ if(localStorage.getItem('isLoggedIn') === 'true'){
     function ps(value){
       var output = document.getElementById('output');
       output.innerHTML = '';
-      if (value === '1') {
+      if (value === 'c') {
           var result = generateRandomCode(10);
           output.innerHTML = '<p id="Titleps">Please Pay Using this code before time end : ' + result + '</p><p id="timer"></p>'; 
           startTimer(30); 
-      } else if (value === '2') {
+      } else if (value === 'v') {
           output.innerHTML = `
           <form>
           <label for="cardHolderName">Card Holder Name:</label><br>
