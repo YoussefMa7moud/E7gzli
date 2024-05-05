@@ -2,12 +2,11 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
-    <title>E7gzli-Master</title>
+    <title> Master </title>
     <link rel="stylesheet" href="/public/Master.css">
     <script src="/public/script/Master.js"></script>
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="icon" href="/public/materials/Icon.png" type="image/x-icon">
    </head>
 <body>
   <div class="sidebar">
@@ -22,37 +21,57 @@
          <span class="tooltip">Search</span>
       </li>
       <li>
-        <a href="#Admin-section">
-          <i class='bx bx-user' ></i>
-          <span class="links_name">Admin Managment</span>
-        </a>
-        <span class="tooltip">Admin Managment</span>
-     </li>
-      <li>
-       <a href="#User-section">
-         <i class='bx bx-user' ></i>
-         <span class="links_name">User Managment</span>
-       </a>
-       <span class="tooltip">User Managment</span>
-    </li>
-     <li>
-       <a href="#Store-section">
-         <i class='bx bx-cart' ></i>
-         <span class="links_name">Store</span>
-       </a>
-       <span class="tooltip">Store</span>
-     </li>
-     </li>
-    </ul>
+        
+        <button id="Admin">Admin</button>
+       
+        <button id="User">User</button>
+       
+        <button id="Store">Store</button>
+      
+      </li>
+      </ul>
+      </div>
+       <div class="Admin-Container">
+      <div id="container1">
+        
+<form > 
+  <h3> Create Account</h3>
+<input type="text" placeholder="Name" required>
+<input type="password" placeholder="Password" required>
+<input type="password" placeholder="Confirm password" required>
+<div class="botton22 ">
+<button type="button">Next</button>
+</div>
+<!-- <div class="botton23 ">
+<button type="button">Back</button>
+</div> -->
+<div class="Admincontainer2">
+</form>
+<form id="form2"> 
+  <h3> Other Info</h3>
+<input type="text" placeholder="Name" required>
+<input type="password" placeholder="Password" required>
+<input type="password" placeholder="Confirm password" required>
+<div class="botton22 ">
+<button type="button" id="Next">Next</button>
+<button type="button" id="back"> Back</button>
+</form>
+</div>
+
+</div>
+
+
+</div>
+
+
+      </div>
+      <!-- </div> -->
+      <div id="container2">
+        <p>This is the container akram</p>
+    </div>
+    <div id="container3">
+      <p>This is the container  omar</p>
   </div>
-  <section id="Admin-section">
-    <div>Example: Admin</div>
-  </section>
-  <section id="User-section">
-    <div>Example: User</div>
-  </section>
-  <section id="Store-section">
-    <div>Example: Store</div>
-  </section>
+  <!-- </div> -->
 </body>
 </html>
