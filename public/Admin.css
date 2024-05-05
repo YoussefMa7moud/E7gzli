@@ -386,7 +386,7 @@ input[type="text"]:hover
    margin-bottom: 15px ;
    transition: all .3s ease;
    border-radius: 39px;
-   border:none; 
+   border: none;
 
 
 }
@@ -502,4 +502,8 @@ background: black;
    position: relative;
    left: 40px;
    
+}
+
+#description{
+   border: none;
 }
