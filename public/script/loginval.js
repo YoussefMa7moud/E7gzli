@@ -12,7 +12,7 @@ else if(b ==""){
   alert("Please Enter your Password");
 }
 else if (a == "admin" && b == "admin") {
-  window.location.href ="Admin.html";
+  window.location.href ="./Admin.html";
 }
 
 else if (a == "user" && b == "user") {
