@@ -1,5 +1,3 @@
-const { FacebookAuthProvider } = require("firebase/auth/cordova");
-
 function calculatePayment() {
     var totalPayment = 0;
 
@@ -37,6 +35,7 @@ if(localStorage.getItem('isLoggedIn') === 'true'){
       changeButton();
     }
     }
+
 
 
 
