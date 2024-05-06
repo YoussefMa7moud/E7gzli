@@ -71,6 +71,44 @@ POTM.addEventListener("click", function() {
 });
 
 });
+/* admin section*/ 
+function toggleadminForm1() {
+  var formContainer1 = document.getElementById("adminHistory1");
+  if (formContainer1.style.display === "block") {
+    formContainer1.style.display = "none";
+  } else {
+    formContainer1.style.display = "block";
+  }
+}
+
+function toggleadminForm2() {
+  var formContainer1 = document.getElementById("adminHistory2");
+  if (formContainer1.style.display === "block") {
+    formContainer1.style.display = "none";
+  } else {
+    formContainer1.style.display = "block";
+  }
+}
+function toggleadminForm3() {
+  var formContainer1 = document.getElementById("adminHistory3");
+  if (formContainer1.style.display === "block") {
+    formContainer1.style.display = "none";
+  } else {
+    formContainer1.style.display = "block";
+  }
+}
+function toggleadminForm4() {
+  var formContainer1 = document.getElementById("adminHistory4");
+  if (formContainer1.style.display === "block") {
+    formContainer1.style.display = "none";
+  } else {
+    formContainer1.style.display = "block";
+  }
+}
+
+
+
+
 /* user section */
 
 
