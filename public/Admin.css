@@ -507,3 +507,20 @@ background: black;
 #description{
    border: none;
 }
+
+#lo{
+   color: white;
+   position: relative;
+   bottom:75px;
+   left: 330%;
+   font-size: 20px;
+   font-weight: lighter;
+   cursor:pointer;
+
+}
+
+#lo:hover{
+   border-color: #EC4899;
+   border-style:solid;
+   color: #EC4899;
+}
