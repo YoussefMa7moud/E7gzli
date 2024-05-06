@@ -101,25 +101,31 @@ document.addEventListener('click', function(event) {
   });
   function toggleForm1() {
     var formContainer1 = document.getElementById("userHistory");
-    if (formContainer1.style.display === "block") {
-      formContainer1.style.display = "none";
-    } else {
+    if (formContainer1.style.display === "none") {
       formContainer1.style.display = "block";
+    } else {
+      formContainer1.style.display = "none";
     }
   }
   function enlarge10(b){
-    let card = b.getElementsByClassName('history-container');
-    card.classList.add('enlarge_profile1');
+    let card = b.getElementsByClassName('history-container')[0];
+    card.classList.add('enlarge10_History');
     document.body.style.overflow='hidden';
     /* this for the data to be shown in the card when enlarged */
+    let profile4 =document.getElementById('userHistory');
+    profile4.style.display='block';
   
   }
   document.addEventListener('click', function(event) {
-    const enlargedCard = document.querySelector('.history-container.enlarge_profile1');
+    const enlargedCard = document.querySelector('.history-container.enlarge10_History');
     if (enlargedCard && !enlargedCard.contains(event.target)) {
-        enlargedCard.classList.remove('enlarge_profile1');
+        enlargedCard.classList.remove('enlarge10_History');
         document.body.style.overflow = 'auto';
-      }
+       
+        let profile4 =document.getElementById('userHistory');
+      profile4.style.display='none';
+      
+    }
   
     });
 
@@ -160,10 +166,10 @@ function closeForm() {
 
 function toggleForm() {
   var formContainer = document.getElementById("addProfileForm");
-  if (formContainer.style.display === "none") {
-    formContainer.style.display = "block";
-  } else {
+  if (formContainer.style.display === "block") {
     formContainer.style.display = "none";
+  } else {
+    formContainer.style.display = "block";
   }
 }
 
