@@ -538,28 +538,58 @@ table thead tr{
 }
 .history-container {
   width: 25%;
-  margin: 10px;
+  margin: 100px;
+  position: relative;
+  bottom: 550px;
+  left: 500px;
   background: #fff;
   text-align: center;
   border-radius: 10px;
   padding: 50px;
   box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1); 
+  display: none;
 }
 
 .history-container.active {
-  display: block;
+  display: none;
 }
 
-.history-container.enlarge10_history {
-  position: fixed;
-  top: 50%;
-  width: 40%;
-  height: 70%;
-  left: 0%;
-  transform: translate(80%, -50%) scale(0.9);
-  background-color: #fff;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
+
+
+.ban-form-container {
+  width: 25%;
+  margin: 100px;
+  position: relative;
+  bottom: 550px;
+  left: 500px;
+  background: #fff;
+  text-align: center;
+  border-radius: 10px;
+  padding: 50px;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1); 
+  display: none;
+}
+.ban-button.active {
+  display: none;
+}
+.button_ban {
+  position: relative;
+  right: 30%;
+  top: 40px;
+  padding: 8px 10px; 
+  background-color: black;
+  color: #fff;
+  border-radius: 8px;
+}
+
+.button_ban:hover{
+  position: relative;
+  right: 30%;
+  top: 40px;
+  background-color: red;
+  color: #fff;
+  border-radius: 10px;
+  border-color: red;
 }
 
 /* Store Section */

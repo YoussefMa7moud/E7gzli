@@ -100,34 +100,71 @@ document.addEventListener('click', function(event) {
 
   });
   function toggleForm1() {
-    var formContainer1 = document.getElementById("userHistory");
-    if (formContainer1.style.display === "none") {
-      formContainer1.style.display = "block";
-    } else {
+    var formContainer1 = document.getElementById("userHistory1");
+    if (formContainer1.style.display === "block") {
       formContainer1.style.display = "none";
+    } else {
+      formContainer1.style.display = "block";
     }
   }
-  function enlarge10(b){
-    let card = b.getElementsByClassName('history-container')[0];
-    card.classList.add('enlarge10_History');
-    document.body.style.overflow='hidden';
-    /* this for the data to be shown in the card when enlarged */
-    let profile4 =document.getElementById('userHistory');
-    profile4.style.display='block';
-  
-  }
-  document.addEventListener('click', function(event) {
-    const enlargedCard = document.querySelector('.history-container.enlarge10_History');
-    if (enlargedCard && !enlargedCard.contains(event.target)) {
-        enlargedCard.classList.remove('enlarge10_History');
-        document.body.style.overflow = 'auto';
-       
-        let profile4 =document.getElementById('userHistory');
-      profile4.style.display='none';
-      
+
+  function toggleForm2() {
+    var formContainer1 = document.getElementById("userHistory2");
+    if (formContainer1.style.display === "block") {
+      formContainer1.style.display = "none";
+    } else {
+      formContainer1.style.display = "block";
     }
-  
-    });
+  }
+  function toggleForm3() {
+    var formContainer1 = document.getElementById("userHistory3");
+    if (formContainer1.style.display === "block") {
+      formContainer1.style.display = "none";
+    } else {
+      formContainer1.style.display = "block";
+    }
+  }
+  function toggleForm4() {
+    var formContainer1 = document.getElementById("userHistory4");
+    if (formContainer1.style.display === "block") {
+      formContainer1.style.display = "none";
+    } else {
+      formContainer1.style.display = "block";
+    }
+  }
+
+  function toggleBan1() {
+    var formContainer1 = document.getElementById("banForm1");
+    if (formContainer1.style.display === "block") {
+      formContainer1.style.display = "none";
+    } else {
+      formContainer1.style.display = "block";
+    }
+  }
+  function toggleBan2() {
+    var formContainer1 = document.getElementById("banForm2");
+    if (formContainer1.style.display === "block") {
+      formContainer1.style.display = "none";
+    } else {
+      formContainer1.style.display = "block";
+    }
+  }
+  function toggleBan3() {
+    var formContainer1 = document.getElementById("banForm3");
+    if (formContainer1.style.display === "block") {
+      formContainer1.style.display = "none";
+    } else {
+      formContainer1.style.display = "block";
+    }
+  }
+  function toggleBan4() {
+    var formContainer1 = document.getElementById("banForm4");
+    if (formContainer1.style.display === "block") {
+      formContainer1.style.display = "none";
+    } else {
+      formContainer1.style.display = "block";
+    }
+  }
 
 
 

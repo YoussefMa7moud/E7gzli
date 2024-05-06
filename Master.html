@@ -81,7 +81,7 @@
       <div class="card">
         <h6>&nbsp;</h6>
         <img src="/public/materials/user_man.jpg">
-        <h4>Sam David</h4>
+        <h4>Sam Sulek</h4>
         <p>🟢 Admin</p>
         <h6>&nbsp;</h6>
         <div class="test1">
@@ -104,7 +104,7 @@
       <div class="card">
         <h6>&nbsp;</h6>
         <img src="/public/materials/user_man.jpg">
-        <h4>Balbina kherr</h4>
+        <h4>David Goggins</h4>
         <p>🟢 user</p>
         <h6>&nbsp;</h6>
         <div class="test1">
@@ -127,7 +127,7 @@
       <div class="card">
         <h6>&nbsp;</h6>
         <img src="/public/materials/user_man.jpg">
-        <h4>Badan John</h4>
+        <h4>John Wick</h4>
         <p>🟢 tester</p>
         <h6>&nbsp;</h6>
         <div class="test1">
@@ -150,7 +150,7 @@
       <div class="card">
         <h6>&nbsp;</h6>
         <img src="/public/materials/user_man.jpg">
-        <h4>Salina micheal</h4>
+        <h4>Dwayne Johnson</h4>
         <p>🟢 user</p>
         <h6>&nbsp;</h6>
         <div class="test1">
@@ -195,8 +195,8 @@
               <td>male</td>
               <td>Example@gmail.com</td>
               <td>123456</td>
-              <td><button onclick="toggleForm1();enlarge10(this)">View</button></td>
-              <td><button id="ban">Ban</button></td>
+              <td><button onclick="toggleForm1()">View</button></td>
+              <td><button id="ban" onclick="toggleBan1()">Ban</button></td>
             </tr>
             <tr class="active">
               <td>02</td>
@@ -205,8 +205,8 @@
               <td>Female</td>
               <td>Example@gmail.com</td>
               <td>123456</td>
-              <td><button>View</button></td>
-              <td><button id="ban">Ban</button></td>
+              <td><button onclick="toggleForm2()">View</button></td>
+              <td><button id="ban" onclick="toggleBan2()">Ban</button></td>
             </tr>
             <tr>
               <td>03</td>
@@ -215,8 +215,8 @@
               <td>male</td>
               <td>Example@gmail.com</td>
               <td>123456</td>
-              <td><button>View</button></td>
-              <td><button id="ban">Ban</button></td>
+              <td><button onclick="toggleForm3()">View</button></td>
+              <td><button id="ban" onclick="toggleBan3()">Ban</button></td>
             </tr>
             <tr>
               <td>04</td>
@@ -225,15 +225,15 @@
               <td>Female</td>
               <td>Example@gmail.com</td>
               <td>123456</td>
-              <td><button>View</button></td>
-              <td><button id="ban">Ban</button></td>
+              <td><button onclick="toggleForm4()">View</button></td>
+              <td><button id="ban" onclick="toggleBan4()">Ban</button></td>
             </tr>
           </tbody>
         </table>
       </div>
     </section>
   </section>
-    <div class="history-container" id="userHistory">
+    <div class="history-container" id="userHistory1">
       <h2>User History</h2>
       <ul>
           <li>
@@ -247,8 +247,109 @@
           <!-- add more login history here -->
       </ul>
     </div>
-
-     
+    <div class="history-container" id="userHistory2">
+      <h2>User History</h2>
+      <ul>
+          <li>
+              <strong>Login Time:</strong> January 1, 2024 12:00 AM
+              <span class="ticket-status">Ticket1 Purchased: Yes</span>
+          </li>
+          <li>
+              <strong>Login Time:</strong> January 3, 2024 1:30 PM
+              <span class="ticket-status">Ticket2 Purchased: Yes</span>
+          </li>
+          <!-- add more login history here -->
+      </ul>
+    </div>
+    <div class="history-container" id="userHistory3">
+      <h2>User History</h2>
+      <ul>
+          <li>
+              <strong>Login Time:</strong> January 5, 2024 4:00 PM
+              <span class="ticket-status">Ticket1 Purchased: No</span>
+          </li>
+          <li>
+              <strong>Login Time:</strong> January 9, 2024 5:30 PM
+              <span class="ticket-status">Ticket2 Purchased: Yes</span>
+          </li>
+          <!-- add more login history here -->
+      </ul>
+    </div>
+    <div class="history-container" id="userHistory4">
+      <h2>User History</h2>
+      <ul>
+          <li>
+              <strong>Login Time:</strong> January 10, 2024 8:00 AM
+              <span class="ticket-status">Ticket1 Purchased: No</span>
+          </li>
+          <li>
+              <strong>Login Time:</strong> January 12, 2024 11:30 AM
+              <span class="ticket-status">Ticket2 Purchased: No</span>
+          </li>
+          <!-- add more login history here -->
+      </ul>
+    </div>
+    <div class="ban-form-container" id="banForm1">
+      <h2>Ban User</h2>
+        <div>
+          <label>Ban Duration:</label>
+            <select name="banDuration">
+              <option value="1">1 Hour</option>
+              <option value="6">6 Hours</option>
+              <option value="24">1 Day</option>
+              <option value="72">3 Days</option>
+              <option value="168">1 Week</option>
+              <option value="720">1 Month</option>
+            </select>
+          <button class="button_ban">Ban</button>
+        </div>
+    </div>
+    <div class="ban-form-container" id="banForm2">
+      <h2>Ban User</h2>
+        <div>
+          <label>Ban Duration:</label>
+            <select name="banDuration">
+              <option value="1">1 Hour</option>
+              <option value="6">6 Hours</option>
+              <option value="24">1 Day</option>
+              <option value="72">3 Days</option>
+              <option value="168">1 Week</option>
+              <option value="720">1 Month</option>
+            </select>
+          <button class="button_ban">Ban</button>
+        </div>
+    </div>
+    <div class="ban-form-container" id="banForm3">
+      <h2>Ban User</h2>
+        <div>
+          <label>Ban Duration:</label>
+            <select name="banDuration">
+              <option value="1">1 Hour</option>
+              <option value="6">6 Hours</option>
+              <option value="24">1 Day</option>
+              <option value="72">3 Days</option>
+              <option value="168">1 Week</option>
+              <option value="720">1 Month</option>
+            </select>
+          <button class="button_ban">Ban</button>
+        </div>
+    </div>
+    <div class="ban-form-container" id="banForm4">
+      <h2>Ban User</h2>
+        <div>
+          <label>Ban Duration:</label>
+            <select name="banDuration">
+              <option value="1">1 Hour</option>
+              <option value="6">6 Hours</option>
+              <option value="24">1 Day</option>
+              <option value="72">3 Days</option>
+              <option value="168">1 Week</option>
+              <option value="720">1 Month</option>
+            </select>
+          <button class="button_ban">Ban</button>
+        </div>
+    </div>
+  
 </div>
 
 
