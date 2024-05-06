@@ -31,6 +31,7 @@
 
         <button id="Store" class="sidebuttons">Store Managment</button>
 
+        <button id="POTM" class="sidebuttons">POTM Managment</button>
 
       </li>
 
@@ -47,12 +48,13 @@
 
       <form>
         <h3> Create Account</h3>
-        <input type="text" placeholder="Name" required> </input>
-        <input type="password" placeholder="Password" required> </input>
-        <input type="password" placeholder="Confirm password" required> </input>
-        <input type="email" placeholder="Email" required> </input>
+        <input type="text" id="creat_acc" placeholder="Name" required> </input>
+        <input type="password" id="creat_acc" placeholder="Password" required> </input>
+        <input type="password" id="creat_acc" placeholder="Confirm password" required> </input>
+        <input type="email" id="creat_acc" placeholder="Email" required> </input>
 
-        <input type="number" placeholder=" Mobile number" required></input>
+        <input type="number" id="creat_acc" placeholder=" Mobile number" required></input>
+        <input type="number" id="creat_acc" placeholder=" ID" required></input>
         <br>
 
         <div class="radiobuttons">
@@ -64,11 +66,126 @@
         <div class="botton22 ">
           <br>
           <button type="button" id="Create Account">Create Account</button>
-          <button type="button" id="delete Account">delete Account</button>
+          
       </form>
     </div>
-
-
+    <section class="Admin_list">
+        <div class="admins-list">
+          <h1>Admin's List</h1>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>History</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>01</td>
+                <td>Sam David</td>
+                <td>20</td>
+                <td>male</td>
+                <td>Example@gmail.com</td>
+                <td>123456</td>
+                <td><button onclick="toggleForm1()">View</button></td>
+                <td><button id="delete" >Delete</button></td>
+              </tr>
+              <tr class="active">
+                <td>02</td>
+                <td>Balbina Kherr</td>
+                <td>25</td>
+                <td>Female</td>
+                <td>Example@gmail.com</td>
+                <td>123456</td>
+                <td><button onclick="toggleForm2()">View</button></td>
+                <td><button id="delete" >Delete</button></td>
+              </tr>
+              <tr>
+                <td>03</td>
+                <td>Badan John</td>
+                <td>33</td>
+                <td>male</td>
+                <td>Example@gmail.com</td>
+                <td>123456</td>
+                <td><button onclick="toggleForm3()">View</button></td>
+                <td><button id="delete" >Delete</button></td>
+              </tr>
+              <tr>
+                <td>04</td>
+                <td>Sara David</td>
+                <td>35</td>
+                <td>Female</td>
+                <td>Example@gmail.com</td>
+                <td>123456</td>
+                <td><button onclick="toggleForm4()">View</button></td>
+                <td><button id="delete" >Delete</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <div class="Admin-history-container" id="userHistory1">
+        <h2>Admin History</h2>
+        <ul>
+          <li>
+            <strong>Creation Time:</strong> January 1, 2024 10:00 AM
+            <span class="ticket-status">Event Made: Amr Diab</span>
+          </li>
+          <li>
+            <strong>Last Logout Time:</strong> January 2, 2024 11:30 AM
+            <span class="ticket-status">Event Made:Marwan Moussa Event</span>
+          </li>
+          
+        </ul>
+      </div>
+      <div class="Admin-history-container" id="userHistory2">
+        <h2>Admin History</h2>
+        <ul>
+          <li>
+            <strong>Creation Time</strong> January 1, 2024 12:00 AM
+            <span class="ticket-status">Event Made: Yes</span>
+          </li>
+          <li>
+            <strong>Last Logout Time</strong> January 3, 2024 1:30 PM
+            <span class="ticket-status">>Match Made:somoha vs AlAhly</span>
+          </li>
+          
+        </ul>
+      </div>
+      <div class="Admin-history-container" id="userHistory3">
+        <h2>Admin History</h2>
+        <ul>
+          <li>
+            <strong>Creation Time:</strong> January 5, 2024 4:00 PM
+            <span class="ticket-status">Match Made:somoha vs AlAhly</span>
+          </li>
+          <li>
+            <strong>Last Logout Time</strong> January 9, 2024 5:30 PM
+            <span class="ticket-status">>Match Made:Somoha vs Elzamlek</span>
+          </li>
+          
+        </ul>
+      </div>
+      <div class="Admin-history-container" id="userHistory4">
+        <h2>Admin History</h2>
+        <ul>
+          <li>
+            <strong>Creation Time:</strong> January 10, 2024 8:00 AM
+            <span class="ticket-status">Event Made: Marwan pablo Event</span>
+          </li>
+          <li>
+            <strong>Last Logout Time:</strong> January 12, 2024 11:30 AM
+            <span class="ticket-status">>Match Made:Alahly vs Elzamlek</span>
+          </li>
+          
+        </ul>
+      </div>
 
   </div>
 
@@ -599,6 +716,183 @@
       </main>
     </div>
   </div>
+  <div id="container4">
+
+
+    <div id="container87">
+      <input type="file" id="file" accept="image/*" hidden>
+
+      <div class="img-area" data-img="">
+        <i class='bx bxs-cloud-upload icon'></i>
+        <h3>Upload Image</h3>
+        <p>Image size must be less than <span>2MB</span></p>
+      </div>
+      <label for="file" class="select-image">Select Image</label>
+
+
+
+      <form>
+
+
+
+
+
+
+        <div class="button1">
+          <input type="text" id="title" name="fname" placeholder="Player Name">
+
+        </div>
+
+        <div class="location">
+          <input type="text" id="location" name="location" placeholder="Player Club ">
+        </div>
+
+
+
+        <div class="button_2">
+          <textarea id="description" name="description" placeholder="Description" rows="8"></textarea>
+        </div>
+
+        <!-- <div class="location">
+        <input type="text" id="location" name="location" placeholder="Location">
+    </div> -->
+
+        <!-- <div class="date">
+        <input type="date" id="date" name="date" placeholder="Date">
+    </div> -->
+
+        <div class="tickets1">
+          <input type="number" id="numTickets" name="numTickets1" placeholder="goals">
+
+
+        </div>
+        <div class="tickets2">
+          <input type="number" id="numTickets" name="numTickets2" placeholder="Assists">
+
+        </div>
+
+        <div class="tickets3">
+          <input type="number" id="numTickets" name="numTickets3" placeholder="Clean Sheets">
+
+
+        </div>
+
+        <button class="add-event">Add Nominees</button>
+
+      </form>
+
+
+
+    </div>
+
+    <div id="container88">
+      <input type="file" id="file" accept="image/*" hidden>
+
+      <div class="img-area2" data-img="">
+        <i class='bx bxs-cloud-upload icon'></i>
+        <h3>Upload Image</h3>
+        <p>Image size must be less than <span>2MB</span></p>
+      </div>
+      <label for="file" class="select-image2">Select Image</label>
+
+      <form>
+
+
+
+
+
+
+        <div class="button1">
+          <input type="text" id="title" name="fname" placeholder="Player Name">
+          <div class="location">
+            <input type="text" id="location" name="location" placeholder="Player Club ">
+          </div>
+          <div class="button_2">
+            <textarea id="description" name="description" placeholder="Description" rows="8"></textarea>
+          </div>
+        </div>
+        <div class="tickets1">
+          <input type="number" id="numTickets" name="numTickets1" placeholder="goals">
+
+
+        </div>
+        <div class="tickets2">
+          <input type="number" id="numTickets" name="numTickets2" placeholder="Assists">
+
+        </div>
+
+        <div class="tickets3">
+          <input type="number" id="numTickets" name="numTickets3" placeholder="Clean Sheets">
+
+
+        </div>
+
+        <button class="add-event">Add Nominees</button>
+
+      </form>
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+    <div id="container89">
+      <input type="file" id="file" accept="image/*" hidden>
+
+      <div class="img-area3" data-img="">
+        <i class='bx bxs-cloud-upload icon'></i>
+        <h3>Upload Image</h3>
+        <p>Image size must be less than <span>2MB</span></p>
+      </div>
+      <br>
+      <label for="file" class="select-image3">Select Image</label>
+      <form>
+
+
+
+
+
+
+        <div class="button1">
+          <input type="text" id="title" name="fname" placeholder="Player Name">
+          <div class="location">
+            <input type="text" id="location" name="location" placeholder="Player Club ">
+          </div>
+          <div class="button_2">
+            <textarea id="description" name="description" placeholder="Description" rows="8"></textarea>
+          </div>
+        </div>
+
+        <div class="tickets1">
+          <input type="number" id="numTickets" name="numTickets1" placeholder="goals">
+
+
+        </div>
+        <div class="tickets2">
+          <input type="number" id="numTickets" name="numTickets2" placeholder="Assists">
+
+        </div>
+
+        <div class="tickets3">
+          <input type="number" id="numTickets" name="numTickets3" placeholder="Clean Sheets">
+
+
+        </div>
+
+        <button class="add-event">Add Nominees</button>
+
+
+      </form>
+
+
+    </div>
 
 </body>
 

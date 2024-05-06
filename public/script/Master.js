@@ -30,23 +30,45 @@ document.addEventListener("DOMContentLoaded", function() {
   let container2 = document.getElementById("container2");
   let Store = document.getElementById("Store");
   let container3 = document.getElementById("container3");
+  let  POTM= document.getElementById("POTM");
+  let container4 = document.getElementById("container4");
+  let container87 = document.getElementById("container87");
+  let container88 = document.getElementById("container88");
+  let container89 = document.getElementById("container89");
   Admin.addEventListener("click", function() {
-    container1.style.display = "flex";
+    container1.style.display = "block";
     container2.style.display = "none";
     container3.style.display = "none";
+    container87.style.display = "none";
+    container88.style.display = "none";
+    container89.style.display = "none";
   });
   User.addEventListener("click", function() {
          container2.style.display = "block";
          container1.style.display = "none";
          container3.style.display = "none";
+         container87.style.display = "none";
+    container88.style.display = "none";
+    container89.style.display = "none";
   });
   Store.addEventListener("click", function() {
     container3.style.display = "block";
     container2.style.display = "none";
     container1.style.display = "none";
-
+    container87.style.display = "none";
+    container88.style.display = "none";
+    container89.style.display = "none";
 });
 
+POTM.addEventListener("click", function() {
+  container3.style.display = "none";
+  container2.style.display = "none";
+  container1.style.display = "none";
+  container4.style.display = "flex";
+  container87.style.display = "block";
+  container88.style.display = "block";
+  container89.style.display = "block";
+});
 
 });
 /* user section */
