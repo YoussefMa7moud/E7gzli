@@ -71,16 +71,12 @@ background-image: url(./public/materials/fan2.jpg);
    transform: translate(-50%, -50%);
 }
 
-
-
-
-
 .form {
    display: flex;
    justify-content: center;
    align-items: center;
    height: 100vh; 
-   /* background-image: url(../public/materials/fan2.JPG); */
+   background-image: url(../public/materials/fan2.JPG);
    background-size: cover;
    background-color: rgb(18, 13, 13); 
    background-repeat: no-repeat;
