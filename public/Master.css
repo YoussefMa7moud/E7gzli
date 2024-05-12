@@ -179,6 +179,7 @@
   right: 0;
   background: #11101d;
   color: #ddd;
+  text-decoration: none;
   width: 100%;
   height: 60px;
   line-height: 60px;
@@ -1356,3 +1357,6 @@ container89 */
 
 
 }
+
+
+
