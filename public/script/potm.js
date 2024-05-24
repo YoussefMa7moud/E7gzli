@@ -35,3 +35,18 @@ if(localStorage.getItem('isLoggedIn') === 'true'){
     changeButton();
   }
   }
+function validate(){
+  var a = document.getElementById("option").value;
+  if (a == "Emam Ashour" ) {
+    alert("Total votes for "+a+" is:");
+}
+else if (a == "Zizo" ) {
+  alert("Total votes for "+a+" is:");
+}
+else if (a == "Ali Maloul" ) {
+  alert("Total votes for "+a+" is:");
+}
+else{
+  alert("Please choose a player");
+}
+}
