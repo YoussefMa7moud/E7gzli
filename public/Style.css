@@ -263,9 +263,18 @@ body {
 
 
 .holder {
+   font-size: 150%;
    display: flex;
    padding: 2%;
    justify-content: center;
+}
+.holder .fieldset{
+   margin-top: 20px;
+}
+.field_text{
+   margin-top: 10px;
+   height: 60px;
+   
 }
 
 .holder_words {
@@ -274,9 +283,12 @@ body {
    justify-content: center;
    color: white;
 }
-
+.creat-acc button {
+   font-size: large;
+}
 .holder_words h3 {
    margin: 0;
+   font-size: x-large;
 }
 
 select {
