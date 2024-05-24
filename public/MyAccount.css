@@ -358,7 +358,15 @@ body {
 
 
 
-
+form {
+	font-size:20px;
+}
+form input{
+font-size:19px;
+}
+form button{
+	font-size: 20px;
+}
 
 
 
