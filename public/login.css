@@ -5,69 +5,63 @@ body {
 }
 
 .navbar {
-   background-color: #FFFFFF;
-   display: flex;
-   height: 37px;
-   border-radius: 50px;
-   margin: 11px;
-   position: fixed;
-   width: 99%;
-
-
+  background-color: #FFFFFF;
+  display: flex;
+  height: 37px;
+  border-radius: 50px;
+  margin: 11px;
+  position: fixed;
+  width: 99%;
+  padding: 10px 3px;
 }
 
 .material-symbols-outlined {
-   position: absolute;
-   top: 7px;
-   left: 47%;
-
-
-
+  position: absolute;
+  top: 17px;
+  left: 47%;
 }
 
 
 
 .left-A a {
-   justify-content: space-between;
-   padding: 10px;
-   color: black;
-   text-decoration: none;
-   font-family: "Open Sans", sans-serif;
-   font-size: 15px;
-   position: relative;
-   left: 20%;
-   top: 6px;
-
+  justify-content: space-between;
+  padding: 10px;
+  color: black;
+  text-decoration: none;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  position: relative;
+  left: 20%;
+  top: 6px;
+  font-size: 20px;
 }
 
 
 
 .R-A a {
-   justify-content: space-between;
-   color: black;
-   text-decoration: none;
-   font-family: "Open Sans", sans-serif;
-   font-size: 15px;
-   position: relative;
-   left: 1500px;
-   top: 6px;
-
+  justify-content: space-between;
+  color: black;
+  text-decoration: none;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  position: relative;
+  left: 1500px;
+  top: 6px;
+  font-size: 20px;
 }
 
 
 
 .LOGO h1 {
-   color: black;
-   text-decoration: none;
-   font-family: "Open Sans", sans-serif;
-   font-size: 17px;
-
-
-   float: none;
-   position: absolute;
-   top: 7px;
-   left: 50%;
-   transform: translate(-50%, -50%);
+  color: black;
+  text-decoration: none;
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  float: none;
+  position: absolute;
+  top: 17px;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .form {

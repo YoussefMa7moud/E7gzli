@@ -17,12 +17,12 @@ else if (a == "admin" && b == "admin") {
 
 else if (a == "user" && b == "user") {
   localStorage.setItem('isLoggedIn', 'true');
-  window.location.href ="index.html";
+  window.location.href ="./index.html";
   changeButton();
 }
 
 else if (a == "master" && b == "master") {
-  window.location.href ="Master.html";
+  window.location.href ="./Master.html";
 }
 
 else{

@@ -701,7 +701,7 @@ main {
 
 .back button {
   display: inline-block;
-  background-color: #1d1b31;
+  background-color: #EC4899;
   color: #E7E5E4;
   border-radius: 6px;
   width: 120px;
@@ -749,7 +749,7 @@ main {
 .Add {
   margin-left: -300px;
   display: inline-block;
-  background-color: #1d1b31;
+  background-color: #EC4899;
   color: #E7E5E4;
   border-radius: 6px;
   width: 120px;
@@ -826,7 +826,7 @@ main {
   height: 1100px;
 }
 .Store-Form-Button button{
-  background-color: #1d1b31;
+  background-color: #EC4899;
   color: #E7E5E4;
 }
 #addProfileFormmm input{
