@@ -255,7 +255,9 @@ form button {
   width: 110px;
   height: 35px;
   margin: 0 10px;
-  background: linear-gradient(to right, #ff10ff, #0634ff);
+  background-color: #1d1b31;
+  color: #fff;
+  border-radius: 6%;
   border: 0;
   outline: none;
   cursor: pointer;
@@ -580,8 +582,6 @@ main {
   height: 20px;
   width: 40px;
   border-radius: 20px;
-
-
 }
 
 
@@ -658,7 +658,6 @@ main {
   background-color: #FFFFFF;
 }
 
-.profile--unexpanded>.profile__data,
 .profile--expanded>.profile__data {
   width: 100%;
   text-align: center;
@@ -672,30 +671,10 @@ main {
   justify-content: space-around;
 }
 
-.profile--unexpanded>.profile__data {
-  opacity: 0;
-  animation: unreveal 0.2s ease;
-}
-
 .profile--expanded>.profile__data {
   opacity: 1;
   animation: reveal 0.7s ease;
 }
-
-.profile__data>*>* {
-  display: block;
-}
-
-.profile__data>*>*:first-child {
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-
-.profile__data>*>*:nth-child(2) {
-  font-size: 0.9rem;
-}
-
-
 
 #shirt {
   width: 200px;
@@ -739,23 +718,29 @@ main {
 .back button:hover {
   background-color: white;
   color: black;
+  cursor: pointer;
 }
-
-.profile.profile--expanded {
-  margin-bottom: 20px;
+.edit-form ::placeholder{
+  font-size: 130%;
 }
-
 .edit-form {
   display: none;
 }
 
 .edit-form label {
+  align-items: center;
+  padding:15px;
   color: #11101D;
+  font-weight: 300%;
+  font-size: 120%;
 }
 
 .edit-form input,
 .edit-form textarea {
-  border-radius: 4px;
+  font-size: 100%;
+  border-radius: 5px;
+  background-color: #ffffff;
+  border-radius: 4rgb(29, 8, 255)
 }
 
 .profile.editing .edit-form {
@@ -841,7 +826,16 @@ main {
   overflow: hidden;
   height: 1100px;
 }
-
+.Store-Form-Button button{
+  background-color: #1d1b31;
+  color: #E7E5E4;
+}
+#addProfileFormmm input{
+  font-size: 125%;
+}
+#profileInfo{
+  font-size : 93%;
+}
 /* mezo was here */
 
 #container1 {
@@ -922,18 +916,14 @@ border-radius: 8px;
  
   
   }
-  form button{
+  #Create-Account{
   width: 110px;
   height: 35px;
   margin: 0 10px ;
-  background: linear-gradient(to right,#ff10ff,#0634ff);
+  background-color: #1d1b31;
   border: 0;
-  
-  
   margin-bottom: 10px;
    margin-left:130px ;
-  
-  
   }
   
   .AdminContainer{
