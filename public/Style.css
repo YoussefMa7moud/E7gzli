@@ -414,7 +414,7 @@ select {
 
 
 
-@media only screen and (max-width: 1290px) and (min-width: 430px) {
+@media only screen and (max-width: 844px) and (min-width: 375px) {
    .navbar {
       flex-direction: column;
       align-items: center;
