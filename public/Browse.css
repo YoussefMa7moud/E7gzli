@@ -70,28 +70,6 @@ scroll-behavior: smooth;
 
  }
 
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .header_title{
    text-align: center;
    font-size: 30px;
@@ -262,4 +240,88 @@ scroll-behavior: smooth;
    padding-bottom: 99px;
 
 }
+@media only screen and (max-width: 844px) and (min-width: 375px) {
+  .navbar {
+     width:360px;
+     flex-direction: column;
+     align-items: center;
+     height: auto;
+     padding: 5px;
+  }
 
+  .material-symbols-outlined {
+     position: static;
+     margin-top: -10px;
+  }
+
+  .left-A a,
+  .R-A a {
+     position: static;
+     font-size: 16px;
+     text-align: center;
+  }
+
+  .left-A a {
+     margin-bottom: 10px;
+  }
+
+  .R-A a {
+     margin-top: 10px;
+  }
+
+  .LOGO {
+     margin-right:70px;
+     margin-top:10px;
+     display: flex;
+     justify-content: center;
+  }
+
+  .LOGO h1 {
+     margin-left:17px;
+     top:3px;
+  }
+  .header_title {
+    font-size: 24px;
+    padding-top: 2%;
+  }
+
+  .content {
+    padding-left: 5%;
+  }
+
+  .card {
+    width: 90%;
+    grid-template-columns: 1fr;
+    padding: 10px;
+  }
+
+  .side_img img {
+    width: 100%;
+    height: auto;
+  }
+
+  .info,
+  .info2 {
+    font-size: 20px;
+  }
+
+  .button_dist,
+  .button_dist2 {
+    position: static;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .button_dist h3,
+  .button_dist2 h3 {
+    position: static;
+    top: 0;
+    right: 0;
+  }
+
+  .booking-btn,
+  .booking-btn2 {
+    padding: 15px 50px;
+    display: inline-block;
+  }
+}
