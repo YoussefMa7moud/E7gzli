@@ -720,3 +720,58 @@ padding-left: 340px;
    
    
   }
+	@media only screen and (max-width: 844px) and (min-width: 375px) {
+		body {
+			padding-right: 0;
+		}
+	
+		.app-body {
+			grid-template-columns: 1fr; /* Adjusting grid layout to single column */
+			padding-top: 2rem;
+		}
+	
+		.app-body-navigation {
+			display: none;
+		}
+	
+		.ongoing-tickets {
+			padding-left: 0;
+		}
+	
+		.animation,
+		.Update-info {
+			left: 0;
+			bottom: unset;
+			margin-bottom: 2rem;
+		}
+	
+		.card {
+			width: 100%;
+			padding: 0 20px 30px 20px;
+			margin-top: 2rem;
+			left: 0;
+		}
+	
+		.side_info {
+			margin-top: 20px;
+		}
+	
+		.side_img img {
+			width: 100%;
+		}
+	
+		.info2 {
+			left: 0;
+			font-size: 24px;
+		}
+	
+		.button_dist2 {
+			left: 0;
+			top: 0;
+		}
+	
+		.booking-btn2 {
+			padding: 15px 30px;
+			font-size: 16px;
+		}
+	}
