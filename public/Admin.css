@@ -585,13 +585,13 @@ textarea {
    }
 
    .card {
-      width: 90%;
+      width: 120%;
       margin-top: 230px;
       margin-right: 20px;
       margin-bottom: 40px;
       margin-left: 20px;
       padding: 60px 10px 10px 10px;
-      height: auto;
+      height: 700px;
       display: block;
    }
 

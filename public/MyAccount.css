@@ -27,7 +27,7 @@ body {
 	color: var(--c-text-primary);
 	display: flex;
 	justify-content: center;
-    padding-right: 70%;
+	padding-right: 70%;
 }
 
 
@@ -38,7 +38,7 @@ body {
 
 .navigation a {
 	color: inherit;
-    width: 270px;
+	width: 270px;
 }
 
 
@@ -63,11 +63,9 @@ body {
 .app-body {
 	height: 100%;
 	display: grid;
-	grid-template-columns: minmax(min-content, 175px) minmax(max-content, 1fr) minmax(
-			min-content,
-			400px
-		);
-      
+	grid-template-columns: minmax(min-content, 175px) minmax(max-content, 1fr) minmax(min-content,
+			400px);
+
 
 	column-gap: 4rem;
 	padding-top: 2.5rem;
@@ -78,6 +76,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+
 	@media (max-width: 1200px) {
 		display: none;
 	}
@@ -86,11 +85,13 @@ body {
 
 .footer {
 	margin-top: auto;
+
 	h1 {
 		font-size: 1.5rem;
 		line-height: 1.125;
 		display: flex;
 		align-items: flex-start;
+
 		small {
 			font-size: 0.5em;
 			margin-left: 0.25em;
@@ -111,8 +112,8 @@ body {
 	align-items: center;
 	padding-bottom: 1rem;
 	padding-top: 1rem;
-	
-	
+
+
 }
 
 .logo-icon img {
@@ -126,11 +127,11 @@ body {
 .logo-title {
 	display: flex;
 	flex-direction: column;
-    font-size: 50px;
+	font-size: 50px;
 	line-height: 1.25;
 	margin-left: 0.75rem;
 
-	
+
 }
 
 .navigation {
@@ -138,14 +139,15 @@ body {
 	flex-direction: column;
 	align-items: flex-start;
 	color: var(--c-text-tertiary);
+
 	a {
 		display: flex;
 		align-items: center;
 		text-decoration: none;
 		transition: 0.25s ease;
-        cursor: pointer;
-        font-weight: lighter;
-        font-size: 35px;
+		cursor: pointer;
+		font-weight: lighter;
+		font-size: 35px;
 
 		* {
 			transition: 0.25s ease;
@@ -157,13 +159,13 @@ body {
 			flex-shrink: 0;
 		}
 
-		& + a {
+		&+a {
 			margin-top: 1.25rem;
 		}
 
 		&:hover,
 		&:focus {
-            
+
 			transform: translateX(4px);
 			color: red;
 		}
@@ -180,12 +182,13 @@ body {
 	cursor: pointer;
 	color: white;
 	transition: 0.25s ease;
-    position: relative;
-    left: 280%;
+	position: relative;
+	left: 280%;
 
 	&:hover,
 	&:focus {
 		color: var(--c-text-primary);
+
 		span:last-child {
 			box-shadow: 0 0 0 4px var(--c-gray-800), 0 0 0 5px var(--c-text-tertiary);
 		}
@@ -229,7 +232,7 @@ body {
 	transition: 0.25s ease;
 
 	&:hover {
-        
+
 		transform: translateY(-5px);
 	}
 
@@ -239,12 +242,15 @@ body {
 
 	&:nth-child(2) {
 		background-color: var(--c-green-500);
+
 		&:focus-within {
 			box-shadow: 0 0 0 2px var(--c-gray-800), 0 0 0 4px var(--c-green-500);
 		}
 	}
+
 	&:nth-child(3) {
 		background-color: var(--c-gray-300);
+
 		&:focus-within {
 			box-shadow: 0 0 0 2px var(--c-gray-800), 0 0 0 4px var(--c-gray-300);
 		}
@@ -260,9 +266,11 @@ body {
 		.icon-button {
 			color: inherit;
 			border-color: inherit;
+
 			&:hover,
 			&:focus {
 				background-color: transparent;
+
 				i {
 					transform: none;
 				}
@@ -288,6 +296,7 @@ body {
 .tile-header {
 	display: flex;
 	align-items: center;
+
 	i {
 		font-size: 2.5em;
 	}
@@ -297,6 +306,7 @@ body {
 		flex-direction: column;
 		line-height: 1.375;
 		margin-left: 0.5rem;
+
 		span:first-child {
 			font-weight: 600;
 		}
@@ -319,6 +329,7 @@ body {
 	display: flex;
 	flex-grow: 1;
 	position: relative;
+
 	input {
 		width: 100%;
 		padding-top: 0.5rem;
@@ -351,6 +362,7 @@ body {
 	width: 100%;
 	padding-bottom: 0.75rem;
 	border-bottom: 1px solid var(--c-gray-600);
+
 	h2 {
 		font-size: 1.5rem;
 	}
@@ -359,12 +371,14 @@ body {
 
 
 form {
-	font-size:20px;
+	font-size: 20px;
 }
-form input{
-font-size:19px;
+
+form input {
+	font-size: 19px;
 }
-form button{
+
+form button {
 	font-size: 20px;
 }
 
@@ -406,13 +420,13 @@ button {
 
 
 
-.ongoing-tickets{
-padding-left: 340px;
+.ongoing-tickets {
+	padding-left: 340px;
 }
 
 
 
- 
+
 
 * {
 	margin: 0;
@@ -589,37 +603,37 @@ padding-left: 340px;
 
 
 
-.animation{
-    position: relative;
-    left: 245%;
-    bottom: 38%;
+.animation {
+	position: relative;
+	left: 245%;
+	bottom: 38%;
 }
 
 
-.Update-info{
-    position: relative;
-    bottom: 90%;
-    left: 140%;
-    
+.Update-info {
+	position: relative;
+	bottom: 90%;
+	left: 140%;
+
 }
 
-.Update-info input{
-    border-radius: 9px;
-    width: 360px; 
-    height: 59px;
-    
+.Update-info input {
+	border-radius: 9px;
+	width: 360px;
+	height: 59px;
+
 }
 
-.Update-info button{
-    margin-top: 9px;
-    display: inline-block; 
-    background-color: #EC4899;
-    color: #E7E5E4;
-    border-radius: 6px;
-    width: 360px; 
-    height: 59px; 
-    text-align: center; 
-    text-decoration: none;
+.Update-info button {
+	margin-top: 9px;
+	display: inline-block;
+	background-color: #EC4899;
+	color: #E7E5E4;
+	border-radius: 6px;
+	width: 360px;
+	height: 59px;
+	text-align: center;
+	text-decoration: none;
 }
 
 
@@ -634,144 +648,153 @@ padding-left: 340px;
 
 
 
- .content{
-    justify-content: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-top: 60px;
-    
- }
- 
- .card {
-    background-color: white;
-    width: 70%;
-    border-radius: 10px;
-    padding: 0px/*top*/ 60px/*right*/ 70px/*bottom*/ 0px/*left*/;
-    transition: 0.7s ease;
-    margin-top: 60px;
-    position: relative;
-    bottom: 14%;
-    left: 29%;
-    
- }
+.content {
+	justify-content: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin-top: 60px;
 
- .side_info{
-   margin-top: 50px;
-   color: black;
- }
+}
+
+.card {
+	background-color: white;
+	width: 70%;
+	border-radius: 10px;
+	padding: 0px
+		/*top*/
+		60px
+		/*right*/
+		70px
+		/*bottom*/
+		0px
+		/*left*/
+	;
+	transition: 0.7s ease;
+	margin-top: 60px;
+	position: relative;
+	bottom: 14%;
+	left: 29%;
+
+}
+
+.side_info {
+	margin-top: 50px;
+	color: black;
+}
 
 .side_img img {
 
-    border-radius: 3%;
-    width: 600px; 
-    height: 110%;  
+	border-radius: 3%;
+	width: 600px;
+	height: 110%;
 }
 
 
 
-  
- .info{
-   
-   font-size: 29px;
- }
- .info2 {
-   
-   font-size: 29px;
-   position: relative;
-   left: 30px;
- }
+
+.info {
+
+	font-size: 29px;
+}
+
+.info2 {
+
+	font-size: 29px;
+	position: relative;
+	left: 30px;
+}
 
 
 
 
 
- 
-
-
- 
- .button_dist2{
-   
-   position: relative;
-   left:65%;
-   top: 70px;
-   padding-bottom: 29px;
-   
- }
 
 
 
 
-  .booking-btn2 {
+.button_dist2 {
 
-   display: inline-block;
-   padding: 20px 90px;    
-   border: none;
-   border-radius: 5px;
-   transition: 0.3s ease;
+	position: relative;
+	left: 65%;
+	top: 70px;
+	padding-bottom: 29px;
 
-  
- 
-  }
- 
-  #finishbtn{
-   background-color: black;
-   color: white;
-   
-   
-   
-  }
-	@media only screen and (max-width: 844px) and (min-width: 375px) {
-		body {
-			padding-right: 0;
-		}
-	
-		.app-body {
-			grid-template-columns: 1fr; /* Adjusting grid layout to single column */
-			padding-top: 2rem;
-		}
-	
-		.app-body-navigation {
-			display: none;
-		}
-	
-		.ongoing-tickets {
-			padding-left: 0;
-		}
-	
-		.animation,
-		.Update-info {
-			left: 0;
-			bottom: unset;
-			margin-bottom: 2rem;
-		}
-	
-		.card {
-			width: 100%;
-			padding: 0 20px 30px 20px;
-			margin-top: 2rem;
-			left: 0;
-		}
-	
-		.side_info {
-			margin-top: 20px;
-		}
-	
-		.side_img img {
-			width: 100%;
-		}
-	
-		.info2 {
-			left: 0;
-			font-size: 24px;
-		}
-	
-		.button_dist2 {
-			left: 0;
-			top: 0;
-		}
-	
-		.booking-btn2 {
-			padding: 15px 30px;
-			font-size: 16px;
-		}
+}
+
+
+
+
+.booking-btn2 {
+
+	display: inline-block;
+	padding: 20px 90px;
+	border: none;
+	border-radius: 5px;
+	transition: 0.3s ease;
+
+
+
+}
+
+#finishbtn {
+	background-color: black;
+	color: white;
+
+
+
+}
+
+@media only screen and (max-width: 844px) and (min-width: 375px) {
+	body {
+		padding-right: 0;
 	}
+
+	.app-body {
+		grid-template-columns: 1fr;
+		padding-top: 2rem;
+	}
+
+	.ongoing-tickets {
+		padding-left: 0;
+	}
+
+	.animation,
+	.Update-info {
+		left: 0;
+		bottom: unset;
+		margin-bottom: 2rem;
+	}
+
+	.card {
+		width: 100%;
+		padding: 0 20px 30px 20px;
+		margin-top: 2rem;
+		left: 0;
+	}
+
+	.side_info {
+		margin-top: 20px;
+	}
+
+	.side_img img {
+		width: 100%;
+	}
+
+	.info2 {
+		left: 0;
+		font-size: 24px;
+	}
+
+	.button_dist2 {
+		left: 0;
+		top: 0;
+	}
+
+	.booking-btn2 {
+		padding: 15px 30px;
+		font-size: 16px;
+	}
+	.app-body-navigation {
+		display: block; 
+}
+}
