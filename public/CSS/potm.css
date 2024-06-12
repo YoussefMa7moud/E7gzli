@@ -1,0 +1,252 @@
+html,body
+{
+padding: 0%;
+margin: 0%;
+background-color: #1C1917;
+scroll-behavior: smooth;
+}
+ .navbar{
+background-color: #FFFFFF;
+display:flex;
+height: 37px;
+border-radius: 50px;
+margin: 11px;
+position:fixed;
+width: 99%;
+
+
+ }
+
+ .material-symbols-outlined{
+   position: absolute;
+    top: 7px;
+    left: 47%;
+    
+
+
+ }
+
+
+
+.left-A a{
+    justify-content: space-between;
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+    font-family: "Open Sans", sans-serif;
+    font-size: 15px;
+    position: relative;
+    left: 20%;
+    top: 6px;
+    
+ }
+
+
+
+ .R-A a{
+   justify-content: space-between;
+   color: black;
+   text-decoration: none;
+   font-family: "Open Sans", sans-serif;
+   font-size: 15px;
+   position: relative;
+   left: 1500px;
+   top: 6px;
+   
+}
+
+
+
+ .LOGO h1{
+    color: black;
+    text-decoration: none;
+    font-family: "Open Sans", sans-serif;
+    font-size: 17px;
+    
+
+    float: none;
+    position: absolute;
+    top: 7px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+ }
+
+
+ .Starting-Home{
+  padding: 90px;
+
+ }
+
+
+
+
+
+ .Winner {
+  background-color: white;
+  border-radius: 20px;
+  width: 1300px;
+  margin-left: 12%;
+}
+
+.Winner h1 {
+ padding-left: 9px;
+ font-family: "Open Sans", sans-serif;
+}
+
+.winner-content {
+  display: flex;
+}
+
+.Winner img {
+  border-radius: 20px;
+  width: 600px;
+}
+
+.stats  {
+ font-size: 30px;
+ font-family: "Open Sans", sans-serif;
+ padding-left: 99px;
+}
+
+
+
+
+
+
+.vote{
+  padding-top: 99px;
+  padding-left: 100px;
+  
+}
+
+
+
+
+.area{
+  padding-bottom: 99px;
+}
+
+
+
+
+.votearea{
+  
+ background-color: white;
+ height: 700px;
+ border-radius: 9px;
+ width: 98%;
+ margin-left: 25px;
+ 
+ 
+  
+}
+
+#countdown{
+  width: 430px;
+}
+
+
+
+
+.Title h1 {
+ text-align: center;
+ font-size: 30px;
+ font-family: "Open Sans", sans-serif;
+ 
+
+ 
+}
+ 
+.card-wrapper {
+  display:flex;
+  gap: 40px;
+  padding-left: 20px;
+  padding-top: 110px;
+
+
+  
+}
+
+.card {
+  width: 256px;
+  place-items: center;
+  z-index: 2;
+  aspect-ratio: 50/75;
+  isolation: isolate;
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  padding-left: 99px;
+  bottom: 59px;
+  
+
+  &:hover {
+      & > .card-front {
+          transform: rotateY(180deg);
+      }
+
+      & > .card-back {
+          transform: rotateY(0deg);
+          opacity: 1;
+      }
+  }
+}
+
+.card-front,
+.card-back {
+  aspect-ratio: inherit;
+  transition: inherit;
+  width: 100%;
+  border-radius: 0.75rem;
+  inset: 0;
+  position: absolute;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease;
+}
+
+.card-front {
+  z-index: 2;
+
+  & > img {
+      max-width: 100%;
+  }
+}
+
+.card-back {
+  background-color: #000000cc;
+  backface-visibility: hidden;
+  padding: 1.5rem;
+  z-index: 2;
+  transform: rotateY(-180deg);
+  backdrop-filter: blur(4px);
+  color: white;
+}
+
+
+
+#votebtn{
+  background-color: #EC4899;
+         color: #E7E5E4;
+         border-radius: 8px;
+         width: 160px;
+         height: 59px;
+         border-style: none;
+         cursor: pointer;
+     
+}
+
+
+#option{
+  width: 60%;
+      margin-bottom: 10px; 
+      height: 58px;
+      border-radius: 8px;
+      cursor: pointer;
+}
+
+
+.card-back p{
+  font-size: 15px;
+  font-family: "Open Sans", sans-serif;
+}

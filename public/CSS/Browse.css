@@ -1,0 +1,271 @@
+html,body
+{
+padding: 0%;
+margin: 0%;
+background-color: #1C1917;
+scroll-behavior: smooth;
+}
+ .navbar{
+background-color: #FFFFFF;
+display:flex;
+height: 37px;
+border-radius: 50px;
+margin: 11px;
+position:fixed;
+width: 99%;
+
+
+ }
+
+ .material-symbols-outlined{
+   position: absolute;
+    top: 7px;
+    left: 47%;
+    
+
+
+ }
+
+
+
+.left-A a{
+    justify-content: space-between;
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+    font-family: "Open Sans", sans-serif;
+    font-size: 15px;
+    position: relative;
+    left: 20%;
+    top: 6px;
+    
+ }
+
+
+
+ .R-A a{
+   justify-content: space-between;
+   color: black;
+   text-decoration: none;
+   font-family: "Open Sans", sans-serif;
+   font-size: 15px;
+   position: relative;
+   left: 1500px;
+   top: 6px;
+   
+}
+
+
+
+ .LOGO h1{
+    color: black;
+    text-decoration: none;
+    font-family: "Open Sans", sans-serif;
+    font-size: 17px;
+    
+
+    float: none;
+    position: absolute;
+    top: 7px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+ }
+
+ .Starting-Home{
+  padding: 90px;
+
+ }
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.header_title{
+   text-align: center;
+   font-size: 30px;
+   font-weight: bold;
+   color: white; 
+   padding-top: 3%;
+}
+
+
+ .content{
+
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+    padding-left: 11%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 60px;
+    
+ }
+ 
+ .card {
+    background-color: white;
+    width: 70%;
+    border-radius: 10px;
+    padding: 0px/*top*/ 200px/*right*/ 70px/*bottom*/ 0px/*left*/;
+    transition: 0.7s ease;
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: auto auto ;
+ }
+
+ .side_info{
+   margin-top: 50px;
+ }
+
+ .icon{
+    text-align: center;
+ }
+.side_img img {
+
+    border-radius: 3%;
+    width: 600px; 
+    height: 120.5%;  
+}
+
+
+
+  
+ .info{
+   
+   font-size: 29px;
+   position: relative;
+   left: 5%;
+ }
+ .info2 {
+   
+   font-size: 29px;
+   position: relative;
+   left: 5%;
+ }
+ .info i {
+    
+    font-size: 1.5em;
+    color: #EC4899;
+  }
+
+  .info2 i{
+   
+   font-size: 1.5em;
+   color: #EC4899;
+ }
+
+ .info h3{
+   
+    font-size: 1.2em;
+    font-weight: 700;
+    
+ }
+
+ .info2 h3{
+   
+   font-size: 1.2em;
+   font-weight: 700;
+   
+}
+
+
+ .button_dist{
+   
+   position: relative;
+   left: 70%;
+    top: 7%;
+    padding-bottom: 29px;
+   
+ }
+
+ .button_dist h3{
+   position: relative;
+   top: 65px;
+   right: 50%;
+
+
+ }
+ 
+ .button_dist2{
+   
+   position: relative;
+   left:67.5%;
+   top: 70px;
+   padding-bottom: 29px;
+   
+ }
+
+ .button_dist2 h3{
+   position: relative;
+   top: 65px;
+   right: 47%;
+ }
+
+
+
+ .booking-btn {
+
+    padding: 20px 100px;    
+    display:ruby;
+    background-color: #EC4899;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    text-decoration: none;
+    position: relative;
+    top: 22px;
+   
+  
+   }
+  
+  .booking-btn:hover {
+    background-color: white;
+    color: black;
+  }
+
+
+  .booking-btn2 {
+
+   display: inline-block;
+   padding: 20px 90px;    
+   border: none;
+   border-radius: 5px;
+   transition: 0.3s ease;
+   cursor:no-drop;
+  
+ 
+  }
+ 
+  #finishbtn{
+   background-color: black;
+   color: white;
+   
+   
+   
+  }
+ 
+
+.secndcard{
+   padding-bottom: 99px;
+
+}
+

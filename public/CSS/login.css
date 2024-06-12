@@ -1,0 +1,158 @@
+html,
+body {
+   padding: 0%;
+   margin: 0%;
+}
+
+.navbar {
+   background-color: #FFFFFF;
+   display: flex;
+   height: 37px;
+   border-radius: 50px;
+   margin: 11px;
+   position: fixed;
+   width: 99%;
+
+
+}
+
+.material-symbols-outlined {
+   position: absolute;
+   top: 7px;
+   left: 47%;
+
+
+
+}
+
+
+
+.left-A a {
+   justify-content: space-between;
+   padding: 10px;
+   color: black;
+   text-decoration: none;
+   font-family: "Open Sans", sans-serif;
+   font-size: 15px;
+   position: relative;
+   left: 20%;
+   top: 6px;
+
+}
+
+
+
+.R-A a {
+   justify-content: space-between;
+   color: black;
+   text-decoration: none;
+   font-family: "Open Sans", sans-serif;
+   font-size: 15px;
+   position: relative;
+   left: 1500px;
+   top: 6px;
+
+}
+
+
+
+.LOGO h1 {
+   color: black;
+   text-decoration: none;
+   font-family: "Open Sans", sans-serif;
+   font-size: 17px;
+
+
+   float: none;
+   position: absolute;
+   top: 7px;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+
+.form {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh; 
+   background-image: url(../public/materials/fan2.jpg);
+   background-size: cover;
+   background-color: rgb(18, 13, 13); 
+   background-repeat: no-repeat;
+   background-position: center;
+   background-color: #000000;
+ }
+ 
+ .form form {
+   width: 400px; 
+   height: 300px;
+   padding: 100px;
+   border: 1px solid #150e0e;
+   border-radius: 10px;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   text-align: center; 
+   background-color: rgba(0, 0, 0, 0.8); 
+ }
+
+ .form h1 {
+   font-size: 360%;
+   color: #EC4899;
+   margin-bottom: 90px;
+   margin-top: -80px; 
+ }
+ .form div {
+   margin-bottom: 15px;
+ }
+ 
+ .form input[type="text"],
+ .form input[type="password"],
+ .form input[type="submit"] {
+   width: 100%;
+   padding: 20px;
+   border: 1px solid #000000;
+   border-radius: 12px;
+   box-sizing: border-box;
+   background-color: #000000;
+   color: #fff;
+   font-size: 140%;
+   letter-spacing: 0.1ch;
+ }
+ 
+ .form input {
+   font-size: 140%;
+   background-color:#EC4899 ;
+   color: #fff;
+   border: none;
+   border-radius: 7px;
+   cursor: pointer;
+   margin-top: 17px;
+   width: 209px;
+   height: 60px;
+ }
+ .inputs{
+   width: 510px;
+   margin-left: -60px;
+   margin-top: 10px;
+ }
+ .password{
+   margin-top: 40px;  
+ }
+
+ .password-toggle-icon {
+   margin-top: -25px;
+   margin-left: 455px;
+   display: flex;
+   position: absolute;
+   transform: translateY(-50%);
+   cursor: pointer;
+   align-items: center;
+ }
+ 
+ .password-toggle-icon i {
+   font-size: 25px;
+   line-height: 1;
+   color: #EC4899;
+   transition: color 0.3s ease-in-out;
+   margin-bottom: 20px;
+ }
+ 

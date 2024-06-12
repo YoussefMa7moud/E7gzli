@@ -1,0 +1,233 @@
+html,body
+{
+padding: 0%;
+margin: 0%;
+background-color: #1C1917;
+scroll-behavior: smooth;
+}
+ .navbar{
+background-color: #FFFFFF;
+display:flex;
+height: 37px;
+border-radius: 50px;
+margin: 11px;
+position:fixed;
+width: 99%;
+
+
+ }
+
+ .material-symbols-outlined{
+   position: absolute;
+    top: 7px;
+    left: 47%;
+    
+
+
+ }
+
+
+
+.left-A a{
+    justify-content: space-between;
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+    font-family: "Open Sans", sans-serif;
+    font-size: 15px;
+    position: relative;
+    left: 20%;
+    top: 6px;
+    
+ }
+
+
+
+ .R-A a{
+   justify-content: space-between;
+   color: black;
+   text-decoration: none;
+   font-family: "Open Sans", sans-serif;
+   font-size: 15px;
+   position: relative;
+   left: 1500px;
+   top: 6px;
+   
+}
+
+
+
+ .LOGO h1{
+    color: black;
+    text-decoration: none;
+    font-family: "Open Sans", sans-serif;
+    font-size: 17px;
+    
+
+    float: none;
+    position: absolute;
+    top: 7px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+ }
+ .Starting-Home{
+  padding: 90px;
+
+ }
+
+
+
+
+
+ .Area{
+    background-color: white;
+    border-radius: 30px;
+    text-align: center;
+    padding-bottom: 99px;
+    position: relative;
+    top: 80px;
+    margin-left:99px ;
+    margin-right: 99px;
+    max-height:760px ;
+ }
+
+ .stadium img{
+    width: 400px;
+    padding-top: 20px;
+
+ }
+
+
+ .cat label{
+    font-size: 40px;
+ }
+
+
+ .cat select{
+    font-size: 40px;
+    padding-top: 22px;
+ }
+
+
+ #Cat3{
+    color: rgb(60, 180, 180);
+    
+ }
+
+
+ #Cat2{
+    color: rgb(185, 185, 6);
+ }
+
+
+
+ #Cat1{
+    color: red;
+ }
+
+
+
+#BN{
+   background-color: #EC4899;
+   color: #E7E5E4;
+   border-radius: 6px;
+   width: 15%; 
+   height: 59px; 
+   text-align: center; 
+   text-decoration: none;
+   cursor: pointer;
+   border-style: none;
+   position: relative;
+   left: 33%;
+   top: 120px;
+ }
+
+
+
+ #CN{
+    display: inline-block; 
+    line-height: 59px; 
+    background-color: white;
+    color: black;
+    border-radius: 6px;
+    width: 200px; 
+    height: 59px; 
+    text-align: center; 
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+    left: 32%;
+    top: 120px;
+
+
+
+
+   
+
+ }
+
+ #CN:hover{
+    background-color: black;
+    color: white;
+ }
+
+
+ #PS{
+    font-size: 40px;
+    position: relative;
+    right: 35%;
+    bottom: 599PX;
+    
+ }
+
+ 
+
+ .output{
+   position: relative;
+   right: 30%;
+   bottom: 500px;
+   margin-right: 199px;
+   
+ }
+
+ .output input{
+   
+   border-radius: 6px;
+   width: 15%; 
+   height:30px; 
+   text-decoration: none;
+   cursor: pointer;
+   position: relative;
+
+ }
+ input::-webkit-outer-spin-button,
+ input::-webkit-inner-spin-button {
+   -webkit-appearance: none;
+   margin: 0;
+ }
+ 
+
+#timer{
+   color: green;
+   font-size: 40px;
+   margin-bottom: 30px;
+}
+
+#Titleps{
+   font-size: 15px;
+   font-family: "Open Sans", sans-serif;
+}
+
+
+#NO3{
+   padding: 2px;
+   margin: 4px;
+}
+#NO2{
+   padding: 2px;
+   margin: 4px;
+}
+#NO1{
+   padding: 2px;
+   margin: 4px;
+}

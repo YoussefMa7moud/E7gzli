@@ -1,0 +1,438 @@
+html,body
+{
+padding: 0%;
+margin: 0%;
+background-color: #1C1917;
+scroll-behavior: smooth;
+}
+ .navbar{
+background-color: #FFFFFF;
+display:flex;
+height: 37px;
+border-radius: 50px;
+margin: 11px;
+position:fixed;
+width: 99%;
+
+
+ }
+
+ .material-symbols-outlined{
+   position: absolute;
+    top: 7px;
+    left: 47%;
+    
+
+
+ }
+
+
+
+.left-A a{
+    justify-content: space-between;
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+    font-family: "Open Sans", sans-serif;
+    font-size: 15px;
+    position: relative;
+    left: 20%;
+    top: 6px;
+    
+ }
+
+
+
+ .R-A a{
+   justify-content: space-between;
+   color: black;
+   text-decoration: none;
+   font-family: "Open Sans", sans-serif;
+   font-size: 15px;
+   position: relative;
+   left: 1500px;
+   top: 6px;
+   
+}
+
+
+
+ .LOGO h1{
+    color: black;
+    text-decoration: none;
+    font-family: "Open Sans", sans-serif;
+    font-size: 17px;
+    
+
+    float: none;
+    position: absolute;
+    top: 7px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+ }
+
+
+ .Starting-Home{
+  padding: 90px;
+
+ }
+
+
+
+
+ 
+ 
+
+ .TEXT1  {
+   color: #E7E5E4;
+   font-family: "Domine", serif;
+   font-size: 64px;
+
+}
+
+
+.TEXT2 h2{
+   font-size: 29px;
+   font-weight: lighter;
+   font-family: "Open Sans", sans-serif;
+   color: #E7E5E4;
+   
+}
+
+
+.Starting-Home a{
+   display: inline-block; 
+   background-color: #EC4899;
+   color: #E7E5E4;
+   border-radius: 6px;
+   width: 360px; 
+   height: 59px; 
+   text-align: center; 
+   line-height: 59px; 
+   text-decoration: none;
+   }
+   
+   .Starting-Home a:hover{
+      cursor: pointer;
+   }
+
+
+
+.HOME-VIDEO{
+  
+   position:static;
+   padding-left: 60%;
+   margin-top: -760px;
+   
+   
+}
+
+
+.HOME-VIDEO video{
+   border-radius: 32px;
+   width: 77%;
+   
+   
+}
+
+
+
+
+
+
+
+
+
+.three-steps{
+   background-color: #E7E5E4;
+   padding-top: 18px;
+   padding-left: 75PX;
+
+}
+
+
+
+.main-title h1{
+   font-family: "Domine", serif;
+   font-size: 74px;
+   font-weight: lighter;
+}
+
+
+
+.first-step{
+display: flex;
+}
+
+.first-step h1{
+   
+   font-family: "Domine", serif;
+   font-size: 108px;
+   font-weight: lighter;
+}
+.first-step h2{
+   position: relative;
+    left: 30%;
+    top: 70px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 20px;
+}
+
+.first-step h3{
+   position: relative;
+    left: 23.3%;
+    top: 106px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 20px;
+    color: #a8a29e;
+    font-weight: lighter;
+   }
+
+
+
+
+
+
+ .second-step{
+   display: flex;
+   }
+   
+   .second-step h1{
+      
+      font-family: "Domine", serif;
+      font-size: 108px;
+      font-weight: lighter;
+   }
+   .second-step h2{
+      position: relative;
+       left: 29%;
+       top: 70px;
+       font-family: "Open Sans", sans-serif;
+       font-size: 20px;
+   }
+   
+   .second-step h3{
+      position: relative;
+       left: 20.2%;
+       top: 106px;
+       font-family: "Open Sans", sans-serif;
+       font-size: 20px;
+       color: #a8a29e;
+       font-weight: lighter;
+   }
+
+
+
+
+
+     .third-step{
+      display: flex;
+      }
+      
+      .third-step h1{
+         
+         font-family: "Domine", serif;
+         font-size: 108px;
+         font-weight: lighter;
+      }
+      .third-step h2{
+         position: relative;
+          left: 29.1%;
+          top: 70px;
+          font-family: "Open Sans", sans-serif;
+          font-size: 20px;
+      }
+      
+      .third-step h3{
+         position: relative;
+          left: 20.8%;
+          top: 106px;
+          font-family: "Open Sans", sans-serif;
+          font-size: 20px;
+          color: #a8a29e;
+          font-weight: lighter;
+      }
+   
+
+
+
+      .Main_holder{
+         
+         display: grid;
+         grid-template-columns: auto auto ;
+      }
+      
+
+
+      .holder{
+         display: flex;
+         padding: 2%;
+         justify-content: center;
+      }
+      .holder_words {
+         padding: 3%;
+         display: grid;
+         justify-content: center;
+         color: white;
+       }
+       
+       .holder_words h3 {
+         margin: 0;
+       }
+
+      select{
+         border:none;
+         border-radius: 7px;
+         height: 50px;
+         padding: 6px;
+         margin-left: 15px;
+         margin-right: 10px;
+      }
+         
+        
+
+
+
+
+
+      .creat-acc{
+         padding-top: 99px;
+      }
+
+      
+      .creat-acc h1{
+         padding-left: 36%;
+         color: white;
+         font-family: "Domine", serif;
+         font-size:80px;
+         justify-content: center;
+         padding-top: 39px;
+      }
+      .holder h3{
+        
+         color: white;
+         padding-right: 2%;
+         
+      }
+
+      #emailholder{
+         margin-left: 50px;
+      }
+
+
+      .creat-acc button{
+         background-color: #EC4899;
+         color: #E7E5E4;
+         border-radius: 6px;
+         width: 360px;
+         height: 59px;
+         border-style: none;
+         margin-bottom: 130px;
+         margin-left: 42%;
+         
+      }
+
+      .creat-acc button:hover{
+         cursor: pointer;
+         background-color: white;
+         color: black;
+         border-color: black;
+      }
+
+
+      .holder input{
+         border-radius: 20px;
+         padding-right: 17%;
+      }
+      
+
+   #agree{
+      margin-left: 90px;
+   }
+
+
+
+
+
+
+
+
+
+
+   .contact-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center; 
+      justify-content: center; 
+      height: 600px;
+      background-color: white;
+  }
+
+  .contactus h1{
+      text-align: center; 
+      font-family: "Domine", serif;
+      font-size: 108px;
+      font-weight: lighter;
+  }
+
+  .contactus  h2 {
+   text-align: center; 
+   font-family: "Open Sans", sans-serif;
+   font-weight: lighter;
+}
+
+  .contactus input {
+      width: 60%;
+      margin-bottom: 10px; 
+      height: 54px;
+  }
+
+  .contactus button {
+     
+      background-color: #EC4899;
+         color: #E7E5E4;
+         border-radius: 6px;
+         width: 160px;
+         height: 59px;
+         border-style: none;
+     
+  }
+   
+      
+
+
+
+
+ @media only screen and (max-width: 600px) {
+
+   .left-A a{
+      justify-content: space-between;
+      padding: 10px;
+      font-size: 13px;
+      position: relative;
+      left: 10%;
+      top: 6px;
+      
+   }
+
+
+
+   .R-A a{
+      justify-content: space-between;
+      color: black;
+      text-decoration: none;
+      font-family: "Open Sans", sans-serif;
+      font-size: 13px;
+      position: relative;
+      left: 490%;
+      top: 6px;
+      
+   }
+
+
+
+
+
+   
+}
+ 
