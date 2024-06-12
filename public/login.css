@@ -149,4 +149,84 @@ body {
    transition: color 0.3s ease-in-out;
    margin-bottom: 20px;
  }
- 
+ @media only screen and (max-width: 844px) and (min-width: 375px) {
+  .navbar {
+     width:360px;
+     flex-direction: column;
+     align-items: center;
+     height: auto;
+     padding: 5px;
+  }
+
+  .material-symbols-outlined {
+     position: static;
+     margin-top: -10px;
+  }
+
+  .left-A a,
+  .R-A a {
+     position: static;
+     font-size: 16px;
+     text-align: center;
+  }
+
+  .left-A a {
+     margin-bottom: 10px;
+  }
+
+  .R-A a {
+     margin-top: 10px;
+  }
+
+  .LOGO {
+     margin-right:70px;
+     margin-top:10px;
+     display: flex;
+     justify-content: center;
+  }
+
+  .LOGO h1 {
+     margin-left:17px;
+     top:3px;
+  }
+  .form form {
+    width: 300px; 
+    height: auto;
+    padding: 50px 20px;
+  }
+
+  .form h1 {
+    font-size: 250%;
+    font-weight: 100px;
+    margin-bottom: 50px;
+    margin-top: -40px;
+  }
+
+  .form input[type="text"],
+  .form input[type="password"],
+  .form input[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    font-size: 120%;
+  }
+
+  .form input {
+    font-size: 120%;
+    width: 180px;
+    height: 50px;
+  }
+
+  .inputs {
+    width: 320px;
+    margin-left: -10px;
+  }
+
+  .password {
+    margin-top: 30px;
+  }
+
+  .password-toggle-icon {
+    margin-top: -13px;
+    margin-left: 280px;
+  }
+}

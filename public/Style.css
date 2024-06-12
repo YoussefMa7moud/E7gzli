@@ -414,36 +414,176 @@ select {
 
 
 
+@media only screen and (max-width: 844px) and (min-width: 375px) {
+   .navbar {
+      width:360px;
+      flex-direction: column;
+      align-items: center;
+      height: auto;
+      padding: 5px;
+   }
 
-@media only screen and (max-width: 600px) {
+   .material-symbols-outlined {
+      position: static;
+      margin-top: -10px;
+   }
+
+   .left-A a,
+   .R-A a {
+      position: static;
+      font-size: 16px;
+      text-align: center;
+   }
 
    .left-A a {
-      justify-content: space-between;
-      padding: 10px;
-      font-size: 13px;
-      position: relative;
-      left: 10%;
-      top: 6px;
-
+      margin-bottom: 10px;
    }
-
-
 
    .R-A a {
-      justify-content: space-between;
-      color: black;
-      text-decoration: none;
-      font-family: "Open Sans", sans-serif;
-      font-size: 13px;
-      position: relative;
-      left: 490%;
-      top: 6px;
-
+      margin-top: 10px;
    }
 
+   .LOGO {
+      margin-right:70px;
+      margin-top:10px;
+      display: flex;
+      justify-content: center;
+   }
 
+   .LOGO h1 {
+      margin-left:17px;
+      top:3px;
+   }
 
+   .Starting-Home {
+      padding: 50px 20px;
+      text-align: center;
+   }
 
+   .TEXT1 {
+      font-size: 30px;
+   }
 
+   .TEXT2 h2 {
+      font-size: 20px;
+   }
 
+   .Starting-Home a {
+      width: 100%;
+      max-width: 280px;
+      height: 50px;
+      line-height: 50px;
+      font-size: 18px;
+   }
+
+   .HOME-VIDEO {
+      padding-left: 0;
+      margin-top: 20px;
+   }
+
+   .HOME-VIDEO video {
+      width: 100%;
+      border-radius: 20px;
+   }
+
+   .three-steps {
+      padding: 20px;
+      text-align: center;
+   }
+
+   .main-title h1 {
+      font-size: 36px;
+   }
+
+   .first-step, .second-step, .third-step {
+      display: block;
+      text-align: center;
+      margin: 20px 0;
+   }
+
+   .first-step h1,
+   .second-step h1,
+   .third-step h1 {
+      font-size: 48px;
+   }
+
+   .first-step h2,
+   .second-step h2,
+   .third-step h2 {
+      left: 0;
+      top: 10px;
+      font-size: 18px;
+   }
+
+   .first-step h3,
+   .second-step h3,
+   .third-step h3 {
+      left: 0;
+      top: 20px;
+      font-size: 16px;
+   }
+
+   .Main_holder {
+      grid-template-columns: 1fr;
+   }
+
+   .creat-acc {
+      padding: 20px;
+   }
+
+   .creat-acc h1 {
+      padding-left: 0;
+      font-size: 36px;
+   }
+
+   .holder {
+      flex-direction: column;
+      align-items: center;
+   }
+
+   .holder input,
+   .holder select {
+      width: 100%;
+      max-width: 300px;
+      margin: 10px 0;
+   }
+
+   .holder input {
+      padding-right: 10px;
+   }
+
+   .creat-acc button {
+      width: 100%;
+      max-width: 300px;
+      margin: 20px auto;
+   }
+
+   #agree {
+      margin-left: 0;
+   }
+
+   .contact-container {
+      padding: 20px;
+      height: auto;
+   }
+
+   .contactus h1 {
+      font-size: 36px;
+   }
+
+   .contactus h2 {
+      font-size: 20px;
+   }
+
+   .contactus input {
+      width: 100%;
+      max-width: 300px;
+      height: 40px;
+   }
+
+   .contactus button {
+      width: 100%;
+      max-width: 160px;
+      height: 40px;
+   }
 }

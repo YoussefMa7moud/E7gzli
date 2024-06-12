@@ -1,83 +1,94 @@
-body{
+body {
 
-background-color: #1C1917 ;
+   background-color: #1C1917;
 
 
 }
 
- 
- .card {
-    background-color: white;
-    width: 1300px;
-    height: 300px;
-    border-radius: 10px;
-    padding: 10px/*top*/ 50px/*right*/ 90px/*bottom*/ 0px/*left*/;
-    transition: 0.7s ease;
-    margin-left: 500px;
-    margin-top: 100px;
+
+.card {
+   background-color: white;
+   width: 1300px;
+   height: 300px;
+   border-radius: 10px;
+   padding: 10px
+      /*top*/
+      50px
+      /*right*/
+      90px
+      /*bottom*/
+      0px
+      /*left*/
+   ;
+   transition: 0.7s ease;
+   margin-left: 500px;
+   margin-top: 100px;
    display: grid;
    grid-template-columns: auto auto;
 
 
- }
+}
 
 
 
- .side_info{
-    margin-top: 50px;
-    margin-left: 50px;
-  }
- 
-  .icon{
-     text-align: center;
-  }
-  .side_img img {
- 
-     border-radius: 3%;
-     width: 430px; 
-     height: 116%; 
-     
-   
- }
- 
- 
-   
-  .info{
-     
-    font-size: 20px;
-    position: relative;
-    
-  }
-  .info i {
-     margin-right: 0px;
-     font-size: 1.5em;
-     color: #EC4899;
-   }
-  .info h3{
-    
-     font-size: 100px;
-     font-weight: 700;
-     margin: 10px;
-  }
- 
-  .button_dist{
-    
-    position: relative;
-     left: 160px;
-     
-     padding-bottom: px;
-  }
- 
-  .button_dist h4{
-    position: relative;
-    top: 0px;
-   
- 
- 
-  }
- 
-  .button130{
-   
+.side_info {
+   margin-top: 50px;
+   margin-left: 50px;
+}
+
+.icon {
+   text-align: center;
+}
+
+.side_img img {
+
+   border-radius: 3%;
+   width: 430px;
+   height: 116%;
+
+
+}
+
+
+
+.info {
+
+   font-size: 20px;
+   position: relative;
+
+}
+
+.info i {
+   margin-right: 0px;
+   font-size: 1.5em;
+   color: #EC4899;
+}
+
+.info h3 {
+
+   font-size: 100px;
+   font-weight: 700;
+   margin: 10px;
+}
+
+.button_dist {
+
+   position: relative;
+   left: 160px;
+
+   padding-bottom: px;
+}
+
+.button_dist h4 {
+   position: relative;
+   top: 0px;
+
+
+
+}
+
+.button130 {
+
    padding: 30px 80px;
    background-color: black;
    color: #fff;
@@ -89,65 +100,65 @@ background-color: #1C1917 ;
    position: relative;
    right: 200px;
    top: 20px;
- 
-  
+
+
 }
 
-  .booking-btn {
+.booking-btn {
    position: relative;
    left: 100px;
-     
-     padding: 30px 90px;    
-     background-color: #EC4899;
-     color: white;
-     border: none;
-     border-radius: 5px;
-     cursor: pointer;
-     transition: 0.3s ease;
-     text-decoration: none;
-   
-   
-    }
-   
 
-
-
-
-
- 
-
-::-webkit-left-side
-{
-width: 5px;
+   padding: 30px 90px;
+   background-color: #EC4899;
+   color: white;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   transition: 0.3s ease;
+   text-decoration: none;
 
 
 }
-::-webkit-formation-thumb{
 
-background: white ;
+
+
+
+
+
+
+
+::-webkit-left-side {
+   width: 5px;
+
+
+}
+
+::-webkit-formation-thumb {
+
+   background: white;
 
 }
 
 
-        .left-side{
+.left-side {
 
 
 
-flex-direction: column;
+   flex-direction: column;
 
 
-background-color:#D9D9D9 ;
+   background-color: #D9D9D9;
 
-width: 300px;
+   width: 300px;
 
-padding: 20px;
-box-sizing: border-box;
-margin-top: 0;
-position: fixed;
-height: 100%;
-overflow-y: auto;
-flex-direction: column;
-display: flex;
+   padding: 20px;
+   box-sizing: border-box;
+   margin-top: 0;
+   position: fixed;
+   height: 100%;
+   overflow-y: auto;
+   flex-direction: column;
+   display: flex;
 }
 
 /* height: 100%; 
@@ -161,176 +172,192 @@ display: flex;
   padding-top: 60px; 
   transition: 0.5s; */
 
-        
 
-        .formation{
-            
-          
-         
-           right: 100px; ;
-            border: 50px ;
-            text-align: center;
-            
-            }
-            .button1{
-              
-              border: none; 
-              color: white;
-              padding: 15px 32px;
-              text-align: center;
-              text-decoration: none;
-              display: inline-block;
-              font-size: 17px;
-              font-variant-position: center ;
-            }
-            .button_2 {
-            
-            
-            margin-top: 30px;
-            margin-bottom: 10px;
-                /* margin: 100px;
+
+.formation {
+
+
+
+   right: 100px;
+   ;
+   border: 50px;
+   text-align: center;
+
+}
+
+.button1 {
+
+   border: none;
+   color: white;
+   padding: 15px 32px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 17px;
+   font-variant-position: center;
+}
+
+.button_2 {
+
+
+   margin-top: 30px;
+   margin-bottom: 10px;
+   /* margin: 100px;
                 margin-left: 180px;
                 border-left: 5px; */
-                text-align: center;
-                font-size: large;
-            }
-            .radiobuttons{
+   text-align: center;
+   font-size: large;
+}
 
-margin-top: 30px;
+.radiobuttons {
 
-
-
-            }
-           
-
-            .location{
-
-margin-top: 10px;
-margin-bottom: 10px;
+   margin-top: 30px;
 
 
-            }
+
+}
+
+
+.location {
+
+   margin-top: 10px;
+   margin-bottom: 10px;
+
+
+}
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 * {
-	margin: 10;
-	padding: 10;
-	box-sizing: border-box;
-	font-family: 'Poppins', sans-serif;
+   margin: 10;
+   padding: 10;
+   box-sizing: border-box;
+   font-family: 'Poppins', sans-serif;
 }
 
 :root {
-	--blue: #0071FF;
-	--light-blue: #B6DBF6;
-	--dark-blue: #005DD1;
-	--grey: #f2f2f2;
+   --blue: #0071FF;
+   --light-blue: #B6DBF6;
+   --dark-blue: #005DD1;
+   --grey: #f2f2f2;
 }
 
 body {
-	display: flex;
-	
+   display: flex;
+
 }
 
 
 .container {
-	max-width: 400px;
-	width: 100%;
-	background: #fff;
-	padding: 30px;
-	border-radius: 30px;
- 
+   max-width: 400px;
+   width: 100%;
+   background: #fff;
+   padding: 30px;
+   border-radius: 30px;
+
 }
+
 .img-area {
-	position: relative;
-	width: 100%;
-	height: 240px;
-	background: var(--grey);
-	margin-bottom: 30px;
-	border-radius: 15px;
-	overflow: hidden;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
+   position: relative;
+   width: 100%;
+   height: 240px;
+   background: var(--grey);
+   margin-bottom: 30px;
+   border-radius: 15px;
+   overflow: hidden;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
 }
+
 .img-area .icon {
-	font-size: 100px;
+   font-size: 100px;
 }
+
 .img-area h3 {
-	font-size: 20px;
-	font-weight: 500;
-	margin-bottom: 6px;
+   font-size: 20px;
+   font-weight: 500;
+   margin-bottom: 6px;
 }
+
 .img-area p {
-	color: #999;
+   color: #999;
 }
+
 .img-area p span {
-	font-weight: 600;
+   font-weight: 600;
 }
+
 .img-area img {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	object-position: center;
-	z-index: 100;
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   object-position: center;
+   z-index: 100;
 }
+
 .img-area::before {
-	content: attr(data-img);
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: rgba(0, 0, 0, .5);
-	color: #fff;
-	font-weight: 500;
-	text-align: center;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	pointer-events: none;
-	opacity: 0;
-	transition: all .3s ease;
-	z-index: 200;
+   content: attr(data-img);
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: rgba(0, 0, 0, .5);
+   color: #fff;
+   font-weight: 500;
+   text-align: center;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   pointer-events: none;
+   opacity: 0;
+   transition: all .3s ease;
+   z-index: 200;
 }
+
 .img-area.active:hover::before {
-	opacity: 1;
+   opacity: 1;
 }
+
 .select-image {
-	display: block;
-	width: 100%;
-	padding: 16px 0;
-	border-radius: 15px;
-	background:#EC4899;
-	color: #fff;
-	font-weight: 500;
-	font-size: 16px;
-	border: none;
-	cursor: pointer;
-	transition: all .3s ease;
+   display: block;
+   width: 100%;
+   padding: 16px 0;
+   border-radius: 15px;
+   background: #EC4899;
+   color: #fff;
+   font-weight: 500;
+   font-size: 16px;
+   border: none;
+   cursor: pointer;
+   transition: all .3s ease;
 }
+
 .select-image:hover {
-	background: pink;
+   background: pink;
 }
+
 .add-event {
-	display: block;
-	width: 100%;
-	padding: 16px 0;
-	border-radius: 15px;
-	background:#EC4899;
-	color: #fff;
-	font-weight: 500;
-	font-size: 16px;
-	border: none;
-	cursor: pointer;
-	transition: all .3s ease;
+   display: block;
+   width: 100%;
+   padding: 16px 0;
+   border-radius: 15px;
+   background: #EC4899;
+   color: #fff;
+   font-weight: 500;
+   font-size: 16px;
+   border: none;
+   cursor: pointer;
+   transition: all .3s ease;
 }
+
 .add-event:hover {
-	background: pink;
+   background: pink;
 }
 
 /* .date{
@@ -338,15 +365,15 @@ background-color: var(--dark-blue);
 
 
 } */
-input[type="date"]
-{
-   background:white;
+input[type="date"] {
+   background: white;
    padding: 15px;
-   margin-bottom: 15px ;
+   margin-bottom: 15px;
    border-radius: 15px;
    border: none;
-   color:#EC4899;
+   color: #EC4899;
 }
+
 /* .date:hover{
 
    background: white;
@@ -357,97 +384,102 @@ input[type="date"]
 
 
 
-input[type="text"]
-{
-   background:#f2f2f2;
+input[type="text"] {
+   background: #f2f2f2;
    padding: 15px;
-   margin-bottom: 15px ;
+   margin-bottom: 15px;
    transition: all .3s ease;
    border-radius: 15px;
-   border:none; 
-   
+   border: none;
+
 }
 
 
-input[type="text"]:hover
-{
-   background:white;
+input[type="text"]:hover {
+   background: white;
    padding: 15px;
-   margin-bottom: 15px ;
+   margin-bottom: 15px;
    transition: all .3s ease;
    border-radius: 15px;
 }
 
 
-.button_2{
+.button_2 {
 
-   
+
    padding: 15px;
-   margin-bottom: 15px ;
+   margin-bottom: 15px;
    transition: all .3s ease;
    border-radius: 39px;
    border: none;
 
 
 }
-textarea
-{
-   background-color:white;
+
+textarea {
+   background-color: white;
    padding: 15px;
-   margin-bottom: 15px ;
+   margin-bottom: 15px;
    transition: all .3s ease;
    border-radius: 15px;
-   width:100%;
-   border: 1px solid  ;
+   width: 100%;
+   border: 1px solid;
 
 }
-.radiobuttons{
+
+.radiobuttons {
    display: inline-flex;
-overflow: hidden;
- border-radius: 15px;
+   overflow: hidden;
+   border-radius: 15px;
 
-box-shadow: 0 0 5px  rgb(0,0,0 ,o.25);
-
-}
-.radio{
-
-display: none;
+   box-shadow: 0 0 5px rgb(0, 0, 0, o.25);
 
 }
-.label{
 
+.radio {
 
-   padding: 8px ;
-
-font-size: 14px;
-padding: 8px 14px;
-font-family: sans-serif;
-color: white ;
-background:#EC4899;
-cursor: pointer;
-transition:0.1s ;
+   display: none;
 
 }
-.radio{
 
-display: none;
+.label {
+
+
+   padding: 8px;
+
+   font-size: 14px;
+   padding: 8px 14px;
+   font-family: sans-serif;
+   color: white;
+   background: #EC4899;
+   cursor: pointer;
+   transition: 0.1s;
 
 }
-.label:not(:last-of-type){
-border-radius:1px solid #FFC0CB;
+
+.radio {
+
+   display: none;
+
+}
+
+.label:not(:last-of-type) {
+   border-radius: 1px solid #FFC0CB;
 
 
 
 
 }
-.label:hover{
-background-color: #f2f2f2;
+
+.label:hover {
+   background-color: #f2f2f2;
    transition: all .3s ease;
 
 }
-.radio:checked +.label {
 
-background: black;
+.radio:checked+.label {
+
+   background: black;
 }
 
 
@@ -455,7 +487,7 @@ background: black;
    position: absolute;
    font-size: 30px;
    font-weight: bold;
-   color: white; 
+   color: white;
    top: 10px;
    right: 650px;
 }
@@ -464,63 +496,195 @@ background: black;
 
 
 
-.tickets1{
+.tickets1 {
    display: flex;
    color: white;
    padding: 8px 0px;
 
 }
 
-.tickets2{
+.tickets2 {
    display: flex;
    color: white;
    padding: 8px 0px;
 }
 
-.tickets3{
+.tickets3 {
    display: flex;
    color: white;
    padding: 8px 0px;
 }
 
 
-#numTickets{
+#numTickets {
    width: 120px;
    border-radius: 5px;
    padding: 6px 1px;
    border: none;
    position: relative;
    left: 20px;
-   
+
 }
 
-#priceDropdown{
+#priceDropdown {
    width: 60px;
    padding: 9px 1px;
    border-radius: 5px;
    border: none;
    position: relative;
    left: 40px;
-   
+
 }
 
-#description{
+#description {
    border: none;
 }
 
-#lo{
+#lo {
    color: white;
    position: relative;
-   bottom:75px;
+   bottom: 75px;
    left: 330%;
    font-size: 20px;
    font-weight: lighter;
-   cursor:pointer;
+   cursor: pointer;
 
 }
 
-#lo:hover{
+#lo:hover {
    border-color: #EC4899;
-   border-style:solid;
+   border-style: solid;
    color: #EC4899;
+}
+
+@media only screen and (max-width: 844px) and (min-width: 375px) {
+   body {
+      display: block;
+      padding: 0;
+      margin: 0;
+   }
+
+ .header a{
+   margin-left:65px;
+ }
+
+   .header p{
+      font-size: 30px;
+      font-weight: bold;
+      color: white;
+      top: 10px;
+      right: 5%;
+   }
+
+   #lo {
+      color: white;
+      font-size: 20px;
+      font-weight: lighter;
+      cursor: pointer;
+      margin-right: 90px;
+   }
+
+   .card {
+      width: 120%;
+      margin-top: 230px;
+      margin-right: 20px;
+      margin-bottom: 40px;
+      margin-left: 20px;
+      padding: 60px 10px 10px 10px;
+      height: 700px;
+      display: block;
+   }
+
+   .side_info {
+      margin: 20px 0 0 0;
+   }
+
+   .side_img img {
+      width: 100%;
+      height: auto;
+   }
+
+   .button_dist {
+      text-align: center;
+      padding-bottom: 10px;
+   }
+   .button_dist h4{
+      margin: 15px auto 0px -300px;
+   }
+   .button130 {
+      width: 40%;
+      display: block;
+      margin: 30px auto -90px 45px;
+      padding: 15px;
+   }
+
+   .booking-btn {
+      width: 40%;
+      display: block;
+      margin: 43px 110px 0px -60px;
+      padding: 15px;
+   }
+
+   .left-side {
+      width: 100%;
+      position: static;
+      padding: 10px;
+      height: auto;
+      margin-top: 20px;
+   }
+
+   .formation {
+      padding: 10px;
+      text-align: center;
+   }
+
+   .container {
+      padding: 20px;
+      margin: 0 auto;
+   }
+
+   input[type="text"],
+   textarea,
+   input[type="number"],
+   input[type="date"] {
+      width: 100%;
+      margin-bottom: 15px;
+   }
+
+   .radiobuttons {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+   }
+
+   .button1,
+   .button_2 {
+      text-align: center;
+      margin: 10px auto;
+   }
+
+   .tickets1,
+   .tickets2,
+   .tickets3 {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+   }
+
+   #priceDropdown {
+      width: 45%;
+      margin-left: -10px;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+   }
+
+   #numTickets {
+      width: 45%;
+      margin-left: -50px;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+   }
+
 }
