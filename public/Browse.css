@@ -75,32 +75,36 @@ scroll-behavior: smooth;
    font-size: 30px;
    font-weight: bold;
    color: white; 
-   padding-top: 3%;
+   padding-top: 5%;
 }
 
 
- .content{
+.content {
+  display: grid;
+  grid-template-columns: auto;
+  justify-content: center;
+  padding-left: 11%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 60px;
+}
 
-    display: grid;
-    grid-template-columns: auto;
-    justify-content: center;
-    padding-left: 11%;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-top: 60px;
-    
- }
- 
- .card {
-    background-color: white;
-    width: 70%;
-    border-radius: 10px;
-    padding: 0px/*top*/ 200px/*right*/ 70px/*bottom*/ 0px/*left*/;
-    transition: 0.7s ease;
-    margin-top: 60px;
-    display: grid;
-    grid-template-columns: auto auto ;
- }
+.card {
+  background-color: white;
+  width: 70%;
+  border-radius: 10px;
+  padding: 0px/*top*/ 200px/*right*/ 70px/*bottom*/ 0px/*left*/;
+  transition: 0.7s ease;
+  margin-top: 60px;
+  display: none; 
+  grid-template-columns: auto auto;
+}
+
+.content-wrapper .content .card:nth-child(1),
+.content-wrapper .content .card:nth-child(2) {
+  display: grid; 
+}
+
 
  .side_info{
    margin-top: 50px;
@@ -122,14 +126,15 @@ scroll-behavior: smooth;
  .info{
    
    font-size: 29px;
-   position: relative;
-   left: 5%;
+   position: static;
+   padding-left: 7%;
+   /* left: 5%; */
  }
  .info2 {
    
    font-size: 29px;
-   position: relative;
-   left: 5%;
+   position: static;
+   padding-left: 7%;
  }
  .info i {
     
@@ -240,6 +245,38 @@ scroll-behavior: smooth;
    padding-bottom: 99px;
 
 }
+
+
+#load-more {
+  margin-left: 40%;
+  padding: 20px 100px;
+  display: inline-block; 
+  background-color: crimson;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  text-decoration: none;
+  position: relative;
+  top: 22px;
+}
+
+#load-more:hover {
+  background-color: #EC4899;
+  border-color: #EC4899;
+  color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
 @media only screen and (max-width: 844px) and (min-width: 375px) {
   .navbar {
      width:360px;
