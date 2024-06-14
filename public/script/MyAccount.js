@@ -3,7 +3,7 @@ function logout() {
         var logoutbtn = document.getElementById('logout');
         logoutbtn.onclick = function() {
             localStorage.setItem('isLoggedIn', 'false');
-            window.location.href = 'index.html';
+            window.location.href = 'index';
         };
     }
 }

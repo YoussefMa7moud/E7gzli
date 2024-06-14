@@ -12,17 +12,17 @@ else if(b ==""){
   alert("Please Enter your Password");
 }
 else if (a == "admin" && b == "admin") {
-  window.location.href ="./Admin.html";
+  window.location.href ="./Admin";
 }
 
 else if (a == "user" && b == "user") {
   localStorage.setItem('isLoggedIn', 'true');
-  window.location.href ="./index.html";
+  window.location.href ="./index";
   changeButton();
 }
 
 else if (a == "master" && b == "master") {
-  window.location.href ="./Master.html";
+  window.location.href ="./Master";
 }
 
 else{
@@ -49,7 +49,7 @@ window.onload = function() {
     if(localStorage.getItem('isLoggedIn') === 'true') {
       var createAccBtn = document.getElementById('CREATACC');
       createAccBtn.textContent = 'Vote For POTM';
-      createAccBtn.setAttribute('href', 'potm.html');
+      createAccBtn.setAttribute('href', 'potm');
 
 
 
@@ -57,7 +57,7 @@ window.onload = function() {
       var logbutton = document.getElementById('loginbutton');
           logbutton.textContent = 'My Account';
           logbutton.onclick = function() {
-          logbutton.setAttribute('href', 'MyAccount.html');
+          logbutton.setAttribute('href', 'MyAccount');
             
           };
         

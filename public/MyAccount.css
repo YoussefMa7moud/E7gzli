@@ -447,7 +447,7 @@ button {
 .image {
 	height: 250px;
 	width: 250px;
-	background-image: url("../public/materials/Wegz-f.jpg");
+	background-image: url("/materials/Wegz-f.jpg");
 	background-size: contain;
 	opacity: 0.85;
 }

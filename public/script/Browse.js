@@ -4,7 +4,7 @@ window.onload = function() {
           var logbutton = document.getElementById('loginbutton');
           logbutton.textContent = 'My Account';
           logbutton.onclick = function() {
-              logbutton.setAttribute('href', 'MyAccount.html');
+              logbutton.setAttribute('href', 'MyAccount');
           };
       }
   }
@@ -13,9 +13,9 @@ window.onload = function() {
   booknowbtn.onclick = function() {
       if (localStorage.getItem('isLoggedIn') === 'false') {
           alert('Login so you can book');
-          window.location.href = 'login.html';
+          window.location.href = 'login';
       } else {
-          booknowbtn.setAttribute('href', 'BookNow.html');
+          booknowbtn.setAttribute('href', 'BookNow');
       }
   };
 };

@@ -27,7 +27,7 @@ if(localStorage.getItem('isLoggedIn') === 'true'){
             var logbutton = document.getElementById('loginbutton');
           logbutton.textContent = 'My Account';
           logbutton.onclick = function() {
-          logbutton.setAttribute('href', 'MyAccount.html');
+          logbutton.setAttribute('href', 'MyAccount');
             
           };
         }
