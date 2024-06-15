@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let info = document.getElementById("info");
     let container3 = document.getElementById("my-info");
 
+    
     // Initially hide all containers
     container1.style.display = "none";
     container2.style.display = "none";

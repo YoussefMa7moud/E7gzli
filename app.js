@@ -1,5 +1,7 @@
 const express = require('express');
 const app = express();
+const mongoose = require('mongoose');
+
 
 
 app.set('view engine', 'ejs');
@@ -53,3 +55,13 @@ app.get('/login', (req, res) => {
 app.listen(3000, () => {
   console.log('Server is running on port 3000');
 });
+
+
+mongoose.connect("mongodb+srv://youssef2207740:Pi1p2TXCiVVEIT39@user-data.blnfrn5.mongodb.net/USER-DATA?retryWrites=true&w=majority&appName=USER-DATA")
+.then(() => {
+  console.log('Mongo Connected!');
+})
+.catch(() => {
+  console.log('connection failed');
+})
+
