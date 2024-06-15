@@ -1,6 +1,9 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
+const DATALOG = require("./MODELS/loginDB.js");
+app.use(express.json());
+app.use(express.urlencoded({extended: false}));
 
 
 
@@ -13,10 +16,18 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 
-
 app.get('/login', (req, res) => {
     res.render('login.ejs');
   });
+
+  app.post('/login/addData', async (req, res) => {
+    try {
+        const loginDB = await DATALOG.create(req.body);
+        res.status(200).json(loginDB);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+});
 
   app.get('/index', (req, res) => {
     res.render('index.ejs');
@@ -50,6 +61,7 @@ app.get('/login', (req, res) => {
   app.get('/MyAccount', (req, res) => {
     res.render('MyAccount.ejs');
   });
+
 
 
 app.listen(3000, () => {
