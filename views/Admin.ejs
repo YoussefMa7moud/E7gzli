@@ -14,7 +14,7 @@
 <body>
 <div class="header">
 <p class="head"> Current Events </p>
-<a href="index.html" id="lo">Logout</a>
+<a href="index" id="lo">Logout</a>
 </div>
     <div class="card">
         <div class="side_img">
@@ -49,12 +49,9 @@
         
         
         <div class ="formation"  >
-            <form>
-
-<div>
-
-    <div class="container">
-		<input type="file" id="file" accept="image/*" hidden>
+            <form action="/ADMIN/ADD-TICKETS" method="post">
+                <div class="container">
+                    <input type="file" id="file" name="image" accept="image/*" hidden>
        
         <div class="img-area" data-img="">
 			<i class='bx bxs-cloud-upload icon'></i>
@@ -66,19 +63,21 @@
 	</div>
 
                 <div class="button1" >
-        <input type="text" id="title" name="fname" placeholder="Add title" >
+                    <input type="text" name="title" placeholder="Add title">
+
        
         </div>
 
         
 
         <div class="radiobuttons">
-            <input class="radio" type="radio" id="html" name="urevent" value="Event">
-            <label class="label" for="html">Event</label>
-            <input class="radio" type="radio" id="css" name="urevent" value="Match">
-            <label class="label" for="css">Match</label>
+            <input class="radio" type="radio" id="event" name="type" value="1">
+            <label class="label" for="event">Event</label>
+            <input class="radio" type="radio" id="match" name="type" value="2">
+            <label class="label" for="match">Match</label>
         </div>
 
+        
         <div class="button_2">
             <textarea id="description" name="description" placeholder="Description" rows="8"></textarea>
         </div>
@@ -92,18 +91,18 @@
         </div>
 
         <div class="tickets1">
-            <input type="number" id="numTickets" name="numTickets1" placeholder="Cat 1 No tickets">
-            <input type="number" id="priceDropdown" placeholder="Price $">
+            <input type="number" id="numTickets" name="cat1" placeholder="Cat 1 No tickets">
+<input type="number" id="priceDropdown" name="cat1price" placeholder="Price $">
 
         </div>
         <div class="tickets2">
-            <input type="number" id="numTickets" name="numTickets2" placeholder="Cat 2 No tickets">
-            <input type="number" id="priceDropdown" placeholder="Price $">
+            <input type="number" id="numTickets" name="cat2" placeholder="Cat 1 No tickets">
+            <input type="number" id="priceDropdown" name="cat2price" placeholder="Price $">
         </div>
 
             <div class="tickets3">
-            <input type="number" id="numTickets" name="numTickets3" placeholder="Cat 3 No tickets">
-            <input type="number" id="priceDropdown" placeholder="Price $">
+            <input type="number" id="numTickets" name="cat3" placeholder="Cat 1 No tickets">
+            <input type="number" id="priceDropdown" name="cat3price" placeholder="Price $">
             
         </div>
 

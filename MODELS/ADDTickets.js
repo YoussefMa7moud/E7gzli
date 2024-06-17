@@ -4,7 +4,7 @@ const ticketsDb = mongoose.createConnection('mongodb+srv://youssef2207740:Pi1p2T
 const TICKETSSCHEMA = new mongoose.Schema({
     image: {
         type: String,
-        required: true
+        required: false
     },
     title: {
         type: String,
