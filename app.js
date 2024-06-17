@@ -40,9 +40,23 @@ app.get('/login', (req, res) => {
 
 
 
-  app.get('/Browse', (req, res) => {
-    res.render('browse.ejs');
+  
+  app.get('/Browse', async (req, res) => {
+    try {
+      const events = await TICKETS.find();
+      events.forEach(event => {
+        event.totalTickets = event.cat1 + event.cat2 + event.cat3;
+      });
+      res.render('browse.ejs', { events: events });
+    } catch (error) {
+      console.error(error);
+      res.status(500).send(error);
+    }
   });
+  
+
+
+
 
   app.get('/Store', (req, res) => {
     res.render('store.ejs');

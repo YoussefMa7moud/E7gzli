@@ -96,7 +96,7 @@ scroll-behavior: smooth;
   padding: 0px/*top*/ 200px/*right*/ 70px/*bottom*/ 0px/*left*/;
   transition: 0.7s ease;
   margin-top: 60px;
-  display: none; 
+  display:flex; 
   grid-template-columns: auto auto;
 }
 
@@ -125,10 +125,11 @@ scroll-behavior: smooth;
   
  .info{
    
+  padding: 9px;
    font-size: 29px;
    position: static;
    padding-left: 7%;
-   /* left: 5%; */
+   
  }
  .info2 {
    
@@ -142,11 +143,7 @@ scroll-behavior: smooth;
     color: #EC4899;
   }
 
-  .info2 i{
-   
-   font-size: 1.5em;
-   color: #EC4899;
- }
+
 
  .info h3{
    
@@ -166,34 +163,14 @@ scroll-behavior: smooth;
  .button_dist{
    
    position: relative;
-   left: 70%;
-    top: 7%;
+   left: 10%;
+    top: 12%;
     padding-bottom: 29px;
    
  }
 
- .button_dist h3{
-   position: relative;
-   top: 65px;
-   right: 50%;
 
 
- }
- 
- .button_dist2{
-   
-   position: relative;
-   left:67.5%;
-   top: 70px;
-   padding-bottom: 29px;
-   
- }
-
- .button_dist2 h3{
-   position: relative;
-   top: 65px;
-   right: 47%;
- }
 
 
 
@@ -220,47 +197,18 @@ scroll-behavior: smooth;
   }
 
 
-  .booking-btn2 {
-
-   display: inline-block;
-   padding: 20px 90px;    
-   border: none;
-   border-radius: 5px;
-   transition: 0.3s ease;
-   cursor:no-drop;
-  
- 
-  }
  
   #finishbtn{
    background-color: black;
    color: white;
    
    
-   
   }
  
 
-.secndcard{
-   padding-bottom: 99px;
-
-}
 
 
-#load-more {
-  margin-left: 40%;
-  padding: 20px 100px;
-  display: inline-block; 
-  background-color: crimson;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s ease;
-  text-decoration: none;
-  position: relative;
-  top: 22px;
-}
+
 
 #load-more:hover {
   background-color: #EC4899;
@@ -361,4 +309,15 @@ scroll-behavior: smooth;
     padding: 15px 50px;
     display: inline-block;
   }
+}
+
+
+
+.emp {
+  display: flex;
+  width: 600px;
+  color: white;
+  position: relative;
+  right: 99px;
+  top: 99px;
 }
