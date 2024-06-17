@@ -16,30 +16,40 @@
 <p class="head"> Current Events </p>
 <a href="index" id="lo">Logout</a>
 </div>
-    <div class="card">
-        <div class="side_img">
-            <img id="pic" src="/materials/AHLY_ZAMALEK.png">
-    </div>
-    <div class="side_info">
-        <div class="info">
-           
-            <span>Title: AHLY VS ZAMALEK</span>
-            <span>WEEK 25 of EPL (DERPY)</span> <br>
-            <i class="fa-solid fa-calendar"></i>
-            <span>Data:22/4/2024</span>
-            <span>Location: Cairo International Stadium</span>
-        </div>
-            <div class="button_dist">
-                
-                <h4>Tickets remaining: 100 </h4>
-                <a class="button130">Cancel Event</a> <br>  
-                <a href=""  class="booking-btn"> Edit Event </a>
-            </div>
-           
-    </div>
-   
-</div>
 
+
+
+
+<div class="content">
+
+<% if (events.length > 0) { %>
+    <% events.forEach(function(event) { %>
+  
+        <div class="card">
+            <div class="side_img">
+                <img id="pic" src="<%= event.image %>">
+            </div>
+            <div class="side_info">
+                <div class="info">
+                    <span>Title: <%= event.title %></span>
+                    <span><%= event.description %></span> <br>
+                    <i class="fa-solid fa-calendar"></i>
+                    <span><%= event.date %></span>
+                    <span><%= event.location %></span>
+                </div>
+                <div class="button_dist">
+                    <h3>Tickets remaining: <%= event.totalTickets %></h3>
+                    <button class="delete-btn" data-id="<%= event._id %>">Delete</button>
+
+                    
+                      %>
+                </div>
+            </div>
+        </div>
+        <% }) %>
+<% }  %>
+
+</div>
 
 <div class = "left-side">
 
@@ -113,7 +123,31 @@
 
 </div>
 
-
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const deleteButtons = document.querySelectorAll('.delete-btn');
+      deleteButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+          const eventId = e.target.getAttribute('data-id');
+          fetch('/delete-event/' + eventId, {
+            method: 'DELETE'
+          })
+          .then(response => response.json())
+          .then(data => {
+            if (data.success) {
+              // Remove the card element from the DOM
+              e.target.closest('.card').remove();
+            } else {
+              // Handle failure
+              alert('Error deleting event');
+            }
+          })
+          .catch(error => console.error('Error:', error));
+        });
+      });
+    });
+  </script>
+  
 
 
 

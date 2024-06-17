@@ -66,9 +66,35 @@ app.get('/login', (req, res) => {
     res.render('BookNow.ejs');
   });
 
-  app.get('/Admin', (req, res) => {
-    res.render('Admin.ejs');
+
+
+
+
+  app.get('/Admin', async (req, res) => {
+    try {
+      const events = await TICKETS.find();
+      events.forEach(event => {
+        event.totalTickets = event.cat1 + event.cat2 + event.cat3;
+      });
+      res.render('admin.ejs', { events: events });
+    } catch (error) {
+      console.error(error);
+      res.status(500).send(error);
+    }
   });
+
+
+
+
+  app.delete('/delete-event/:id', async (req, res) => {
+    try {
+      await TICKETS.findByIdAndDelete(req.params.id);
+      res.json({ success: true });
+    } catch (error) {
+      res.status(500).json({ success: false });
+    }
+  });
+  
 
 
   
