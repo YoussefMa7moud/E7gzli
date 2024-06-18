@@ -676,64 +676,76 @@
 
 
     <div id="container87">
+      
       <input type="file" id="file" accept="image/*" hidden>
 
       <div class="img-area" data-img="">
         <i class='bx bxs-cloud-upload icon'></i>
         <h3>Upload Image</h3>
         <p>Image size must be less than <span>2MB</span></p>
+        
       </div>
       <label for="file" class="select-image">Select Image</label>
+ 
+
+
+      <form id="formation">
 
 
 
-      <form>
 
 
 
-
-
-
-        <div class="button1">
-          <input type="text" id="title" name="fname" placeholder="Player Name">
+        <div class="player_name">
+          <input type="text" id ="player_name" name="fname" placeholder="Player Name">
 
         </div>
 
         <div class="location">
-          <input type="text" id="location" name="location" placeholder="Player Club ">
+          <input type="text" id="player_club" name="location" placeholder="Player Club ">
         </div>
 
 
 
         <div class="button_2">
-          <textarea id="description" name="description" placeholder="Description" rows="8"></textarea>
+          <textarea id="description2" name="description" placeholder="Description" rows="8"></textarea>
         </div>
 
         <!-- <div class="location">
         <input type="text" id="location" name="location" placeholder="Location">
     </div> -->
 
-        <!-- <div class="date">
-        <input type="date" id="date" name="date" placeholder="Date">
-    </div> -->
-
+        <div class="date">
+        <input type="number" id="age" name="date" placeholder="Age">
+    </div>
+    <div class="nationality">
+      <input type="text" id="nation" name="nation" placeholder="Nationality">
+  </div>
         <div class="tickets1">
-          <input type="number" id="numTickets" name="numTickets1" placeholder="goals">
+          <input type="number" id="numofgoals" name="numTickets1" placeholder="goals">
 
 
         </div>
         <div class="tickets2">
-          <input type="number" id="numTickets" name="numTickets2" placeholder="Assists">
+          <input type="number" id="assists" name="numTickets2" placeholder="Assists">
 
         </div>
 
         <div class="tickets3">
-          <input type="number" id="numTickets" name="numTickets3" placeholder="Clean Sheets">
+          <input type="number" id="cleancheats" name="numTickets3" placeholder="Clean Sheets">
 
 
         </div>
+        <label for="nominees" id="nomo">Choose a NOMINEES Number:</label>
 
-        <button class="add-event">Add Nominees</button>
+        <select name="nominees" id="nominees">
+          <option value="one">1</option>
+          <option value="two">2</option>
+          <option value="three">3</option>
+         
+        </select>
+        <br>
+        <button class="add-event" id=""addnominees>Add Nominees</button>
 
       </form>
 
@@ -741,49 +753,11 @@
 
     </div>
 
-    <div id="container88">
-      <input type="file" id="file" accept="image/*" hidden>
+   
 
-      <div class="img-area2" data-img="">
-        <i class='bx bxs-cloud-upload icon'></i>
-        <h3>Upload Image</h3>
-        <p>Image size must be less than <span>2MB</span></p>
-      </div>
-      <label for="file" class="select-image2">Select Image</label>
+      
 
-      <form>
-
-
-
-
-
-
-        <div class="button1">
-          <input type="text" id="title" name="fname" placeholder="Player Name">
-          <div class="location">
-            <input type="text" id="location" name="location" placeholder="Player Club ">
-          </div>
-          <div class="button_2">
-            <textarea id="description" name="description" placeholder="Description" rows="8"></textarea>
-          </div>
-        </div>
-        <div class="tickets1">
-          <input type="number" id="numTickets" name="numTickets1" placeholder="goals">
-
-
-        </div>
-        <div class="tickets2">
-          <input type="number" id="numTickets" name="numTickets2" placeholder="Assists">
-
-        </div>
-
-        <div class="tickets3">
-          <input type="number" id="numTickets" name="numTickets3" placeholder="Clean Sheets">
-
-
-        </div>
-
-        <button class="add-event">Add Nominees</button>
+       
 
       </form>
 
@@ -798,52 +772,6 @@
 
 
 
-
-    <div id="container89">
-      <input type="file" id="file" accept="image/*" hidden>
-
-      <div class="img-area3" data-img="">
-        <i class='bx bxs-cloud-upload icon'></i>
-        <h3>Upload Image</h3>
-        <p>Image size must be less than <span>2MB</span></p>
-      </div>
-      <br>
-      <label for="file" class="select-image3">Select Image</label>
-      <form>
-
-        <div class="button1">
-          <input type="text" id="title" name="fname" placeholder="Player Name">
-          <div class="location">
-            <input type="text" id="location" name="location" placeholder="Player Club ">
-          </div>
-          <div class="button_2">
-            <textarea id="description" name="description" placeholder="Description" rows="8"></textarea>
-          </div>
-        </div>
-
-        <div class="tickets1">
-          <input type="number" id="numTickets" name="numTickets1" placeholder="goals">
-
-
-        </div>
-        <div class="tickets2">
-          <input type="number" id="numTickets" name="numTickets2" placeholder="Assists">
-
-        </div>
-
-        <div class="tickets3">
-          <input type="number" id="numTickets" name="numTickets3" placeholder="Clean Sheets">
-
-
-        </div>
-
-        <button class="add-event">Add Nominees</button>
-
-
-      </form>
-
-
-    </div>
 
 
 
@@ -886,7 +814,7 @@
     
 
 
-
+</div>
 
 </body>
 </html>

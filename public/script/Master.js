@@ -65,7 +65,7 @@ POTM.addEventListener("click", function() {
   container2.style.display = "none";
   container1.style.display = "none";
   container4.style.display = "flex";
-  container87.style.display = "block";
+  container87.style.display = "flex";
   container88.style.display = "block";
   container89.style.display = "block";
 });
