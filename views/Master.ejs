@@ -46,26 +46,26 @@
 
 
 
-      <form>
+      <form id="Create-Admin" action="/Master/Creat-Admin" method="post">
         <h3> Create Account</h3>
-        <input type="text" id="creat_acc" placeholder="Name" required> </input>
-        <input type="password" id="creat_acc" placeholder="Password" required> </input>
-        <input type="password" id="creat_acc" placeholder="Confirm password" required> </input>
-        <input type="email" id="creat_acc" placeholder="Email" required> </input>
+        <input type="text" name="Fullname" id="creat_acc" placeholder="Name" required> </input>
+        <input type="password" name="Password" id="creat_acc" placeholder="Password" required> </input>
+        <input type="password"  id="creat_acc" placeholder="Confirm password" required> </input>
+        <input type="email" name="email" id="creat_acc" placeholder="Email" required> </input>
 
-        <input type="number" id="creat_acc" placeholder=" Mobile number" required></input>
-        <input type="number" id="creat_acc" placeholder=" ID" required></input>
+        <input type="number" name="PhoneNumber" id="creat_acc" placeholder=" Mobile number" required></input>
+        <input type="number" name="Num" id="creat_acc" placeholder=" ID" required></input>
         <br>
 
         <div class="radiobuttons">
-          <input class="radio" type="radio" id="html" name="urevent" value="Event">
+          <input class="radio" type="radio" id="html" name="Gender" value="male">
           <label class="label" for="html">Male</label>
-          <input class="radio" type="radio" id="css" name="urevent" value="Match">
+          <input class="radio" type="radio" id="css" name="Gender" value="female">
           <label class="label" for="css">Female</label>
         </div>
         <div class="botton22 ">
           <br>
-          <button type="button" id="Create Account">Create Account</button>
+          <button type="submit" id="Create Account">Create Account</button>
 
       </form>
     </div>
@@ -77,7 +77,6 @@
             <tr>
               <th>ID</th>
               <th>Name</th>
-              <th>Age</th>
               <th>Gender</th>
               <th>Email</th>
               <th>Password</th>
@@ -86,45 +85,19 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>01</td>
-              <td>Sam David</td>
-              <td>20</td>
-              <td>male</td>
-              <td>Example@gmail.com</td>
-              <td>123456</td>
-              <td><button onclick="toggleadminForm1()">View</button></td>
-              <td><button id="delete">Delete</button></td>
-            </tr>
             <tr class="active">
-              <td>02</td>
-              <td>Balbina Kherr</td>
-              <td>25</td>
-              <td>Female</td>
-              <td>Example@gmail.com</td>
-              <td>123456</td>
-              <td><button onclick="toggleadminForm2()">View</button></td>
-              <td><button id="delete">Delete</button></td>
-            </tr>
-            <tr>
-              <td>03</td>
-              <td>Badan John</td>
-              <td>33</td>
-              <td>male</td>
-              <td>Example@gmail.com</td>
-              <td>123456</td>
-              <td><button onclick="toggleadminForm3()">View</button></td>
-              <td><button id="delete">Delete</button></td>
-            </tr>
-            <tr>
-              <td>04</td>
-              <td>Sara David</td>
-              <td>35</td>
-              <td>Female</td>
-              <td>Example@gmail.com</td>
-              <td>123456</td>
-              <td><button onclick="toggleadminForm4()">View</button></td>
-              <td><button id="delete">Delete</button></td>
+              <% Admins.forEach(function(Admins) { %>
+                <tr>
+                  <td><%= Admins.Num %></td>
+                  <td><%= Admins.Fullname %></td>
+                  <td><%= Admins.Gender %></td>
+                  <td><%= Admins.email %></td>
+                  <td><%= Admins.Password %></td> 
+                  <td><button onclick="toggleadminForm1()">View</button></td>
+                  <td><button class="delete" data-user-id="<%= Admins.id %>">Delete</button></td>
+                </tr>
+              <% }); %>
+              
             </tr>
           </tbody>
         </table>
@@ -872,6 +845,48 @@
 
     </div>
 
-</body>
 
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const deleteButtons = document.querySelectorAll('.delete');
+        deleteButtons.forEach(button => {
+          button.addEventListener('click', function(event) {
+            const adminId = this.getAttribute('data-user-id');
+            // Make an AJAX request to your server to delete the admin
+            fetch('/Master/Delete-Admin/' + adminId, {
+              method: 'DELETE'
+            })
+            .then(response => response.json())
+            .then(data => {
+              if(data.success) {
+                // Remove the table row on successful deletion
+                this.parentElement.parentElement.remove();
+              } else {
+                // Handle failure
+                alert('Failed to delete admin.');
+              }
+            })
+            .catch(error => console.error('Error:', error));
+          });
+        });
+      });
+
+
+
+
+      
+
+
+      </script>
+      
+
+
+
+    
+
+
+
+
+</body>
 </html>

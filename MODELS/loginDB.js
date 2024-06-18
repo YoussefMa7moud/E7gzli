@@ -19,7 +19,7 @@ const loginSchema = new mongoose.Schema({
     },
     DateOfBirth:{
         type: Date,
-        required: true
+        required: false
     },
     Gender:{
         type:String,
@@ -28,6 +28,11 @@ const loginSchema = new mongoose.Schema({
     type: {
         type: Number,
         required: true
+    },
+
+    Num: {
+        type: Number,
+        required: false
     }
 });
 

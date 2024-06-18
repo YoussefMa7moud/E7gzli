@@ -10,7 +10,9 @@ app.use(express.urlencoded({extended: false}));
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
-//        SIGNUP          //
+
+
+
 app.post('/signup', async (req, res) => {
   const { Fullname, email, Password, PhoneNumber, day, month, year, Gender, type } = req.body;
 
@@ -33,9 +35,6 @@ app.post('/signup', async (req, res) => {
       res.status(400).send('Error registering user: ' + error.message);
   }
 });
-//    End of SIGNUP    //
-
-//      LOGIN      //
 
 app.get('/login', (req, res) => {
   res.render('login.ejs');
@@ -75,9 +74,70 @@ app.post('/login', async (req, res) => {
     res.render('index.ejs');
   });
 
-  app.get('/Master', (req, res) => {
-    res.render('Master.ejs');
+
+
+
+  app.get('/Master', async (req, res) => {
+    try {
+      const Admins = await DATALOG.find({ type: 2 });
+      res.render('Master', { Admins }); 
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Server error');
+    }
   });
+
+
+
+
+
+
+  app.post('/Master/Creat-Admin', async (req, res) => {
+    const { Fullname,Password,email, PhoneNumber, Gender ,type, Num } = req.body;
+
+  
+    const newAdmin = new DATALOG({
+        Fullname: Fullname,
+        Password: Password,
+        email: email,
+        PhoneNumber: PhoneNumber,
+        Gender:Gender,
+        type: 2,
+        Num:Num
+    });
+  
+       try {
+      await newAdmin.save();
+      const admins = await DATALOG.find({ type: 2 }); 
+      res.render('Master', { Admins: admins }); 
+  } catch (error) {
+      res.status(400).send('Error registering user: ' + error.message);
+  }
+});
+  
+
+
+
+
+
+
+app.delete('/Master/Delete-Admin/:id', async (req, res) => {
+  try {
+      const adminId = req.params.id;
+      await DATALOG.findByIdAndDelete(adminId);
+      res.json({ success: true, message: 'Admin deleted successfully' });
+  } catch (error) {
+      res.status(500).json({ success: false, message: 'Error deleting admin: ' + error.message });
+  }
+});
+
+
+
+
+
+
+
+
 
 
   app.get('/POTM', (req, res) => {
