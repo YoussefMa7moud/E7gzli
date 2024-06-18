@@ -38,11 +38,11 @@
 
 
   <div class="form">
-    <form name="valform" method="POST" >
+    <form name="valform" method="POST" action="/login">
       <h1>Sign in</h1>
       <div class="inputs">
       <div><input type="text" id="user"name="email" placeholder="Enter your Email"></div>
-      <div class="password"><input type="password" id="pass"name="password" placeholder="Enter your Password" onkeydown="if(event.key==='Enter'){validate();}">
+      <div class="password"><input type="password" id="pass"name="Password" placeholder="Enter your Password" onkeydown="if(event.key==='Enter'){validate();}">
         <span class="password-toggle-icon"><i class="fas fa-eye" onclick="togglePasswordVisibility()"></i></span>
       </div>
       <input type="button" value="Login" onclick="validate()">

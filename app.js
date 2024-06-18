@@ -10,35 +10,96 @@ app.use(express.urlencoded({extended: false}));
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
+//        SIGNUP          //
+app.post('/signup', async (req, res) => {
+  const { Fullname, email, Password, PhoneNumber, day, month, year, Gender, type } = req.body;
 
+  const DateOfBirth = new Date(year, month - 1, day);
 
-
-
-app.get('/login', (req, res) => {
-    res.render('login.ejs');
+  const newUser = new DATALOG({
+      Fullname: Fullname,
+      email: email,
+      Password: Password,
+      PhoneNumber: PhoneNumber,
+      DateOfBirth: DateOfBirth,
+      Gender: Gender,
+      type: 1 
   });
 
-  app.post('/login/addData', async (req, res) => {
-    try {
-        const loginDB = await DATALOG.create(req.body);
-        res.status(200).json(loginDB);
-    } catch (error) {
-        res.status(500).json({ message: error.message });
-    }
+  try {
+      await newUser.save();
+      res.status(200).send(res.render('USADD.ejs'));
+  } catch (error) {
+      res.status(400).send('Error registering user: ' + error.message);
+  }
 });
+//    End of SIGNUP    //
+
+//      LOGIN      //
+
+app.get('/login', (req, res) => {
+  res.render('login.ejs');
+});
+
+app.post('/login', async (req, res) => {
+  const { email, password } = req.body;
+
+  try {
+    if (email === "admin" && password === "admin") {
+      return res.status(200).json({ success: true, type: 2 }); 
+    }
+
+    if (email === "master" && password === "master") {
+      return res.status(200).json({ success: true, type: 3 }); 
+    }
+
+    const user = await DATALOG.findOne({ email: email });
+
+    if (!user) {
+      return res.status(401).json({ success: false, message: "Incorrect Email or Password" });
+    }
+    if (user.Password !== password) {
+      return res.status(401).json({ success: false, message: "Incorrect Email or Password" });
+    }
+    res.status(200).json({ success: true, type: user.type });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ success: false, message: "Server error" });
+  }
+});
+//    End of LOGIN    //
+
+//     ROUTES     //
 
   app.get('/index', (req, res) => {
     res.render('index.ejs');
   });
 
+  app.get('/Master', (req, res) => {
+    res.render('Master.ejs');
+  });
 
+
+  app.get('/POTM', (req, res) => {
+    res.render('potm.ejs');
+  });
+
+  app.get('/MyAccount', (req, res) => {
+    res.render('MyAccount.ejs');
+  });
 
 
   app.get('/', (req, res) => {
     res.render('index.ejs');
   });
 
+  app.get('/Store', (req, res) => {
+    res.render('store.ejs');
+  });
 
+  app.get('/BookNow', (req, res) => {
+    res.render('BookNow.ejs');
+  });
 
   
   app.get('/Browse', async (req, res) => {
@@ -54,20 +115,6 @@ app.get('/login', (req, res) => {
     }
   });
   
-
-
-
-
-  app.get('/Store', (req, res) => {
-    res.render('store.ejs');
-  });
-
-  app.get('/BookNow', (req, res) => {
-    res.render('BookNow.ejs');
-  });
-
-
-
 
 
   app.get('/Admin', async (req, res) => {
@@ -110,18 +157,7 @@ app.get('/login', (req, res) => {
 });
 
 
-  app.get('/Master', (req, res) => {
-    res.render('Master.ejs');
-  });
 
-
-  app.get('/POTM', (req, res) => {
-    res.render('potm.ejs');
-  });
-
-  app.get('/MyAccount', (req, res) => {
-    res.render('MyAccount.ejs');
-  });
 
 
 
