@@ -837,144 +837,167 @@ main {
   font-size : 93%;
 }
 /* mezo was here */
-
 #container1 {
- 
-  background-color:white;
-  right : 1200px ;
-width: 360px;
-height:590px ;
-margin-left: 40px;
-margin-top: 40px;
-position:absolute; 
-border-radius: 8px;
-
+  background-color: white;
+  right: 55%;
+  width: 20%;
+  height: 70%;
+  margin-left: 5%;
+  margin-top: 5%;
+  position: absolute;
+  border-radius: 8px;
 }
 
-.contaniner1 from {
-  width: 180px;
-  height: 500px;
-  top: 300px;
-  left: 40px;
-  
-  }
-  /* form input[type="text"]{
+.container1 form {
+  width: 50%;
+  height: 80%;
+  top: 50%;
+  left: 5%;
+  position: relative;
+}
+
+form input[type="password"],
+form input[type="email"],
+form input[type="number"] {
   width: 95%;
-  padding: 10px 5px ;
-  margin: 5px 0px;
+  padding: 10px 5px;
+  margin: 5px 0;
   border: 0;
   border-bottom: 1px solid #999;
-  background:  transparent;
-  outline:black ;
-  
-  
-  } */
-  form input[type="password"]{
-    width: 95%;
-    padding: 10px 5px ;
-    margin: 5px 0px;
-    border: 0;
-    border-bottom: 1px solid #999;
-    background:  transparent;
-    outline:black ;
-    
-    
-  
-    }
-    form input[type="email"]{
-      width: 95%;
-      padding: 10px 5px ;
-      margin: 5px 0px;
-      border: 0;
-      border-bottom: 1px solid #999;
-      background:  transparent;
-      outline:black ;
-      }
-      form input[type="number"]{
-        width: 95%;
-        padding: 10px 5px ;
-        margin: 5px 0px;
-        border: 0;
-        border-bottom: 1px solid #999;
-        background:  transparent;
-        outline:black ;
-        }
-  ::placeholder{
-  
+  background: transparent;
+  outline: black;
+}
+
+::placeholder {
   color: black;
-  
-  }
-  .button22 {
-    display: flex; /* Use flexbox to arrange buttons in a row */
-    gap: 10px; /* Add some space between buttons */
-  }
-  
-  .Container1 .button22{
+}
+
+.button22 {
   display: flex;
-    width: 100px;
-  margin:30px auto ;
- 
-  
-  }
-  #Create-Account{
-  width: 110px;
-  height: 35px;
-  margin: 0 10px ;
-  background-color: #1d1b31;
-  border: 0;
-  margin-bottom: 10px;
-   margin-left:130px ;
-  }
-  
-  
-  
-  .radiobuttons{
-    display: inline-flex;
+  gap: 10px;
+}
+
+.container1 .button22 {
+  display: flex;
+  width: 50%;
+  margin: 3% auto;
+}
+
+
+.radiobuttons {
+  display: inline-flex;
   overflow: hidden;
   border-radius: 15px;
-  
-  box-shadow: 0 0 5px  rgba(0, 0, 0, 0.25);
-  position: center;
-  margin-left: 120px;
-  }
-  .radio{
-  
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+  justify-content: center;
+  margin-left: 25%;
+}
+
+.radiobuttons {
+  display: inline-flex;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+  justify-content: center;
+  margin-left: 25%;
+}
+
+.radio1 {
   display: none;
-  position: center;
-  }
-  .label{
-  
-  
-    padding: 8px ;
-  
-  font-size: 14px;
+}
+
+.radio2 {
+  display: none;
+
+}
+.label1 {
+  padding: 8px;
+  font-size:28px;
   padding: 8px 14px;
   font-family: sans-serif;
-  color: white ;
-  background: #9a1b87;
+  color: white;
+  background: #EC4899;
   cursor: pointer;
-  transition:0.1s ;
-  position: center;
+  transition: 0.1s;
   
-  }
-  
-  .label:not(:last-of-type){
-  border-radius:1px solid #FFC0CB;
-  
-  position: center;
-  
-  
-  }
-  .label:hover{
+}
+
+.label2 {
+  padding: 8px;
+  font-size: 24px;
+  padding: 8px 14px;
+  font-family: sans-serif;
+  color: white;
+  background: #EC4899;
+  cursor: pointer;
+  transition: 0.1s;
+}
+
+.label1:not(:last-of-type) {
+  border: 1px solid #FFC0CB;
+}
+
+.label1:hover {
   background-color: #f2f2f2;
-    transition: all .3s ease;
-  position: center;
-  }
-  .radio:checked +.label {
-  
+  transition: all .3s ease;
+}
+
+.label2:not(:last-of-type) {
+  border: 1px solid #FFC0CB;
+}
+
+.label2:hover {
+  background-color: #f2f2f2;
+  transition: all .3s ease;
+}
+.radio1:checked + .label1 {
   background: black;
+}
+.radio2:checked + .label2 {
+  background: black;
+}
+/* Media Queries for responsiveness */
+@media (max-width: 1200px) {
+  #container1 {
+    width: 40%;
   }
-     
+  .container1 form {
+    width: 60%;
+  }
+  #Create-Account {
+    width: 40%;
+    margin-left: 30%;
+  }
+}
+
+@media (max-width: 768px) {
+  #container1 {
+    width: 70%;
+    right: 5%;
+  }
+  .container1 form {
+    width: 80%;
+  }
+  
+  .radiobuttons {
+    margin-left: 20%;
+  }
+}
+
+@media (max-width: 480px) {
+  #container1 {
+    width: 90%;
+    right: 2%;
+  }
+  .container1 form {
+    width: 90%;
+  }
+ 
+  .radiobuttons {
+    margin-left: 15%;
+  }
+}
+
 
 
 /* conatiner4section */

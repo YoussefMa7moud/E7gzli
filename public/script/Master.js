@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function() {
   let container88 = document.getElementById("container88");
   let container89 = document.getElementById("container89");
   Admin.addEventListener("click", function() {
-    container1.style.display = "block";
+    container1.style.display = "flex";
     container2.style.display = "none";
     container3.style.display = "none";
     container87.style.display = "none";
