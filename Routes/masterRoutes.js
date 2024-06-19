@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const controller = require('../Controller/masterController');
+const controller = require('../controller/masterController');
 
 router.get('/', controller.getMasters);
-router.post('/Create-Admin', controller.createAdmin);
+router.post('/Creat-Admin', controller.createAdmin);
 router.delete('/Delete-Admin/:id', controller.deleteAdmin);
 
 module.exports = router;
