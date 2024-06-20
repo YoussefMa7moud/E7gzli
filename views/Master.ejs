@@ -277,54 +277,30 @@
               <tr>
                 <th>ID</th>
                 <th>Name</th>
-                <th>Age</th>
-                <th>Gender</th>
                 <th>Email</th>
                 <th>Password</th>
+                <th>Phone Number</th>
+                <th>Date Of Birth</th>
+                <th>Gender</th>
                 <th>History</th>
                 <th>Ban</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>01</td>
-                <td>Sam David</td>
-                <td>20</td>
-                <td>male</td>
-                <td>Example@gmail.com</td>
-                <td>123456</td>
-                <td><button onclick="toggleForm1()">View</button></td>
-                <td><button id="ban" onclick="toggleBan1()" >Ban</button></td>
-              </tr>
-              <tr class="active">
-                <td>02</td>
-                <td>Balbina Kherr</td>
-                <td>25</td>
-                <td>Female</td>
-                <td>Example@gmail.com</td>
-                <td>123456</td>
-                <td><button onclick="toggleForm2()">View</button></td>
-                <td><button id="ban" onclick="toggleBan2()">Ban</button></td>
-              </tr>
-              <tr>
-                <td>03</td>
-                <td>Badan John</td>
-                <td>33</td>
-                <td>male</td>
-                <td>Example@gmail.com</td>
-                <td>123456</td>
-                <td><button onclick="toggleForm3()">View</button></td>
-                <td><button id="ban" onclick="toggleBan3()">Ban</button></td>
-              </tr>
-              <tr>
-                <td>04</td>
-                <td>Sara David</td>
-                <td>35</td>
-                <td>Female</td>
-                <td>Example@gmail.com</td>
-                <td>123456</td>
-                <td><button onclick="toggleForm4()">View</button></td>
-                <td><button id="ban" onclick="toggleBan4()">Ban</button></td>
+                  <% Users.forEach(function(user) { %>
+                    <tr>
+                      <td><%= user._id %></td> 
+                      <td><%= user.Fullname %></td>
+                      <td><%= user.email %></td>
+                      <td><%= user.Password %></td>
+                      <td><%= user.PhoneNumber %></td>
+                      <td><%= new Date(user.DateOfBirth).toLocaleDateString() %></td>
+                      <td><%= user.Gender%></td> 
+                      <td><button onclick="toggleForm2()">View</button></td>
+                      <td><button id="ban" onclick="toggleBan2()">Ban</button></td>
+                    </tr>
+                  <% }); %>
               </tr>
             </tbody>
           </table>
@@ -349,19 +325,15 @@
             </thead>
             <tbody>
               <tr>
-                  <% Users.forEach(function(user) { %>
-                    <tr>
-                      <td><%= user._id %></td> 
-                      <td><%= user.Fullname %></td>
-                      <td><%= user.email %></td>
-                      <td><%= user.Password %></td>
-                      <td><%= user.PhoneNumber %></td>
-                      <td><%= new Date(user.DateOfBirth).toLocaleDateString() %></td>
-                      <td><%= user.Gender%></td> 
-                      <td><button id="accept_but">Accept</button></td>
-                      <td><button id="ban">Reject</button></td>
-                    </tr>
-                  <% }); %>
+                <td>01</td>
+                <td>Sam David</td>
+                <td>Example@gmail.com</td>
+                <td>12345678910</td>
+                <td>01125897456</td>
+                <td>12/10/1999</td>
+                <td>Male</td>
+                <td><button id="accept_but">Accept</button></td>
+                <td><button id="ban">Reject</button></td>
               </tr>
             </tbody>
           </table>
