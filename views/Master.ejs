@@ -331,9 +331,9 @@
         </div>
       </section>
       <section class="User">
-        <div class="Users-list">
+        <div class="Users-list" >
           <h1>Incoming User's Requests </h1>
-          <table class="table">
+          <table class="table" >
             <thead>
               <tr>
                 <th>ID</th>
@@ -349,15 +349,19 @@
             </thead>
             <tbody>
               <tr>
-                <td>01</td>
-                <td>Sam David</td>
-                <td>Example@gmail.com</td>
-                <td>12345678910</td>
-                <td>01125897456</td>
-                <td>12/10/1999</td>
-                <td>Male</td>
-                <td><button id="accept_but">Accept</button></td>
-                <td><button id="ban">Reject</button></td>
+                  <% Users.forEach(function(user) { %>
+                    <tr>
+                      <td><%= user._id %></td> 
+                      <td><%= user.Fullname %></td>
+                      <td><%= user.email %></td>
+                      <td><%= user.Password %></td>
+                      <td><%= user.PhoneNumber %></td>
+                      <td><%= new Date(user.DateOfBirth).toLocaleDateString() %></td>
+                      <td><%= user.Gender%></td> 
+                      <td><button id="accept_but">Accept</button></td>
+                      <td><button id="ban">Reject</button></td>
+                    </tr>
+                  <% }); %>
               </tr>
             </tbody>
           </table>

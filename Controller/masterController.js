@@ -2,8 +2,9 @@ const DATALOG = require('../MODELS/loginDB.js');
 
 exports.getMasters = async (req, res) => {
   try {
+    const Users = await DATALOG.find({ type: 1 });
     const Admins = await DATALOG.find({ type: 2 });
-    res.render('Master', { Admins });
+    res.render('Master', { Users, Admins });
   } catch (error) {
     console.error(error);
     res.status(500).send('Server error');
@@ -25,8 +26,9 @@ exports.createAdmin = async (req, res) => {
 
   try {
     await newAdmin.save();
-    const admins = await DATALOG.find({ type: 2 });
-    res.render('Master', { Admins: admins });
+    const Users = await DATALOG.find({ type: 1 });
+    const Admins = await DATALOG.find({ type: 2 });
+    res.render('Master', { Users, Admins });
   } catch (error) {
     res.status(400).send('Error registering user: ' + error.message);
   }
