@@ -1,5 +1,6 @@
 const TICKETS = require('../MODELS/ADDTickets.js');
 
+
 exports.adminPanel = async (req, res) => {
   try {
     const events = await TICKETS.find();
@@ -15,12 +16,18 @@ exports.adminPanel = async (req, res) => {
 
 exports.deleteEvent = async (req, res) => {
   try {
-    await TICKETS.findByIdAndDelete(req.params.id);
-    res.json({ success: true });
+    const eventid = req.params.id;
+    const deletedEvent = await TICKETS.findByIdAndDelete(eventid);
+    if (!deletedEvent) {
+      return res.status(404).json({ success: false, message: 'Event not found' });
+    }
+    res.json({ success: true, message: 'Event deleted successfully' });
   } catch (error) {
-    res.status(500).json({ success: false });
+    res.status(500).json({ success: false, message: 'Error deleting event: ' + error.message });
   }
 };
+
+
 
 exports.addTickets = async (req, res) => {
   try {
