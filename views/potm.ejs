@@ -69,35 +69,29 @@
     <h1>Current Nominees : </h1>
     <div>
 
-    <div class="card-wrapper">
-      <div class="card">
-          <div class="card-front">
-              <img src="/materials/emamashour.jpg_large" alt="Player 1">
-          </div>
-          <div class="card-back">
-              <h3>Emam Ashour (Egyptian)</h3>
-              <p>Al Ahly Sc</p>
-              <br>
-              <p>
-                Emam Ashour Metwally Abdel Ghani
-                 (born in Sinbillawin on February 20, 1998)
-                  is an Egyptian football player who plays in the midfield
-                   position for the Egyptian Al-Ahly Club and the Egyptian
-                    national team .
-              </p>
-              <br>
-              <p>
-                ⚽ Goals: 10
-              </p>
-              <br>
-              <p>
-                ⚽ Assists: 5
-              </p>
-              <br>
-              <p>
-                🥅 Played: 8
-              </p>
-          </div>
+   
+      <div class="card-wrapper">
+        <% for (const player of potmplayers) { %>
+          <% if (player.nomineeNO === 1) { %>
+            <div class="card">
+              <div class="card-front">
+                <img src="<%= player.image %>" alt="Player <%= player.name %>">
+              </div>
+              <div class="card-back">
+                <h3><%= player.name %> (<%= player.nationality %>)</h3>
+                <p><%= player.club %></p>
+                <br>
+                <p><%= player.description %></p>
+                <br>
+                <p>⚽ Goals: <%= player.goals %></p>
+                <br>
+                <p>⚽ Assists: <%= player.assists %></p>
+                <br>
+                <p>🥅 Played: <%= player.cleansheets %></p>
+              </div>
+            </div>
+          <% } %>
+        <% } %>
       </div>
 
 
@@ -108,75 +102,58 @@
 
   
       
-        <div class="card">
-            <div class="card-front">
-                <img src="/materials/zizo.jpg" alt="Player 2">
-            </div>
-            <div class="card-back">
-                <h3>Ahmed Syaed Zizo (Egyptian)</h3>
-                <p>Zamalek Sc</p>
+      <div class="card-wrapper">
+        <% for (const player of potmplayers) { %>
+          <% if (player.nomineeNO === 2) { %>
+            <div class="card">
+              <div class="card-front">
+                <img src="<%= player.image %>" alt="Player <%= player.name %>">
+              </div>
+              <div class="card-back">
+                <h3><%= player.name %> (<%= player.nationality %>)</h3>
+                <p><%= player.club %></p>
                 <br>
-              <p>
-                Ahmed Mostafa Mohamed Sayed 
-                (
-                born 10 January 1996) commonly known as Zizo
-                 (Arabic: زيزو), is an Egyptian professional 
-                 footballer who plays as a winger for Egyptian Premier
-                  League club Zamalek and the Egypt national team.
-
-
-              </p>
-              <br>
-              <p>
-                ⚽ Goals: 12
-              </p>
-              <br>
-              <p>
-                ⚽ Assists: 1
-              </p>
-              <br>
-              <p>
-                🥅 Played: 9
-              </p>
+                <p><%= player.description %></p>
+                <br>
+                <p>⚽ Goals: <%= player.goals %></p>
+                <br>
+                <p>⚽ Assists: <%= player.assists %></p>
+                <br>
+                <p>🥅 Played: <%= player.cleansheets %></p>
+              </div>
             </div>
-          </div>
+          <% } %>
+        <% } %>
+      </div>
           
     
 
 
          
-      <div class="card">
-          <div class="card-front">
-              <img src="/materials/maloul.jpg" alt="Player 3">
-          </div>
-          <div class="card-back">
-              <h3>Ali Maloul (Tunisian)</h3>
-              <p>Al Ahly Sc</p>
-              <br>
-              <p>
-                Maaloul was born on January 1, 1990 in Sfax ,
-                 Tunisia . He is a Tunisian football player who occupies
-                 the position of left back .
-                  He currently plays for the Egyptian Al-Ahly Club .
-                  He participated with the Tunisian national team in the 
-                  2018 World Cup . He won the title of top scorer in Tunisian
-                  League in the 2015-16 season with Sfaxien.
-              </p>
-              <br>
-              <p>
-                ⚽ Goals: 1
-              </p>
-              <br>
-              <p>
-                ⚽ Assists: 10
-              </p>
-              <br>
-              <p>
-                🥅 Played: 7
-              </p>
-          </div>
-          
+      <div class="card-wrapper">
+        <% for (const player of potmplayers) { %>
+          <% if (player.nomineeNO === 3) { %>
+            <div class="card">
+              <div class="card-front">
+                <img src="<%= player.image %>" alt="Player <%= player.name %>">
+              </div>
+              <div class="card-back">
+                <h3><%= player.name %> (<%= player.nationality %>)</h3>
+                <p><%= player.club %></p>
+                <br>
+                <p><%= player.description %></p>
+                <br>
+                <p>⚽ Goals: <%= player.goals %></p>
+                <br>
+                <p>⚽ Assists: <%= player.assists %></p>
+                <br>
+                <p>🥅 Played: <%= player.cleansheets %></p>
+              </div>
+            </div>
+          <% } %>
+        <% } %>
       </div>
+
 
       <div class="vote">
           <h1 id="countdown">Vote Ends In: 00d 0h 0m 00s
