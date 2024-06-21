@@ -1,6 +1,15 @@
 const DATALOG = require('../MODELS/loginDB.js');
 const TICKETS = require('../MODELS/ADDTickets.js');
-
+exports.getUser = async (req, res) => {
+  try {
+    const Users = await DATALOG.find({ type: 1 });
+    const Admins = await DATALOG.find({ type: 2 });
+    res.render('Master', { Users, Admins });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Server error');
+  }
+};
 exports.signup = async (req, res) => {
   const { Fullname, email, Password, PhoneNumber, day, month, year, Gender } = req.body;
   const DateOfBirth = new Date(year, month - 1, day);
@@ -17,6 +26,8 @@ exports.signup = async (req, res) => {
 
   try {
     await newUser.save();
+    const Users = await DATALOG.find({ type: 1 });
+    const Admins = await DATALOG.find({ type: 2 });
     res.status(200).send(res.render('USADD.ejs'));
   } catch (error) {
     res.status(400).send('Error registering user: ' + error.message);

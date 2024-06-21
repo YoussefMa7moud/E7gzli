@@ -277,63 +277,39 @@
               <tr>
                 <th>ID</th>
                 <th>Name</th>
-                <th>Age</th>
-                <th>Gender</th>
                 <th>Email</th>
                 <th>Password</th>
+                <th>Phone Number</th>
+                <th>Date Of Birth</th>
+                <th>Gender</th>
                 <th>History</th>
                 <th>Ban</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>01</td>
-                <td>Sam David</td>
-                <td>20</td>
-                <td>male</td>
-                <td>Example@gmail.com</td>
-                <td>123456</td>
-                <td><button onclick="toggleForm1()">View</button></td>
-                <td><button id="ban" onclick="toggleBan1()" >Ban</button></td>
-              </tr>
-              <tr class="active">
-                <td>02</td>
-                <td>Balbina Kherr</td>
-                <td>25</td>
-                <td>Female</td>
-                <td>Example@gmail.com</td>
-                <td>123456</td>
-                <td><button onclick="toggleForm2()">View</button></td>
-                <td><button id="ban" onclick="toggleBan2()">Ban</button></td>
-              </tr>
-              <tr>
-                <td>03</td>
-                <td>Badan John</td>
-                <td>33</td>
-                <td>male</td>
-                <td>Example@gmail.com</td>
-                <td>123456</td>
-                <td><button onclick="toggleForm3()">View</button></td>
-                <td><button id="ban" onclick="toggleBan3()">Ban</button></td>
-              </tr>
-              <tr>
-                <td>04</td>
-                <td>Sara David</td>
-                <td>35</td>
-                <td>Female</td>
-                <td>Example@gmail.com</td>
-                <td>123456</td>
-                <td><button onclick="toggleForm4()">View</button></td>
-                <td><button id="ban" onclick="toggleBan4()">Ban</button></td>
+                  <% Users.forEach(function(user) { %>
+                    <tr>
+                      <td><%= user._id %></td> 
+                      <td><%= user.Fullname %></td>
+                      <td><%= user.email %></td>
+                      <td><%= user.Password %></td>
+                      <td><%= user.PhoneNumber %></td>
+                      <td><%= new Date(user.DateOfBirth).toLocaleDateString() %></td>
+                      <td><%= user.Gender%></td> 
+                      <td><button onclick="toggleForm2()">View</button></td>
+                      <td><button class="delete" data-user-id="<%= user.id %>">Delete</button></td>
+                    </tr>
+                  <% }); %>
               </tr>
             </tbody>
           </table>
         </div>
       </section>
       <section class="User">
-        <div class="Users-list">
+        <div class="Users-list" >
           <h1>Incoming User's Requests </h1>
-          <table class="table">
+          <table class="table" >
             <thead>
               <tr>
                 <th>ID</th>
@@ -675,9 +651,13 @@
   <div id="container4">
 
 
+
+
+
+    <form id="formation" method="POST" action="/ADD-POTM"></form>
     <div id="container87">
       
-      <input type="file" id="file" accept="image/*" hidden>
+      <input type="text" id="file33" >
 
       <div class="img-area" data-img="">
         <i class='bx bxs-cloud-upload icon'></i>
@@ -688,65 +668,47 @@
       <label for="file" class="select-image">Select Image</label>
  
 
-
-      <form id="formation">
-
-
-
-
-
-
         <div class="player_name">
-          <input type="text" id ="player_name" name="fname" placeholder="Player Name">
-
+          <input type="text" id="player_name33" name="name" placeholder="Player Name">
         </div>
-
+      
         <div class="location">
-          <input type="text" id="player_club" name="location" placeholder="Player Club ">
+          <input type="text" id="player_club33" name="club" placeholder="Player Club">
         </div>
-
-
-
+      
         <div class="button_2">
-          <textarea id="description2" name="description" placeholder="Description" rows="8"></textarea>
+          <textarea id="description233" name="description" placeholder="Description" rows="8"></textarea>
         </div>
-
-        <!-- <div class="location">
-        <input type="text" id="location" name="location" placeholder="Location">
-    </div> -->
-
+      
         <div class="date">
-        <input type="number" id="age" name="date" placeholder="Age">
-    </div>
-    <div class="nationality">
-      <input type="text" id="nation" name="nation" placeholder="Nationality">
-  </div>
+          <input type="number" id="age33" name="age" placeholder="Age">
+        </div>
+      
+        <div class="nationality">
+          <input type="text" id="nation33" name="nationality" placeholder="Nationality">
+        </div>
+      
         <div class="tickets1">
-          <input type="number" id="numofgoals" name="numTickets1" placeholder="goals">
-
-
+          <input type="number" id="numofgoals33" name="goals" placeholder="Goals">
         </div>
+      
         <div class="tickets2">
-          <input type="number" id="assists" name="numTickets2" placeholder="Assists">
-
+          <input type="number" id="assists33" name="assists" placeholder="Assists">
         </div>
-
+      
         <div class="tickets3">
-          <input type="number" id="cleancheats" name="numTickets3" placeholder="Clean Sheets">
-
-
+          <input type="number" id="cleancheats33" name="cleansheets" placeholder="Clean Sheets">
         </div>
-        <label for="nominees" id="nomo">Choose a NOMINEES Number:</label>
-
-        <select name="nominees" id="nominees">
-          <option value="one">1</option>
-          <option value="two">2</option>
-          <option value="three">3</option>
-         
+      
+        <label for="nominees" id="nomo33">Choose a NOMINEES Number:</label>
+        <select name="nomineeNO" id="nominees">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
         </select>
+      
         <br>
-        <button class="add-event" id=""addnominees>Add Nominees</button>
-
+        <button class="add-event" type="submit">Add Nominees</button>
       </form>
 
 
