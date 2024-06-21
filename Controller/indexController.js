@@ -28,7 +28,6 @@ exports.signup = async (req, res) => {
     await newUser.save();
     const Users = await DATALOG.find({ type: 1 });
     const Admins = await DATALOG.find({ type: 2 });
-    res.render('Master', { Users, Admins });
     res.status(200).send(res.render('USADD.ejs'));
   } catch (error) {
     res.status(400).send('Error registering user: ' + error.message);

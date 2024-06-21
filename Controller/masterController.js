@@ -1,4 +1,7 @@
 const DATALOG = require('../MODELS/loginDB.js');
+const ADDPOTM = require('../MODELS/POTM.js')
+
+
 
 exports.getMasters = async (req, res) => {
   try {
@@ -53,5 +56,35 @@ exports.deleteAdmin = async (req, res) => {
     res.json({ success: true, message: 'Admin deleted successfully' });
   } catch (error) {
     res.status(500).json({ success: false, message: 'Error deleting admin: ' + error.message });
+  }
+};
+
+
+
+
+
+
+exports.ADDPOTM = async (req, res) => {
+  const { image, name, club, description, age, nationality, goals, assists, cleansheets, nomineeNO } = req.body;
+
+  const newpotm = new ADDPOTM({
+    image,
+    name,
+    club,
+    description,
+    age,
+    nationality,
+    goals,
+    assists,
+    cleansheets,
+    nomineeNO,
+  });
+
+  try {
+    await newpotm.save(); 
+    const potmplayers = await ADDPOTM.find();
+    res.render('Master', { potmplayers }); 
+  } catch (error) {
+    res.status(400).send('Error adding player: ' + error.message);
   }
 };
