@@ -1,5 +1,6 @@
 const DATALOG = require('../MODELS/loginDB.js');
 const TICKETS = require('../MODELS/ADDTickets.js');
+const bcrypt = require('bcrypt');
 exports.getUser = async (req, res) => {
   try {
     const Users = await DATALOG.find({ type: 1 });
@@ -13,18 +14,19 @@ exports.getUser = async (req, res) => {
 exports.signup = async (req, res) => {
   const { Fullname, email, Password, PhoneNumber, day, month, year, Gender } = req.body;
   const DateOfBirth = new Date(year, month - 1, day);
-
+  try {
+  const hashedPassword = await bcrypt.hash(Password, 10);
   const newUser = new DATALOG({
     Fullname,
     email,
-    Password,
+    Password: hashedPassword,
     PhoneNumber,
     DateOfBirth,
     Gender,
     type: 1
   });
 
-  try {
+  
     await newUser.save();
     const Users = await DATALOG.find({ type: 1 });
     const Admins = await DATALOG.find({ type: 2 });

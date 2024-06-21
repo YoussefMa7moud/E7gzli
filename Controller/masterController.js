@@ -1,7 +1,7 @@
 const DATALOG = require('../MODELS/loginDB.js');
 const ADDPOTM = require('../MODELS/POTM.js')
 const STORE=require('../MODELS/Store.js');
-
+const bcrypt = require('bcrypt');
 exports.getMasters = async (req, res) => {
   try {
     const Users = await DATALOG.find({ type: 1 });
@@ -15,10 +15,11 @@ exports.getMasters = async (req, res) => {
 
 exports.createAdmin = async (req, res) => {
   const { Fullname, Password, email, PhoneNumber, Gender, Num } = req.body;
-
+  try {
+  const hashedPassword = await bcrypt.hash(Password, 10);
   const newAdmin = new DATALOG({
     Fullname,
-    Password,
+    Password: hashedPassword,
     email,
     PhoneNumber,
     Gender,
@@ -26,7 +27,7 @@ exports.createAdmin = async (req, res) => {
     Num
   });
 
-  try {
+ 
     await newAdmin.save();
     const Users = await DATALOG.find({ type: 1 });
     const Admins = await DATALOG.find({ type: 2 });
