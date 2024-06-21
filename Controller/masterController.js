@@ -82,6 +82,7 @@ exports.ADDPOTM = async (req, res) => {
           goals,
           assists,
           cleansheets,
+          votes:0,
         },
       });
     } else {
@@ -96,6 +97,7 @@ exports.ADDPOTM = async (req, res) => {
         assists,
         cleansheets,
         nomineeNO,
+        votes:0,
       });
       await newpotm.save();
     }
