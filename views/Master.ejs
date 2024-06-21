@@ -736,18 +736,15 @@
         deleteButtons.forEach(button => {
           button.addEventListener('click', function(event) {
             const adminId = this.getAttribute('data-user-id');
-            // Make an AJAX request to your server to delete the admin
             fetch('/Master/Delete-Admin/' + adminId, {
               method: 'DELETE'
             })
             .then(response => response.json())
             .then(data => {
               if(data.success) {
-                // Remove the table row on successful deletion
                 this.parentElement.parentElement.remove();
               } else {
-                // Handle failure
-                alert('Failed to delete admin.');
+                alert('Failed to delete event.');
               }
             })
             .catch(error => console.error('Error:', error));

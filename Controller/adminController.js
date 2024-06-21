@@ -1,4 +1,4 @@
-const TICKETS = require('../MODELS/ADDTickets.js');
+const TICKETS = require('../MODELS/ADDTicketsRoutes.js');
 
 
 exports.adminPanel = async (req, res) => {
@@ -16,7 +16,7 @@ exports.adminPanel = async (req, res) => {
 
 exports.deleteEvent = async (req, res) => {
   try {
-    const eventid = req.params.id;
+    const eventid = req.params._id;
     const deletedEvent = await TICKETS.findByIdAndDelete(eventid);
     if (!deletedEvent) {
       return res.status(404).json({ success: false, message: 'Event not found' });
