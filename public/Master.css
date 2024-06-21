@@ -1066,7 +1066,7 @@ border-radius: 8px;
 .select-image {
   display: flex;
   width: 20%; /* Adjusted to percentage */
-  height: 10%; /* Adjusted to percentage */
+  height: 44%; /* Adjusted to percentage */
   padding: 2% 5%; /* Adjusted padding */
   border-radius: 15px;
   background: #EC4899;
@@ -1077,9 +1077,9 @@ border-radius: 8px;
   cursor: pointer;
   transition: all .3s ease;
   text-align: center;
-  margin-left: -35.5%; /* Adjusted to percentage */
+  margin-left: 50%; /* Adjusted to percentage */
   margin-right: 20%; /* Adjusted to percentage */
-  margin-top: 45%; /* Keep this the same */
+  margin-top: 20%; /* Keep this the same */
   position: relative; /* Ensure it's positioned relative to its container */
 }
 
@@ -1092,6 +1092,7 @@ border-radius: 8px;
 }
 
 #formation {
+  height:30%;
   margin-left: -3%;
   width: 100%;
 }
