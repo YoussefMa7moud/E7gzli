@@ -1,6 +1,6 @@
 const DATALOG = require('../MODELS/loginDB.js');
 const ADDPOTM = require('../MODELS/POTM.js')
-
+const STORE=require('../MODELS/Store.js');
 
 exports.getMasters = async (req, res) => {
   try {
@@ -63,28 +63,75 @@ exports.deleteAdmin = async (req, res) => {
 
 
 
-exports.ADDPOTM = async (req, res) => {
-  const {image, name, club, description, age, nationality, goals, assists, cleansheets, nomineeNO } = req.body;
-  const newpotm = new ADDPOTM({
-    image,
-    name,
-    club,
-    description,
-    age,
-    nationality,
-    goals,
-    assists,
-    cleansheets,
-    nomineeNO,
+exports.STORE = async (req, res) => {
+  const {bannerColor, teamImage, teamName, teamUsername, historyTitle, historyDescription, productImage, productName, productPrice } = req.body;
+  const newProduct = new STORE({
+    bannerColor,
+    teamImage,
+    teamName,
+    teamUsername,
+    historyDescription,
+    productImage,
+    productName,
+    productPrice
   });
 
   try {
-    await newpotm.save(); 
+    await newProduct.save(); 
+    const Product = await STORE.find();
     const potmplayers = await ADDPOTM.find();
     const Users = await DATALOG.find({ type: 1 });
     const Admins = await DATALOG.find({ type: 2 });
-    res.render('Master', { Users,Admins,potmplayers }); 
+    res.render('Master', { Users,Admins,potmplayers,Product }); 
   } catch (error) {
-    res.status(400).send('Error adding player: ' + error.message);
+    res.status(400).send('Error adding Product: ' + error.message);
+  }
+};
+
+exports.ADDPOTM = async (req, res) => {
+  const { image, name, club, description, age, nationality, goals, assists, cleansheets, nomineeNO } = req.body;
+
+  try {
+    const existingRecord = await ADDPOTM.findOne({ nomineeNO });
+
+    if (existingRecord) {
+      await ADDPOTM.updateOne({ nomineeNO }, {
+        $set: {
+          image,
+          name,
+          club,
+          description,
+          age,
+          nationality,
+          goals,
+          assists,
+          cleansheets,
+          votes:0,
+        },
+      });
+    } else {
+      const newpotm = new ADDPOTM({
+        image,
+        name,
+        club,
+        description,
+        age,
+        nationality,
+        goals,
+        assists,
+        cleansheets,
+        nomineeNO,
+        votes:0,
+      });
+      await newpotm.save();
+    }
+
+    const potmplayers = await ADDPOTM.find();
+    const Product = await STORE.find();
+    const Users = await DATALOG.find({ type: 1 });
+    const Admins = await DATALOG.find({ type: 2 });
+    res.render('Master', { Users, Admins, Product, potmplayers }); 
+  } catch (error) {
+    res.status(500).json({ error: 'An error occurred while saving the record' });
   }
 };

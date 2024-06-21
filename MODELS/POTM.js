@@ -43,6 +43,10 @@ const POTMSCHEMA = new mongoose.Schema({
         type: Number,
         required: true
     },
+    votes:{
+        type: Number,
+        required:true
+    }
     
 });
 

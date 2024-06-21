@@ -615,32 +615,32 @@
           </div>
         </div>
         <div class="form-container" id="addProfileForm">
-          <form id="addProfileFormmm">
-            <label for="bannerColor">Banner Color:</label>
-            <input type="color" id="bannerColor"><br>
+          <form id="addProfileFormmm" method="post" action="/Master/STORE">
+            <label for="bannerColor" >Banner Color:</label>
+            <input type="color" name="bannerColor"id="bannerColor"><br>
 
             <label for="profilePic">Profile Picture:</label>
-            <input type="file" id="profilePic"><br>
+            <input type="file" name="teamImage"id="profilePic"><br>
 
-            <label for="profileInfo-display">Profile Info Display:</label>
-            <input type="text" id="profileInfo-display" placeholder="Title Name"><br>
+            <label for="profileInfo-display" >Profile Info Display:</label>
+            <input type="text" id="profileInfo-display" name="teamName"placeholder="Title Name"><br>
 
             <label for="profileInfo-username">Profile Info Username:</label>
-            <input type="text" id="profileInfo-username" placeholder="@username"><br>
+            <input type="text" id="profileInfo-username"name="teamUsername"placeholder="@username"><br>
 
             <label for="profileInfo">Profile Info:</label>
-            <textarea id="profileInfo" rows="4" cols="50"></textarea><br>
+            <textarea id="profileInfo" rows="4" cols="50" name="historyDescription"></textarea><br>
 
             <label for="tshirtPic">T-shirt Picture:</label>
-            <input type="file" id="tshirtPic"><br>
+            <input type="file" id="tshirtPic" name="productImage"><br>
 
             <label for="tshirtInfo">T-shirt Info:</label>
-            <input type="text" id="tshirtInfo" placeholder="T-shirt Info"><br>
+            <input type="text" id="tshirtInfo" name="productName"placeholder="T-shirt Info"><br>
 
             <label for="price">Price:</label>
-            <input type="number" id="price" placeholder="Price"><br>
+            <input type="number" id="price" name="productPrice" placeholder="Price"><br>
             <div class="Store-Form-Button">
-            <button type="button">Add Profile</button>
+            <button type="submit">Add Profile</button>
             <button type="button" id="closeButton"onclick="closeForm()">Close</button>
           </div>
           </form>
