@@ -63,28 +63,49 @@ exports.deleteAdmin = async (req, res) => {
 
 
 
+
 exports.ADDPOTM = async (req, res) => {
-  const {image, name, club, description, age, nationality, goals, assists, cleansheets, nomineeNO } = req.body;
-  const newpotm = new ADDPOTM({
-    image,
-    name,
-    club,
-    description,
-    age,
-    nationality,
-    goals,
-    assists,
-    cleansheets,
-    nomineeNO,
-  });
+  const { image, name, club, description, age, nationality, goals, assists, cleansheets, nomineeNO } = req.body;
 
   try {
-    await newpotm.save(); 
+    const existingRecord = await ADDPOTM.findOne({ nomineeNO });
+
+    if (existingRecord) {
+      await ADDPOTM.updateOne({ nomineeNO }, {
+        $set: {
+          image,
+          name,
+          club,
+          description,
+          age,
+          nationality,
+          goals,
+          assists,
+          cleansheets,
+        },
+      });
+    } else {
+      const newpotm = new ADDPOTM({
+        image,
+        name,
+        club,
+        description,
+        age,
+        nationality,
+        goals,
+        assists,
+        cleansheets,
+        nomineeNO,
+      });
+      await newpotm.save();
+    }
+
     const potmplayers = await ADDPOTM.find();
+
     const Users = await DATALOG.find({ type: 1 });
     const Admins = await DATALOG.find({ type: 2 });
-    res.render('Master', { Users,Admins,potmplayers }); 
+    res.render('Master', { Users, Admins, potmplayers });
   } catch (error) {
-    res.status(400).send('Error adding player: ' + error.message);
+    res.status(500).json({ error: 'An error occurred while saving the record' });
   }
 };
