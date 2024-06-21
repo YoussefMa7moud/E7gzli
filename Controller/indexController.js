@@ -1,5 +1,6 @@
 const DATALOG = require('../MODELS/loginDB.js');
 const TICKETS = require('../MODELS/ADDTickets.js');
+
 const bcrypt = require('bcrypt');
 exports.getUser = async (req, res) => {
   try {

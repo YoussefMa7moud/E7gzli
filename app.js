@@ -4,14 +4,14 @@ const app = express();
 const masterRoutes = require('./Routes/masterRoutes');
 const adminRoutes = require('./Routes/adminRoutes');
 const indexRoutes = require('./Routes/indexRoutes');
-
+const potmRoutes = require('./Routes/POTMRoutes');
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
-
+app.use('/potm',potmRoutes);
 app.use('/master', masterRoutes);
 app.use('/admin', adminRoutes);
 app.use('/', indexRoutes);
