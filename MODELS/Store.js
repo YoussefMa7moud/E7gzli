@@ -7,7 +7,7 @@ const storeSchema = new mongoose.Schema({
     },
     teamImage: {
         type: String,
-        required: false
+        required: true
     },
     teamName: {
         type: String,
@@ -23,7 +23,7 @@ const storeSchema = new mongoose.Schema({
     },
     productImage: {
         type: String,
-        required: false
+        required: true
     },
     productName: {
         type: String,

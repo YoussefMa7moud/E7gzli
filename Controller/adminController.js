@@ -16,14 +16,11 @@ exports.adminPanel = async (req, res) => {
 
 exports.deleteEvent = async (req, res) => {
   try {
-    const eventid = req.params._id;
-    const deletedEvent = await TICKETS.findByIdAndDelete(eventid);
-    if (!deletedEvent) {
-      return res.status(404).json({ success: false, message: 'Event not found' });
+    await TICKETS.findByIdAndDelete(req.params.id);
+    res.json({ success: true });
     }
-    res.json({ success: true, message: 'Event deleted successfully' });
-  } catch (error) {
-    res.status(500).json({ success: false, message: 'Error deleting event: ' + error.message });
+     catch (error) {
+    res.status(500).json({ success: false });
   }
 };
 

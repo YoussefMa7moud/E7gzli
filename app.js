@@ -6,7 +6,7 @@ const adminRoutes = require('./Routes/adminRoutes');
 const indexRoutes = require('./Routes/indexRoutes');
 const potmRoutes = require('./Routes/POTMRoutes');
 const BookNowRoutes=require('./Routes/BookNowRoutes');
-const storeRoutes = require('./Routes/StoreRoutes');
+// const storeRoutes = require('./Routes/StoreRoutes');
 
 
 app.use(express.json());
@@ -20,7 +20,7 @@ app.use('/potm',potmRoutes);
 app.use('/master', masterRoutes);
 app.use('/admin', adminRoutes);
 app.use('/', indexRoutes);
-app.use('/', storeRoutes);
+// app.use('/', storeRoutes);
 
 app.listen(3002, () => {
   console.log('Server is running on port 3002');

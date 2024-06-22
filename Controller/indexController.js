@@ -1,5 +1,6 @@
 const DATALOG = require('../MODELS/loginDB.js');
 const TICKETS = require('../MODELS/ADDTickets.js');
+const STORE = require('../MODELS/Store.js');
 
 const bcrypt = require('bcryptjs');
 
@@ -72,5 +73,14 @@ exports.browseEvents = async (req, res) => {
   } catch (error) {
     console.error(error);
     res.status(500).send(error);
+  }
+};
+/* Store */
+exports.getProfile = async (req, res) => {
+  try {
+      const team = await STORE.findOne();
+      res.render('Store', { team });
+  } catch (error) {
+      res.status(500).send('Server error');
   }
 };
