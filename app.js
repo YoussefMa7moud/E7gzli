@@ -5,7 +5,7 @@ const masterRoutes = require('./Routes/masterRoutes');
 const adminRoutes = require('./Routes/adminRoutes');
 const indexRoutes = require('./Routes/indexRoutes');
 const potmRoutes = require('./Routes/POTMRoutes');
-const BookNowRoutes=require('./Routes/BookNowRoutes')
+const BookNowRoutes=require('./Routes/BookNowRoutes');
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
