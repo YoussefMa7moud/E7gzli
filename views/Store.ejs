@@ -59,7 +59,8 @@
 
         <button onclick="toggleTheme()" class="themer"></button>
         <main>
-            <% if (team) { %>
+            <% if (team && team.length > 0) { %>
+                <% team.forEach(function(team) { %>
                 <div class="profile" onclick="expand(this)">
                     <div class="profile__banner" name="bannerColor" style="background-color: <%= team.bannerColor %>;"> </div>
                     <div>
@@ -94,7 +95,7 @@
                         </span>
                     </div>
                 </div>
-               
+                <% }) %>
                 <% } else { %>
                 <div class="emp">
                     <h1>Sorry No Merch to display :) </h1>

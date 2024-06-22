@@ -145,6 +145,14 @@ scroll-behavior: smooth;
  
  /* end cart */
  
+ .emp {
+    display: block;
+    width: 650px;
+    color: white;
+    position: relative;
+    left: 33%;
+  }
+  
  
  .LOGO h1 {
     color: black;
