@@ -1,7 +1,8 @@
 const DATALOG = require('../MODELS/loginDB.js');
 const TICKETS = require('../MODELS/ADDTickets.js');
 
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
+
 exports.getUser = async (req, res) => {
   try {
     const Users = await DATALOG.find({ type: 1 });

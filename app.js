@@ -8,6 +8,7 @@ const potmRoutes = require('./Routes/POTMRoutes');
 const BookNowRoutes=require('./Routes/BookNowRoutes');
 const storeRoutes = require('./Routes/StoreRoutes');
 
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 

@@ -1,7 +1,8 @@
 const DATALOG = require('../MODELS/loginDB.js');
 const ADDPOTM = require('../MODELS/POTM.js')
 const STORE=require('../MODELS/Store.js');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
+
 exports.getMasters = async (req, res) => {
   try {
     const Users = await DATALOG.find({ type: 1 });
