@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E7gzli</title>
-    <link href="Browse.css" rel="stylesheet">
+    <link href="/Browse.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
@@ -30,9 +30,9 @@
             <h1>E7gzli</h1>
         </div>
         <div class="left-A">
-            <a href="index">Home</a>
-            <a href="Browse">Browse</a>
-            <a href="Store">Store</a>
+            <a href="/index">Home</a>
+            <a href="/Browse">Browse</a>
+            <a href="/Store">Store</a>
         </div>
 
         <div class="R-A">
@@ -80,7 +80,7 @@
                     <div class="button_dist">
                         <h3>Tickets remaining: <%= event.totalTickets %></h3>
                         <% if (event.totalTickets > 0) { %>
-                            <a id="booknowbtn" class="booking-btn" href="BookNow">Book Now</a>
+                            <a id="booknowbtn" class="booking-btn" href="/BookNow/<%= event._id %>">Book Now</a>
                           <% } else { %>
                             <div class="button_dist2">
                                 <a id="finishbtn" class="booking-btn2">Booking Closed</a>
