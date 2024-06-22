@@ -1,4 +1,4 @@
-const TICKETS = require('../MODELS/ADDTicketsRoutes.js');
+const TICKETS = require('../MODELS/ADDTickets.js');
 
 
 exports.adminPanel = async (req, res) => {

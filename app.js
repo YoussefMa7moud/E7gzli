@@ -6,6 +6,8 @@ const adminRoutes = require('./Routes/adminRoutes');
 const indexRoutes = require('./Routes/indexRoutes');
 const potmRoutes = require('./Routes/POTMRoutes');
 const BookNowRoutes=require('./Routes/BookNowRoutes');
+const storeRoutes = require('./Routes/StoreRoutes');
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
@@ -17,6 +19,7 @@ app.use('/potm',potmRoutes);
 app.use('/master', masterRoutes);
 app.use('/admin', adminRoutes);
 app.use('/', indexRoutes);
+app.use('/', storeRoutes);
 
 app.listen(3000, () => {
   console.log('Server is running on port 3000');

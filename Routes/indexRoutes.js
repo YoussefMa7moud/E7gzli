@@ -10,7 +10,7 @@ router.get('/index', (req, res) => res.render('index.ejs'));
 router.get('/POTM', (req, res) => res.render('potm.ejs'));
 router.get('/MyAccount', (req, res) => res.render('MyAccount.ejs'));
 router.get('/', (req, res) => res.render('index.ejs'));
-router.get('/Store', (req, res) => res.render('store.ejs'));
+router.get('/Store', (req, res) => res.render('Store.ejs'));
 router.get('/BookNow', (req, res) => res.render('BookNow.ejs'));
 router.get('/Browse', controller.browseEvents);
 

@@ -1,4 +1,4 @@
-const Event = require('../models/ADDTickets');
+const Event = require('../MODELS/ADDTickets.js');
 
 exports.getEventData = async (req, res) => {
   try {
