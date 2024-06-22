@@ -21,8 +21,8 @@ app.use('/admin', adminRoutes);
 app.use('/', indexRoutes);
 app.use('/', storeRoutes);
 
-app.listen(3001, () => {
-  console.log('Server is running on port 3001');
+app.listen(3002, () => {
+  console.log('Server is running on port 3002');
 });
 
 mongoose.connect("mongodb+srv://youssef2207740:Pi1p2TXCiVVEIT39@user-data.blnfrn5.mongodb.net/USER-DATA?retryWrites=true&w=majority&appName=USER-DATA")
