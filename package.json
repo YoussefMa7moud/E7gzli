@@ -4,14 +4,14 @@
   "description": "🎟️ Welcome to Our Event Ticket Store! 🎟️ Are you ready for unforgettable experiences?",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node app.js",
      "postinstall": "npm rebuild bcrypt --build-from-source"
   },
 
   "engines": {
-  "node": "20.x"
+  "node": "20.11.1"
 },
 
   "keywords": [],
