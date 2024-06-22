@@ -108,9 +108,8 @@ scroll-behavior: smooth;
 
 
 .vote{
-  padding-top: 99px;
-  padding-left: 100px;
-  
+  padding-top: 79px;
+  padding-left: 300px;
 }
 
 
@@ -127,17 +126,11 @@ scroll-behavior: smooth;
   
  background-color: white;
  height: 700px;
- border-radius: 9px;
- width: 98%;
- margin-left: 25px;
- 
- 
+ border-radius: 9px
   
 }
 
-#countdown{
-  width: 430px;
-}
+
 
 
 
@@ -152,16 +145,15 @@ scroll-behavior: smooth;
 }
  
 .card-wrapper {
-  display:flex;
+  display:inline-flex;
   gap: 40px;
   padding-left: 20px;
   padding-top: 110px;
-
-
   
 }
 
 .card {
+   
   width: 256px;
   place-items: center;
   z-index: 2;
@@ -219,11 +211,18 @@ scroll-behavior: smooth;
 
 
 
+.vote{
+   position: relative;
+   display: grid;
+   margin-left: 1000px;
+   position: relative;
+   bottom: 350px;
+}
 #votebtn{
-  background-color: #EC4899;
+         background-color: #EC4899;
          color: #E7E5E4;
          border-radius: 8px;
-         width: 160px;
+         width: 360px;
          height: 59px;
          border-style: none;
          cursor: pointer;
@@ -232,7 +231,7 @@ scroll-behavior: smooth;
 
 
 #option{
-  width: 60%;
+      width: 360px;
       margin-bottom: 10px; 
       height: 58px;
       border-radius: 8px;
@@ -342,6 +341,7 @@ scroll-behavior: smooth;
  .card-wrapper {
     flex-direction: column;
     align-items: center;
+    display: block;
     gap: 20px;
     padding-left: 0;
     padding-top: 20px;
@@ -351,7 +351,10 @@ scroll-behavior: smooth;
     width: 90%;
     margin: 40px 0; 
     padding: 60px 30px 10px 10px;
+
  }
+
+
 
  .card-front,
  .card-back {
@@ -364,13 +367,19 @@ scroll-behavior: smooth;
  }
 
  #option {
-    width: 120%;
+    width: 200px;
     margin-bottom: 10px;
     height: 60px;
  }
 
  #votebtn {
-    width: 120%;
+    width: 200px;
     height: 60px;
+ }
+
+ .vote{
+   position: relative;
+   right: 935px;
+   top: 5px;
  }
 }

@@ -156,22 +156,19 @@
 
 
       <div class="vote">
-          <h1 id="countdown">Vote Ends In: 00d 0h 0m 00s
-          </h1>
-          
-          <select id="option">
-            <option value="" disabled selected>Select a player</option>
-            <option>Emam Ashour</option>
-            <option>Zizo</option>
-            <option>Ali Maloul</option>
-          </select>
-          
-          <button id="votebtn"onclick="validate()">Vote</button>
+        <select id="option">
+          <option value="" disabled selected>Select a player</option>
+          <% for (const player of potmplayers) { %>
+            <option><%= player.name %></option>
+          <% } %>
+        </select>
+        <button id="votebtn" onclick="validate()">Vote</button>
       </div>
-
       
-  </div>
-  </div>
+      
+      
+
+
 </div>
 
 </body>
