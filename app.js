@@ -22,6 +22,16 @@ app.use('/admin', adminRoutes);
 app.use('/', indexRoutes);
 // app.use('/', storeRoutes);
 
+
+
+app.use((req, res, next) => {
+  console.log(`Request URL: ${req.url}`);
+  next();
+});
+
+
+
+
 app.listen(3002, () => {
   console.log('Server is running on port 3002');
 });
