@@ -141,25 +141,27 @@ exports.ADDPOTM = async (req, res) => {
 
 
 
-exports.activateuser = async (req, res) => {
-  const { _id } = req.body;  // Only extracting _id from the request body
 
-  console.log('Received _id:', _id);  // Logging the received _id
+exports.activateuser = async (req, res) => {
+  const { _id } = req.body;
 
   try {
     const existingRecord = await DATALOG.findOne({ _id });
-    console.log('Existing record:', existingRecord);  // Logging the existing record
 
     if (existingRecord) {
       const updateResult = await DATALOG.updateOne({ _id }, { $set: { Activated: 1 } });
-      console.log('Update result:', updateResult);  
-      res.status(200).json({ success: true, message: 'Record updated successfully' });
+
+      if (updateResult.ok === 1) {
+        return res.status(200).json({ success: true, message: 'Record updated successfully' });
+      } else {
+        return res.status(500).json({ success: false, error: 'Failed to update record' });
+      }
     } else {
-      res.status(404).json({ success: false, error: 'Record not found' });
+      return res.status(404).json({ success: false, error: 'Record not found' });
     }
   } catch (error) {
     console.error('Error updating record:', error);
-    res.status(500).json({ success: false, error: 'An error occurred while saving the record' });
+    return res.status(500).json({ success: false, error: 'An error occurred while saving the record' });
   }
 };
 
