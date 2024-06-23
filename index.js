@@ -33,7 +33,9 @@ app.use('/admin', adminRoutes);
 app.use('/', indexRoutes);
 // app.use('/', storeRoutes);
 
-
+app.get('/Browse', (req, res) => {
+  res.render('Browse');
+})
 
 
 const port =3002||process.env.PORT;
