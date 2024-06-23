@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const { type } = require('os');
 
 const loginSchema = new mongoose.Schema({
     Fullname:{
@@ -33,6 +34,11 @@ const loginSchema = new mongoose.Schema({
     Num: {
         type: Number,
         required: false
+    },
+    Activated:{
+        type:Number,
+        required:false,
+        default:0
     }
 });
 

@@ -289,6 +289,7 @@
             <tbody>
               <tr>
                   <% Users.forEach(function(user) { %>
+                    <% if (user.Activated == 1) { %>
                     <tr>
                       <td><%= user._id %></td> 
                       <td><%= user.Fullname %></td>
@@ -300,6 +301,7 @@
                       <td><button onclick="toggleForm2()">View</button></td>
                       <td><button class="delete" data-user-id="<%= user.id %>">Delete</button></td>
                     </tr>
+                    <% } %>
                   <% }); %>
               </tr>
             </tbody>
@@ -308,7 +310,7 @@
       </section>
       <section class="User">
         <div class="Users-list" >
-          <h1>Incoming User's Requests </h1>
+          <h1>Incoming User's Requests</h1>
           <table class="table" >
             <thead>
               <tr>
@@ -324,18 +326,26 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>01</td>
-                <td>Sam David</td>
-                <td>Example@gmail.com</td>
-                <td>12345678910</td>
-                <td>01125897456</td>
-                <td>12/10/1999</td>
-                <td>Male</td>
-                <td><button id="accept_but">Accept</button></td>
-                <td><button id="ban">Reject</button></td>
-              </tr>
-            </tbody>
+              <% Users.forEach(function(user) { %>
+                <% if (user.Activated == 0) { %>
+                <tr>
+                  <td><%= user._id %></td> 
+                  <td><%= user.Fullname %></td>
+                  <td><%= user.email %></td>
+                  <td><%= user.Password %></td>
+                  <td><%= user.PhoneNumber %></td>
+                  <td><%= new Date(user.DateOfBirth).toLocaleDateString() %></td>
+                  <td><%= user.Gender%></td> 
+                  <td>
+                    <button class="activate" data-user-id="<%= user._id %>" id="accept_but">Accept</button>
+                  </td>
+                  <td>
+                    <button class="delete" data-user-id="<%= user._id %>" id="ban">Reject</button>
+                  </td>
+                </tr>
+                <% } %>
+              <% }); %>
+            </tbody> 
           </table>
         </div>
       </section>
@@ -741,7 +751,7 @@
             })
             .then(response => response.json())
             .then(data => {
-              if(data.success) {
+              if (data.success) {
                 this.parentElement.parentElement.remove();
               } else {
                 alert('Failed to delete event.');
@@ -750,14 +760,35 @@
             .catch(error => console.error('Error:', error));
           });
         });
-      });
-
-
-
-
       
-
-
+        const activateButtons = document.querySelectorAll('.activate');
+        activateButtons.forEach(button => {
+          button.addEventListener('click', function(event) {
+            const userId = this.getAttribute('data-user-id');
+            console.log('User ID:', userId);
+      
+            fetch('/master', {
+              method: 'PUT',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({ _id: userId })
+            })
+            .then(response => response.json())
+            .then(data => {
+              console.log('Server response:', data);
+              if (data.success) {
+                console.log('Activation status updated successfully.');
+                // Optionally, you can remove or update the row here
+                // this.parentElement.parentElement.remove();
+              } else {
+                alert('Failed to update activation status.');
+              }
+            })
+            .catch(error => console.error('Error:', error));
+          });
+        });
+      });
       </script>
       
 
