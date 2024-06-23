@@ -29,7 +29,7 @@ app.use('/', indexRoutes);
 const port =3002||process.env.PORT;
 
 app.listen(port, () => {
-  console.log('Server is running on port 3002 or in vercel');
+  console.log('Server is running on port 3002 or in Render');
 });
 
 mongoose.connect("mongodb+srv://youssef2207740:Pi1p2TXCiVVEIT39@user-data.blnfrn5.mongodb.net/USER-DATA?retryWrites=true&w=majority&appName=USER-DATA")
