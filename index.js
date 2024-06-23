@@ -2,15 +2,6 @@ const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 
-const cors = require("cors");
-const corsConfig = {
-  origin: "*",
-  credential: true,
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  };
-
-app.options("", cors (corsConfig));
-app.use(cors(corsConfig));
 
 const masterRoutes = require('./Routes/masterRoutes');
 const adminRoutes = require('./Routes/adminRoutes');
