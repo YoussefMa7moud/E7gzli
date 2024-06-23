@@ -40,24 +40,29 @@
 
 
     <div class="Starting-Home">
+      <% for (const player of potmplayers) { %>
+        <% if (player.nomineeNO === 4) { %>
       <div class="Winner">
-        <h1>Last Month Winner: 👑Mohamed Abdelmonem👑</h1>
+        <h1>Last Month Winner: 👑<%= player.name %> (<%= player.nationality %>)👑</h1>
         <div class="winner-content">
-          <img src="/materials/winner.jpg">
+          <img  src="<%= player.image %>" alt="Player <%= player.name %>">
           <div class="stats">
-            <h2>⚽ Goals: 2 </h2>
-            <h2>🥅 clean sheets: 5</h2>
-            <h2>⚽ Assists: 1</h2>
+            <h2>⚽ Goals:  <%= player.goals %> </h2>
+            <h2>🥅 clean sheets: <%= player.cleansheets %></h2>
+            <h2>⚽ Assists:<%= player.assists %></h2>
           </div>
         </div>
       </div>
+      <% } %>
+      <% } %>
+    
   </div>
   
 
 
 
-
-
+  
+    
 
  
  

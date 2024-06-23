@@ -75,18 +75,25 @@ exports.browseEvents = async (req, res) => {
     res.status(500).send(error);
   }
 };
+
+
 exports.getEventData = async (req, res) => {
   try {
-    const ticketId = req.params.id;
+    const ticketId =  req.params.id;
     const event = await TICKETS.findById(ticketId);
+
     if (!event) {
       return res.status(404).json({ success: false, message: 'Event not found' });
     }
-    res.render('BookNow', { event });
+
+    const event2 = await TICKETS.find(); 
+    res.render('BookNow', { event, event2 }); 
   } catch (error) {
     res.status(500).json({ success: false, message: 'Error fetching event data: ' + error.message });
   }
 };
+
+
 /* Store */
 exports.getProfile = async (req, res) => {
   try {
@@ -96,4 +103,8 @@ exports.getProfile = async (req, res) => {
       res.status(500).send('Server error');
   }
 };
+
+
+
+
 

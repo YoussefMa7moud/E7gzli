@@ -60,67 +60,75 @@
 
 
 
+    
+    <% event2.forEach(function(event2) { %>
+        <% if (event2.id === event.id) { %>
+            <div class="Area">
+                <div class="stadium">
+                <% if (event2.type = '1') { %>
+                    <img src="/materials/stadium-right.svg" alt="Match Image">
+                <% } else if (event2.type = '2') { %>
+                    <img src="/materials/stadium-right.svg" alt="Event Image">
+                <% } %>
+    
+                <div class="cat">
+                    <label id="Cat3" for="cat3">CAT 3: <span id="price3"><%= event2.cat3price %></span> EGP</label>
+                    <select name="NUMBER" id="NO3" onchange="calculatePayment()">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+    
+                <div class="cat">
+                    <label id="Cat2" for="cat2">CAT 2: <span id="price2"><%= event2.cat2price %></span> EGP</label>
+                    <select name="NUMBER" id="NO2" onchange="calculatePayment()">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+    
+                <div class="cat">
+                    <label id="Cat1" for="cat1">CAT 1: <span id="price1"><%= event2.cat1price %></span> EGP</label>
+                    <select name="NUMBER" id="NO1" onchange="calculatePayment()">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+                <div class="Payment">
+                    <h1 id="Paymenth1">Total = 0 EGP</h1>
+                </div>
+            </div>
+        
+        
+                <div class="Buttons">
+                <a href="/Browse" id="CN">Cancel</a>
+                <button id="BN" >Buy Now</button>
+                </div>
+        
+        
+                <div class="PaymentStyle">
+                    <label id="PS" for="PS">Payment Style :</label>
+                    <select name="Payment" id="PS"  onchange="ps(this.value)">
+                        <option disabled selected></option>
+                        <option value="c">Cash</option>
+                        <option value="v">Visa</option>
+                    </select>   
+                    <div class="output" id="output"></div>
+                </div>
 
-    <div class="Area">
-        <!-- Conditional rendering based on event type -->
-        <% if (event.type == '1') { %>
-            <img src="/materials/stadium-right.svg" alt="Match Image">
-        <% } else if (event.type == '2') { %>
-            <img src="/materials/stadium-right.svg" alt="Event Image">
+            </div>
         <% } %>
+    <% }); %>
+</div>
 
-        <!-- Display event prices -->
-        <div class="cat">
-            <label id="Cat3" for="cat3">CAT 3: <span id="price3"><%= event.cat3Price %></span> EGP</label>
-            <select name="NUMBER" id="NO3" onchange="calculatePayment()">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-            </select>
-        </div>
-
-        <div class="cat">
-            <label id="Cat2" for="cat2">CAT 2: <span id="price2"><%= event.cat2Price %></span> EGP</label>
-            <select name="NUMBER" id="NO2" onchange="calculatePayment()">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-            </select>
-        </div>
-
-        <div class="cat">
-            <label id="Cat1" for="cat1">CAT 1: <span id="price1"><%= event.cat1Price %></span> EGP</label>
-            <select name="NUMBER" id="NO1" onchange="calculatePayment()">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-            </select>
-        </div>
-
-        <div class="Payment">
-            <h1 id="Paymenth1">Total = 0 EGP</h1>
-        </div>
-    </div>
-
-
-        <div class="Buttons">
-        <a href="/Browse" id="CN">Cancel</a>
-        <button id="BN">Buy Now</button>
-        </div>
-
-
-        <div class="PaymentStyle">
-            <label id="PS" for="PS">Payment Style :</label>
-            <select name="Payment" id="PS"  onchange="ps(this.value)">
-                <option disabled selected></option>
-                <option value="c">Cash</option>
-                <option value="v">Visa</option>
-            </select>   
-            <div class="output" id="output"></div>
-        </div>
+    
+        
 
 </body>
 </html>
