@@ -336,10 +336,15 @@
                   <td><%= user.PhoneNumber %></td>
                   <td><%= new Date(user.DateOfBirth).toLocaleDateString() %></td>
                   <td><%= user.Gender%></td> 
-                  <td>
-                    <button class="activate" data-user-id="<%= user._id %>" id="accept_but">Accept</button>
 
-                  </td>
+                  <form id="activation" action="/Master/Update-Activation" method="post">
+                    <input type="hidden" name="_id" value="<%= user._id %>">
+                    <td>
+                      <input type="number" name="Activated" placeholder=" ac" required></input>
+                    <button type="submit" class="activate" id="accept_but">Accept</button>
+                    </td>
+                  </form>
+                  
                   <td>
                     <button class="delete" data-user-id="<%= user._id %>" id="ban">Reject</button>
                   </td>
@@ -761,6 +766,7 @@
             .catch(error => console.error('Error:', error));
           });
         });
+      
       });
       </script>
       
