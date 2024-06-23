@@ -7,6 +7,8 @@ const masterRoutes = require('./Routes/masterRoutes');
 const adminRoutes = require('./Routes/adminRoutes');
 const indexRoutes = require('./Routes/indexRoutes');
 const potmRoutes = require('./Routes/POTMRoutes');
+const browser = require('./Routes/BrowseRoutes');
+
 // const BookNowRoutes=require('./Routes/BookNowRoutes');
 // const storeRoutes = require('./Routes/StoreRoutes');
 
@@ -22,6 +24,7 @@ app.use('/potm',potmRoutes);
 app.use('/master', masterRoutes);
 app.use('/admin', adminRoutes);
 app.use('/', indexRoutes);
+app.use('/Browse'/browser)
 // app.use('/', storeRoutes);
 
 
