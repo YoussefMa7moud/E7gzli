@@ -165,5 +165,3 @@ exports.activateuser = async (req, res) => {
 
 
 
-
-

@@ -7,7 +7,7 @@ exports.adminPanel = async (req, res) => {
     events.forEach(event => {
       event.totalTickets = event.cat1 + event.cat2 + event.cat3;
     });
-    res.render('admin.ejs', { events });
+    res.render('Admin.ejs', { events });
   } catch (error) {
     console.error(error);
     res.status(500).send(error);

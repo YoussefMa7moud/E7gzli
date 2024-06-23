@@ -338,6 +338,7 @@
                   <td><%= user.Gender%></td> 
                   <td>
                     <button class="activate" data-user-id="<%= user._id %>" id="accept_but">Accept</button>
+
                   </td>
                   <td>
                     <button class="delete" data-user-id="<%= user._id %>" id="ban">Reject</button>
@@ -755,38 +756,6 @@
                 this.parentElement.parentElement.remove();
               } else {
                 alert('Failed to delete event.');
-              }
-            })
-            .catch(error => console.error('Error:', error));
-          });
-        });
-
-
-
-        
-      
-        const activateButtons = document.querySelectorAll('.activate');
-        activateButtons.forEach(button => {
-          button.addEventListener('click', function(event) {
-            const userId = this.getAttribute('data-user-id');
-            console.log('User ID:', userId);
-      
-            fetch('/master', {
-              method: 'PUT',
-              headers: {
-                'Content-Type': 'application/json'
-              },
-              body: JSON.stringify({ _id: userId })
-            })
-            .then(response => response.json())
-            .then(data => {
-              console.log('Server response:', data);
-              if (data.success) {
-                console.log('Activation status updated successfully.');
-                // Optionally, you can remove or update the row here
-                // this.parentElement.parentElement.remove();
-              } else {
-                alert('Failed to update activation status.');
               }
             })
             .catch(error => console.error('Error:', error));
