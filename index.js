@@ -7,10 +7,9 @@ const masterRoutes = require('./Routes/masterRoutes');
 const adminRoutes = require('./Routes/adminRoutes');
 const indexRoutes = require('./Routes/indexRoutes');
 const potmRoutes = require('./Routes/POTMRoutes');
-const browser = require('./Routes/BrowseRoutes');
+const browseRoutes = require('./Routes/BrowseRoutes');
 
-// const BookNowRoutes=require('./Routes/BookNowRoutes');
-// const storeRoutes = require('./Routes/StoreRoutes');
+
 
 
 app.use(express.json());
@@ -24,7 +23,7 @@ app.use('/potm',potmRoutes);
 app.use('/master', masterRoutes);
 app.use('/admin', adminRoutes);
 app.use('/', indexRoutes);
-app.use('/Browse'/browser)
+app.use('/Browse',browseRoutes)
 // app.use('/', storeRoutes);
 
 
