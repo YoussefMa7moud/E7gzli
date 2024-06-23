@@ -66,11 +66,12 @@
             <div class="Area">
                 <div class="stadium">
                 <% if (event2.type = '1') { %>
-                    <img src="/materials/stadium-right.svg" alt="Match Image">
+                    <img src="/materials/stage.png" alt="Match Image">
                 <% } else if (event2.type = '2') { %>
                     <img src="/materials/stadium-right.svg" alt="Event Image">
                 <% } %>
     
+                <form id="formation" method="POST" action="/BookNow/buy-tickets">
                 <div class="cat">
                     <label id="Cat3" for="cat3">CAT 3: <span id="price3"><%= event2.cat3price %></span> EGP</label>
                     <select name="NUMBER" id="NO3" onchange="calculatePayment()">
@@ -105,28 +106,29 @@
                 </div>
             </div>
         
-        
+            <form id="formation" method="POST" action="/BookNow/buy-tickets">
                 <div class="Buttons">
-                <a href="/Browse" id="CN">Cancel</a>
-                <button id="BN" >Buy Now</button>
+                  <a href="/Browse" id="CN">Cancel</a>
+                  <button id="BN" type="submit">Buy Now</button>
                 </div>
-        
-        
-                <div class="PaymentStyle">
-                    <label id="PS" for="PS">Payment Style :</label>
-                    <select name="Payment" id="PS"  onchange="ps(this.value)">
-                        <option disabled selected></option>
-                        <option value="c">Cash</option>
-                        <option value="v">Visa</option>
-                    </select>   
-                    <div class="output" id="output"></div>
-                </div>
+              
+                <label for="cardHolderName">Card Holder Name:</label><br>
+                <input type="text" id="cardHolderName" name="cardHolderName" required><br>
+              
+                <label for="cardNumber">Card Number:</label><br>
+                <input type="number" id="cardNumber" name="cardNumber" required><br>
+              
+                <label for="cvv">CVV:</label><br>
+                <input type="number" id="cvv" name="cvv" required><br>
+              </form>
+              
+               
 
             </div>
         <% } %>
     <% }); %>
 </div>
-
+</form>
     
         
 

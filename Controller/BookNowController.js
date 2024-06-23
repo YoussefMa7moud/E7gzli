@@ -1,15 +1,33 @@
-// const Event = require('../MODELS/ADDTickets.js');
+const DATALOG = require('../MODELS/loginDB.js');
 
-// exports.getEventData = async (req, res) => {
-//   try {
-//     const ticketId = req.params.id;
-//     const event = await Event.findById(ticketId);
-//     if (!event) {
-//       return res.status(404).json({ success: false, message: 'Event not found' });
-//     }
-//     res.render('BookNow', { event });
-//   } catch (error) {
-//     res.status(500).json({ success: false, message: 'Error fetching event data: ' + error.message });
-//   }
-// };
+exports.buyticket = async (req, res) => {
+  const { cardHolderName, cardNumber, cvv } = req.body;
 
+  try {
+
+    const { _id } = req.body;
+    const existingRecord = await DATALOG.findOne({ _id });
+
+    if (existingRecord) {
+      await DATALOG.updateOne({ _id }, {
+        $set: {
+          cardHolderName,
+          cardNumber,
+          cvv
+        },
+      });
+    } else {
+      const newTicket = new DATALOG({
+        cardHolderName,
+        cardNumber,
+        cvv
+      });
+      await newTicket.save();
+    }
+
+    const tick = await DATALOG.find();
+    res.render('CONFIRMPURCHES', { tick });
+  } catch (error) {
+    res.status(500).json({ error: 'An error occurred while saving the record' });
+  }
+};
