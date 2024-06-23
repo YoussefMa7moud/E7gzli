@@ -106,7 +106,7 @@ exports.getProfile = async (req, res) => {
 };
 
 
-const AddPICTURE = (req, res) => {
+exports.AddPICTURE = (req, res) => {
   if (!req.files || Object.keys(req.files).length === 0) {
       return res.status(400).send('No files were uploaded.');
   }
@@ -145,7 +145,7 @@ const AddPICTURE = (req, res) => {
   });
 };
 
-const GetPICTURE = (req, res) => {
+exports.GetPICTURE = (req, res) => {
   var query = { UserName: req.body.un, Password: req.body.pw };
   Employees.findOne(query)
       .then(result => {
