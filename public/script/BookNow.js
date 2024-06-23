@@ -4,28 +4,7 @@
 
 
 
-    function ps(value){
-      var output = document.getElementById('output');
-      output.innerHTML = '';
-      if (value === 'c') {
-          var result = generateRandomCode(10);
-          output.innerHTML = '<p id="Titleps">Please Pay Using this code before time end : ' + result + '</p><p id="timer"></p>'; 
-          startTimer(30); 
-      } else if (value === 'v') {
-          output.innerHTML = `
-          <form>
-          <label for="cardHolderName">Card Holder Name:</label><br>
-          <input type="text" id="cardHolderName" name="cardHolderName"><br>
-          
-          <label for="cardNumber">Card Number:</label><br>
-          <input type="number" id="cardNumber" name="cardNumber"><br>
-  
-          <label for="cvv">CVV:</label><br>
-          <input type="number" id="cvv" name="cvv"><br>
-          </form>
-          `;
-      }
-  }
+
   
   function generateRandomCode(length) {
       var result = '';

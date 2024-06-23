@@ -39,6 +39,18 @@ const loginSchema = new mongoose.Schema({
         type:Number,
         required:false,
         default:0
+    },
+    cardHolderName:{
+        type:String,
+        required:false,
+    },
+    cardNumber:{
+        type:Number,
+        required:false,
+    },
+    cvv:{
+        type:Number,
+        required:false,
     }
 });
 
