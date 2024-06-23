@@ -15,7 +15,7 @@ const BrowseRoutes =require('./Routes/BrowseRoutes');
 
 app.use(fileUpload());
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
 
 app.use(session({
   secret: 'your_secret_key', 
