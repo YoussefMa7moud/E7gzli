@@ -8,7 +8,6 @@ const masterRoutes = require('./Routes/masterRoutes');
 const adminRoutes = require('./Routes/adminRoutes');
 const indexRoutes = require('./Routes/indexRoutes');
 const potmRoutes = require('./Routes/POTMRoutes');
-const BrowseRoutes =require('./Routes/BrowseRoutes');
 
 
 
@@ -33,8 +32,6 @@ app.use('/potm',potmRoutes);
 app.use('/master', masterRoutes);
 app.use('/admin', adminRoutes);
 app.use('/', indexRoutes);
-app.use('/Browse', BrowseRoutes);
-
 
 // app.use('/', storeRoutes);
 
