@@ -65,7 +65,7 @@
                     <div class="profile__banner" name="bannerColor" style="background-color: <%= team.bannerColor %>;"> </div>
                     <div>
                         <div class="profile__pic" name="teamImage">
-                            <img src="<%= team.teamImage %>" alt="Team1">
+                            <img src="/materials/<%= team.teamImage %>" alt="Team1">
                         </div>
                         <div class="profile__info">
                             <span class="profile__info-display" name="teamName">
@@ -83,7 +83,7 @@
                                 <%= team.historyDescription %>
                             </h2>
                             <div class="back">
-                                <img id="shirt" name="productImage" src="<%= team.productImage %>">
+                                <img id="shirt" name="productImage" src="/materials/<%= team.productImage %>">
                                 <h2 name="productName">
                                     <%= team.productName %>
                                 </h2>
@@ -106,7 +106,7 @@
 
         </main>
 
-
+    </div>
 
 </body>
 
