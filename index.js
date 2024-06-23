@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const fileUpload = require('express-fileupload');
 const app = express();
 
 
@@ -11,7 +12,7 @@ const potmRoutes = require('./Routes/POTMRoutes');
 
 
 
-
+app.use(fileUpload());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
