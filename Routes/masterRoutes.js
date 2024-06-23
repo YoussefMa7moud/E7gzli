@@ -11,7 +11,7 @@ const checkMaster = (req, res, next) => {
 };
 
 
-router.get('/', checkMaster,controller.getMasters);
+router.get('/',controller.getMasters);
 router.post('/STORE', checkMaster, controller.STORE);
 router.post('/create-admin', checkMaster, controller.createAdmin);
 router.post('/ADDPOTM', checkMaster, controller.ADDPOTM);

@@ -1,3 +1,37 @@
+document.addEventListener('DOMContentLoaded', function() {
+  const logoutLink = document.getElementById('log_out');
+
+  if (logoutLink) {
+    logoutLink.addEventListener('click', function(event) {
+      event.preventDefault();
+
+      fetch('/logout', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+      .then(response => {
+        if (response.status === 200) {
+          localStorage.removeItem('isLoggedIn'); 
+          window.location.href = '/login'; 
+        } else {
+          throw new Error(`Logout failed with status: ${response.status}`);
+        }
+      })
+      .catch(error => {
+        console.error('Error during logout:', error);
+        alert('Error during logout. Please try again later.');
+      });
+    });
+  }
+});
+
+
+
+
+
+
 document.addEventListener("DOMContentLoaded", function() {
   let sidebar = document.querySelector(".sidebar");
   let closeBtn = document.querySelector("#btn");

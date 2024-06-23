@@ -9,8 +9,8 @@ const checkAdmin = (req, res, next) => {
     res.status(403).send('Forbidden'); 
   }
 };
-
-router.get('/',checkAdmin,controller.adminPanel);
+router.post('/logout',controller.logout);
+router.get('/',controller.adminPanel);
 router.delete('/delete-event/:id', checkAdmin, controller.deleteEvent);
 router.post('/ADD-TICKETS', checkAdmin, controller.addTickets);
 
