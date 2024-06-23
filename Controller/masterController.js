@@ -7,7 +7,8 @@ exports.getMasters = async (req, res) => {
   try {
     const Users = await DATALOG.find({ type: 1 });
     const Admins = await DATALOG.find({ type: 2 });
-    res.render('Master', { Users, Admins });
+    const Master = await DATALOG.find({ type: 3 });
+    res.render('Master', { Users, Admins,Master });
   } catch (error) {
     console.error(error);
     res.status(500).send('Server error');
@@ -40,11 +41,11 @@ exports.createAdmin = async (req, res) => {
 exports.login = async (req, res) => {
   const { email, password } = req.body;
   try {
-    const admins = await DATALOG.find({ type: 2 });
-    if (!admins || admins.Password !== password) {
+    const master = await DATALOG.find({ type: 3 });
+    if (!master || admins.Password !== password) {
       return res.status(401).json({ success: false, message: "Incorrect Email or Password" });
     }
-    res.status(200).json({ success: true, type: admins.type });
+    res.status(200).json({ success: true, type: master.type });
   } catch (error) {
     console.error(error);
     res.status(500).json({ success: false, message: "Server error" });

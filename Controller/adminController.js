@@ -24,6 +24,21 @@ exports.deleteEvent = async (req, res) => {
   }
 };
 
+exports.login = async (req, res) => {
+  const { email, password } = req.body;
+
+  try {
+    const admins = await DATALOG.find({ type: 2 });
+    if (!admins || admins.Password !== password) {
+      return res.status(401).json({ success: false, message: "Incorrect Email or Password" });
+    }
+    req.session.userType = 2; 
+    res.status(200).json({ success: true, type: admins.type });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ success: false, message: "Server error" });
+  }
+};
 
 
 exports.addTickets = async (req, res) => {

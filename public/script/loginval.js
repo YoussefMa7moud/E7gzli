@@ -24,28 +24,29 @@ function authenticateUser(email, password) {
   })
   .then(response => {
     if (response.ok) {
-      return response.json();
+      return response.json(); 
     } else {
-      throw new Error('Network response not ok.');
+      throw new Error('Network response not ok.'); 
     }
   })
   .then(data => {
     if (data.success) {
-      localStorage.setItem('isLoggedIn', 'true');
+      localStorage.setItem('isLoggedIn', 'true'); 
+      
       if (data.type === 1) {
-        window.location.href = "./index";
+        window.location.href = "/index"; 
       } else if (data.type === 2) {
-        window.location.href = "./Admin"; 
+        window.location.href = "/Admin"; 
       } else if (data.type === 3) {
-        window.location.href = "./Master"; 
+        window.location.href = "/Master"; 
       }
     } else {
-      alert("Incorrect Email or Password");
+      alert("Incorrect Email or Password"); 
     }
   })
   .catch(error => {
-    console.error('Error during login:', error);
-    alert("Error during login. Please try again later.");
+    console.error('Error during login:', error); 
+    alert("Error during login. Please try again later."); 
   });
 }
 

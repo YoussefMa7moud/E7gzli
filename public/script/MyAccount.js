@@ -1,13 +1,32 @@
-function logout() {
-    if(localStorage.getItem('isLoggedIn') === 'true') {
-        var logoutbtn = document.getElementById('logout');
-        logoutbtn.onclick = function() {
-            localStorage.setItem('isLoggedIn', 'false');
-            window.location.href = 'index';
-        };
-    }
-}
-window.onload = logout;
+document.addEventListener('DOMContentLoaded', function() {
+  const logoutLink = document.getElementById('logout-link');
+
+  if (logoutLink) {
+    logoutLink.addEventListener('click', function(event) {
+      event.preventDefault();
+
+      fetch('/logout', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+      .then(response => {
+        if (response.status === 200) {
+          localStorage.removeItem('isLoggedIn'); 
+          window.location.href = '/login'; 
+        } else {
+          throw new Error(`Logout failed with status: ${response.status}`);
+        }
+      })
+      .catch(error => {
+        console.error('Error during logout:', error);
+        alert('Error during logout. Please try again later.');
+      });
+    });
+  }
+});
+
 
 
 

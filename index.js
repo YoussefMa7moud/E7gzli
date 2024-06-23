@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const fileUpload = require('express-fileupload');
 const app = express();
-
+const session = require('express-session');
 
 const masterRoutes = require('./Routes/masterRoutes');
 const adminRoutes = require('./Routes/adminRoutes');
@@ -15,6 +15,14 @@ const potmRoutes = require('./Routes/POTMRoutes');
 app.use(fileUpload());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+app.use(session({
+  secret: 'your_secret_key', 
+  resave: false,
+  saveUninitialized: false,
+  cookie: { secure: false } 
+}));
+
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
