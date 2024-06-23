@@ -1,11 +1,15 @@
-{ "version": 2, "rewrites": [{ "source": "/(.*)", "destination": "/index.js" }] ,
-
-    "build": {
-      "env": {
-        "NODE_VERSION": "20.x"
+{
+    "version":2,
+    "builds": [
+      {
+        "src": "./index.js",
+        "use": "@vercel/node"
       }
-    }
-  
-  
-}
-
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "/"
+      }
+    ]
+  }
