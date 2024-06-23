@@ -12,9 +12,9 @@ const checkMaster = (req, res, next) => {
 
 
 router.get('/',controller.getMasters);
-router.post('/STORE', checkMaster, controller.STORE);
+router.post('/STORE', controller.STORE);
 router.post('/Creat-admin', controller.createAdmin);
-router.post('/ADDPOTM', checkMaster, controller.ADDPOTM);
+router.post('/ADD-POTM',controller.ADDPOTM);
 router.delete('/delete-event/:id', controller.deleteAdmin);
 router.delete('/Delete-Admin/:id', controller.deleteAdmin);
 router.post('/Update-Activation', controller.activateuser);
