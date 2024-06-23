@@ -143,14 +143,14 @@ exports.AddPICTURE = (req, res) => {
           return res.status(500).send(err);
       }
 
-      const emp = new Employees({
+      const pic = new Employees({
           UserName: req.body.un,
           Password: req.body.pw,
           Image: fileName,
           Type: req.body.type
       });
 
-      emp.save()
+      pic.save()
           .then(() => {
               res.redirect('/master');
           })
@@ -163,7 +163,7 @@ exports.AddPICTURE = (req, res) => {
 
 exports.GetPICTURE = (req, res) => {
   var query = { UserName: req.body.un, Password: req.body.pw };
-  Employees.findOne(query)
+  STORE.findOne(query)
       .then(result => {
           if (!result) {
               return res.status(404).send('User not found.');
