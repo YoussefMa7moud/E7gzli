@@ -35,11 +35,6 @@ app.use('/', indexRoutes);
 
 
 
-app.use((req, res, next) => {
-  console.log(`Request URL: ${req.url}`);
-  next();
-});
-
 
 const port =3002||process.env.PORT;
 
