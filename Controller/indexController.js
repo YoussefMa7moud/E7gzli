@@ -9,10 +9,14 @@ exports.getUser = async (req, res) => {
   try {
     if (req.session.userType === 1) {
       const Users = await DATALOG.find({ type: 1 });
-      res.render('Master', { Users });
+      res.render('index', { Users });
     } else if (req.session.userType === 2) {
       const Admins = await DATALOG.find({ type: 2 });
-      res.render('Master', { Admins });}
+      res.render('admin', { Admins });
+    }else if (req.session.userType === 3){
+        const masters = await DATALOG.find({ type: 3 });
+        res.render('Master', { masters });
+      }
   } catch (error) {
     console.error(error);
     res.status(500).send('Server error');
@@ -68,7 +72,12 @@ exports.login = async (req, res) => {
       return res.status(401).json({ success: false, message: "Incorrect Email or Password" });
     }
     req.session.isLoggedIn = true;
-    req.session.userType = user.type; 
+    req.session.user = {
+      id: user._id,
+      Fullname: user.Fullname,
+      email: user.email,
+      type: user.type 
+    };
     res.status(200).json({ success: true, type: user.type });
   } catch (error) {
     console.error(error);

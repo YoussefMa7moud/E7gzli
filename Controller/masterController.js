@@ -48,6 +48,8 @@ exports.login = async (req, res) => {
     if (!master || admins.Password !== password) {
       return res.status(401).json({ success: false, message: "Incorrect Email or Password" });
     }
+    req.session.userType = 3; 
+    res.status(200).json({ success: true, type: admins.type });
     res.status(200).json({ success: true, type: master.type });
   } catch (error) {
     console.error(error);
@@ -222,12 +224,3 @@ exports.GetPICTURE = (req, res) => {
           res.status(500).send('Error retrieving user data.');
       });
     };
-// exports.getInactiveUsers = async (req, res) => {
-//   try {
-//     const inactiveUsers = await DATALOG.find({ Activated: 0 });
-//     res.render('master', { Users: inactiveUsers });
-//   } catch (error) {
-//     console.error('Error fetching inactive users:', error);
-//     res.status(500).send('An error occurred while fetching inactive users');
-//   }
-// };
