@@ -221,6 +221,16 @@
   overflow: hidden;
 }
 
+.emp {
+  display: flex;
+  width: 600px;
+  color: white;
+  position: relative;
+  right: 99px;
+  top: 99px;
+}
+
+
 @media (max-width: 420px) {
   .sidebar li .tooltip {
     display: none;

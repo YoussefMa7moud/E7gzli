@@ -3,13 +3,15 @@ const DATALOG = require('../MODELS/loginDB.js');
 const ADDPOTM = require('../MODELS/POTM.js')
 const STORE=require('../MODELS/Store.js');
 const bcrypt = require('bcryptjs');
+const path = require('path');
 
 exports.getMasters = async (req, res) => {
   try {
     const Users = await DATALOG.find({ type: 1 });
     const Admins = await DATALOG.find({ type: 2 });
     const Master = await DATALOG.find({ type: 3 });
-    res.render('Master', { Users, Admins,Master });
+    const Product = await STORE.find(); 
+    res.render('Master', { Users, Admins, Master, Product }); 
   } catch (error) {
     console.error(error);
     res.status(500).send('Server error');
@@ -166,7 +168,60 @@ exports.activateuser = async (req, res) => {
 };
 
 
+exports.AddPICTURE = (req, res) => {
+  if (!req.files || Object.keys(req.files).length === 0) {
+      return res.status(400).send('No files were uploaded.');
+  }
 
+  const imgFile = req.files.img;
+  const validExtensions = ['.png', '.jpeg', '.jpg'];
+  const fileExtension = path.extname(imgFile.name).toLowerCase();
+
+  if (!validExtensions.includes(fileExtension)) {
+      return res.status(400).send('Invalid file type.');
+  }
+
+  const fileName = req.body.un + fileExtension;
+  const uploadPath = path.join(__dirname, '../public/materials/', fileName);
+
+  imgFile.mv(uploadPath, function (err) {
+      if (err) {
+          return res.status(500).send(err);
+      }
+
+      const pic = new Employees({
+          UserName: req.body.un,
+          Password: req.body.pw,
+          Image: fileName,
+          Type: req.body.type
+      });
+
+      pic.save()
+          .then(() => {
+              res.redirect('/master');
+          })
+          .catch(err => {
+              console.log(err);
+              res.status(500).send('Error saving employee data.');
+          });
+  });
+};
+
+exports.GetPICTURE = (req, res) => {
+  var query = { UserName: req.body.un, Password: req.body.pw };
+  DATALOG.find(query)
+      .then(result => {
+          if (!result) {
+              return res.status(404).send('User not found.');
+          }
+          req.session.user = result;
+          res.redirect('/master');
+      })
+      .catch(err => {
+          console.log(err);
+          res.status(500).send('Error retrieving user data.');
+      });
+    };
 // exports.getInactiveUsers = async (req, res) => {
 //   try {
 //     const inactiveUsers = await DATALOG.find({ Activated: 0 });

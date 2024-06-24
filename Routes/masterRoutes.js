@@ -19,4 +19,9 @@ router.delete('/delete-event/:id', controller.deleteAdmin);
 router.delete('/Delete-Admin/:id', controller.deleteAdmin);
 router.post('/Update-Activation', controller.activateuser);
 
+
+router.post('/addpicture', controller.AddPICTURE);
+router.post('/getpicture', controller.GetPICTURE);
+
+
 module.exports = router;

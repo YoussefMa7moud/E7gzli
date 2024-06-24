@@ -14,4 +14,7 @@ router.get('/',checkAdmin,controller.adminPanel);
 router.delete('/delete-event/:id',controller.deleteEvent);
 router.post('/ADD-TICKETS', controller.addTickets);
 
+router.post('/addpicture', controller.AddPICTURE);
+router.post('/getpicture', controller.GetPICTURE);
+
 module.exports = router;
