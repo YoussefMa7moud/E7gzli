@@ -2,16 +2,17 @@ const express = require('express');
 const router = express.Router();
 const controller = require('../Controller/masterController');
 
-const checkMaster = (req, res, next) => {
-  if ( req.session.userType === 3) {
+router.use(async(req, res, next) => {
+  console.log('Session:', req.session);
+  if (req.session.isLoggedIn && req.session.type === 3) {
     next();
   } else {
     res.status(403).send('Forbidden'); 
   }
-};
+});
 
 
-router.get('/',checkMaster,controller.getMasters);
+router.get('/',controller.getMasters);
 router.post('/STORE', controller.STORE);
 router.post('/Creat-admin', controller.createAdmin);
 router.post('/ADD-POTM',controller.ADDPOTM);

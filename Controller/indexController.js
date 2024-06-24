@@ -8,13 +8,13 @@ const bcrypt = require('bcryptjs');
 
 exports.getUser = async (req, res) => {
   try {
-    if (req.session.userType === 1) {
+    if (req.session.type === 1) {
       const Users = await DATALOG.find({ type: 1 });
       res.render('index', { Users });
-    } else if (req.session.userType === 2) {
+    } else if (req.session.type === 2) {
       const Admins = await DATALOG.find({ type: 2 });
       res.render('admin', { Admins });
-    }else if (req.session.userType === 3){
+    }else if (req.session.type === 3){
         const masters = await DATALOG.find({ type: 3 });
         res.render('Master', { masters });
       }
@@ -50,35 +50,21 @@ exports.signup = async (req, res) => {
 };
 
 exports.login = async (req, res) => {
-  const { email, password } = req.body;
-  try {
-    if (email === "admin" && password === "admin") {
-      req.session.isLoggedIn = true;
-      req.session.userType = 2; 
-      return res.status(200).json({ success: true, type: 2 });
-    }
-    if (email === "master" && password === "master") {
-      req.session.isLoggedIn = true;
-      req.session.userType = 3; 
-      return res.status(200).json({ success: true, type: 3 });
-    }
-    if (email === "m" && password === "m") {
-      req.session.isLoggedIn = true;
-      req.session.userType = 7; 
-      return res.status(200).json({ success: true, type: 3 });
-    }
-    const user = await DATALOG.findOne({ email });
+  const { em, pass } = req.body;
 
-    if (!user || user.Password !== password) {
+  try {
+    const user = await DATALOG.findOne({ email:em});
+
+    if (!user || user.Password !== pass) {
       return res.status(401).json({ success: false, message: "Incorrect Email or Password" });
     }
 
     req.session.isLoggedIn = true;
+    req.session.type=user.type;
     req.session.user = {
       id: user._id,
       Fullname: user.Fullname,
-      email: user.email,
-      type: user.type 
+      email: user.email
     };
     res.status(200).json({ success: true, type: user.type });
   } catch (error) {
@@ -109,6 +95,7 @@ exports.logout = async (req, res) => {
         return res.status(500).json({ success: false, message: 'Failed to logout' });
       }
       res.clearCookie('session-id'); 
+      log(req,res);
       res.status(200).json({ success: true, message: 'Logged out successfully' });
     });
   } catch (error) {
@@ -117,6 +104,15 @@ exports.logout = async (req, res) => {
   }
 };
 
+async function log(req,res){
+  try{
+  req.session.isLoggedIn=false;
+  req.session.type=50;
+}
+catch{
+
+}
+}
 
 exports.getEventData = async (req, res) => {
   try {
@@ -214,7 +210,6 @@ exports.sendMessage = async (req, res) => {
     res.status(500).json({ success: false, message: 'Error saving message.' });
   }
 };
-
 
 
 

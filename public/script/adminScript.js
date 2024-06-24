@@ -27,7 +27,6 @@ inputFile.addEventListener('change', function () {
 });
 
 
-
 document.addEventListener('DOMContentLoaded', function() {
   const logoutLink = document.getElementById('lo');
 
@@ -56,4 +55,3 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
-

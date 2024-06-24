@@ -9,7 +9,8 @@ function validate() {
     alert("Please Enter your Email");
   } else if (password === "") {
     alert("Please Enter your Password");
-  } else {
+   }
+   else {
     authenticateUser(email, password);
   }
 }
@@ -17,7 +18,7 @@ function validate() {
 function authenticateUser(email, password) {
   fetch('/login', {
     method: 'POST',
-    body: JSON.stringify({ email: email, password: password }),
+    body: JSON.stringify({ em: email, pass: password }),
     headers: {
       'Content-Type': 'application/json'
     }
@@ -81,14 +82,14 @@ document.addEventListener('DOMContentLoaded', function() {
 });
   
   
-  const passwordInput = document.querySelector('#pass');
-  passwordInput.addEventListener('keydown', function(event) {
-    if (event.key === 'Enter') {
-      event.preventDefault();
-      const button = document.querySelector('input[type="button"]');
-      button.click();
-    }
-  });
+  // const passwordInput = document.querySelector('#pass');
+  // passwordInput.addEventListener('keydown', function(event) {
+  //   if (event.key === 'Enter') {
+  //     event.preventDefault();
+  //     const button = document.querySelector('input[type="button"]');
+  //     button.click();
+  //   }
+  // });
 
 
 

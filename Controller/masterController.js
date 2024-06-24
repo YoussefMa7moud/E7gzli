@@ -41,21 +41,20 @@ exports.createAdmin = async (req, res) => {
     res.status(400).send('Error registering admin: ' + error.message);
   }
 };
-exports.login = async (req, res) => {
-  const { email, password } = req.body;
-  try {
-    const master = await DATALOG.find({ type: 3 });
-    if (!master || admins.Password !== password) {
-      return res.status(401).json({ success: false, message: "Incorrect Email or Password" });
-    }
-    req.session.userType = 3; 
-    res.status(200).json({ success: true, type: admins.type });
-    res.status(200).json({ success: true, type: master.type });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ success: false, message: "Server error" });
-  }
-};
+// exports.login = async (req, res) => {
+//   const { email, password } = req.body;
+//   try {
+//     const master = await DATALOG.find({ type: 3 });
+//     if (!master || master.Password !== password) {
+//       return res.status(401).json({ success: false, message: "Incorrect Email or Password" });
+//     }
+//     req.session.userType = 3; 
+//     res.status(200).json({ success: true, type: master.type });
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).json({ success: false, message: "Server error" });
+//   }
+// };
 exports.logout = async (req, res) => {
   try {
     req.session.destroy(err => {

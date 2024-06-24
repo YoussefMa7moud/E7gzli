@@ -2,17 +2,20 @@ const express = require('express');
 const router = express.Router();
 const controller = require('../Controller/adminController');
 
-const checkAdmin = (req, res, next) => {
-  if (req.session.isLoggedIn && req.session.userType === 2) {
-    next(); 
+
+
+router.use(async(req, res, next) => {
+  console.log('Session:', req.session);
+  if (req.session.isLoggedIn && req.session.type === 2) {
+    next();
   } else {
     res.status(403).send('Forbidden'); 
   }
-};
+});
 
-router.post('/login',controller.login);
-router.get('/',checkAdmin,controller.adminPanel);
-router.post('/logout',controller.logout);
+
+router.get('/',controller.adminPanel);
+// router.post('/logout',controller.logout);
 router.delete('/delete-event/:id',controller.deleteEvent);
 router.post('/ADD-TICKETS', controller.addTickets);
 router.post('/addpicture', controller.AddPICTURE);

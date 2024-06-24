@@ -3,7 +3,7 @@ const DATALOG = require('../MODELS/loginDB.js');
 
 exports.adminPanel = async (req, res) => {
   try {
-    if (req.session.isLoggedIn && req.session.userType === 2) {
+    if (req.session.isLoggedIn && req.session.type === 2) {
       const events = await TICKETS.find();
       events.forEach(event => {
         event.totalTickets = event.cat1 + event.cat2 + event.cat3;
@@ -18,7 +18,7 @@ exports.adminPanel = async (req, res) => {
 
 exports.deleteEvent = async (req, res) => {
   try {
-    if (req.session.isLoggedIn && req.session.userType === 2) {
+    if (req.session.isLoggedIn && req.session.type === 2) {
       await TICKETS.findByIdAndDelete(req.params.id);
       res.json({ success: true });
     }
@@ -27,58 +27,11 @@ exports.deleteEvent = async (req, res) => {
   }
 };
 
-exports.login = async (req, res) => {
-  const { email, password } = req.body;
-
-  try {
-    const admins = await DATALOG.find({ email: email, type: 2 });
-
-    if (admins.Password !== password) {
-      return res.status(401).json({ success: false, message: "Incorrect Email or Password" });
-    }
-
-    // const isPasswordValid = await bcrypt.compare(password, admin.Password);
-    // if (!isPasswordValid) {
-    //   return res.status(401).json({ success: false, message: "Incorrect Email or Password" });
-    // }
-
-    req.session.isLoggedIn = true;
-    req.session.type = 2; 
-    req.session.admins = {
-      id: admin._id,
-      email: admin.email,
-      type: admin.type
-    };
-
-    res.status(200).json({ success: true, type: admin.type });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ success: false, message: "Server error" });
-  }
-};
-
-
-exports.logout = async (req, res) => {
-  try {
-    req.session.destroy(err => {
-      if (err) {
-        console.error('Error destroying session:', err);
-      res.render('index');
-        return res.status(500).json({ success: false, message: 'Failed to logout' });
-      }
-      res.clearCookie('session-id'); 
-      res.status(200).json({ success: true, message: 'Logged out successfully' });
-    });
-  } catch (error) {
-    console.error('Error during logout:', error);
-    res.status(500).json({ success: false, message: 'Server error during logout' });
-  }
-};
 
 
 exports.addTickets = async (req, res) => {
   try {
-    if (req.session.isLoggedIn && req.session.userType === 2) {
+    if (req.session.isLoggedIn && req.session.type === 2) {
       const newTicket = new TICKETS(req.body);
       await newTicket.save();
       res.status(200).render('ADDED.ejs');
