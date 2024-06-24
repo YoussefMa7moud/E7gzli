@@ -24,36 +24,41 @@ function authenticateUser(email, password) {
   })
   .then(response => {
     if (response.ok) {
-      return response.json(); 
+      return response.json();
     } else {
-      throw new Error('Network response not ok.'); 
+      throw new Error('Network response not ok.');
     }
   })
   .then(data => {
     if (data.success) {
       sessionStorage.setItem('isLoggedIn', 'true');
       sessionStorage.setItem('userType', data.type);
-      
-      if (data.type === 1) {
-        window.location.href = "/index"; 
-      } else if (data.type === 2) {
-        window.location.href = "/admin"; 
-      } else if (data.type === 3) {
-        window.location.href = "/master"; 
-      }
-      else if(data.type=== 7){
-        window.location.href = "/FeedBack"; 
+      switch (data.type) {
+        case 1:
+          window.location.href = "/index";
+          break;
+        case 2:
+          window.location.href = "/admin";
+          break;
+        case 3:
+          window.location.href = "/master";
+          break;
+        case 7:
+          window.location.href = "/FeedBack";
+          break;
+        default:
+          console.log("Unknown user type");
+          break;
       }
     } else {
-      alert("Incorrect Email or Password"); 
+      alert("Incorrect Email or Password");
     }
   })
   .catch(error => {
-    console.error('Error during login:', error); 
-    alert("Error during login. Please try again later."); 
+    console.error('Error during login:', error);
+    alert("Error during login. Please try again later.");
   });
 }
-
 
 document.addEventListener('DOMContentLoaded', function() {
   if(sessionStorage.getItem('isLoggedIn') === 'true') {

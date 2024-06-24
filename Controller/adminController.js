@@ -1,5 +1,5 @@
 const TICKETS = require('../MODELS/ADDTickets.js');
-
+const DATALOG = require('../MODELS/loginDB.js');
 
 exports.adminPanel = async (req, res) => {
   try {
@@ -31,11 +31,19 @@ exports.login = async (req, res) => {
   const { email, password } = req.body;
 
   try {
-    const admins = await DATALOG.find({ type: 2 });
-    if (!admins || admins.Password !== password) {
+    const admins = await DATALOG.find({ email: email, type: 2 });
+
+    if (!admins.length) {
       return res.status(401).json({ success: false, message: "Incorrect Email or Password" });
     }
-    // const isPasswordValid = await bcrypt.compare(password, admins.Password);
+
+    const admin = admins[0];
+
+    if (admin.Password !== password) {
+      return res.status(401).json({ success: false, message: "Incorrect Email or Password" });
+    }
+
+    // const isPasswordValid = await bcrypt.compare(password, admin.Password);
     // if (!isPasswordValid) {
     //   return res.status(401).json({ success: false, message: "Incorrect Email or Password" });
     // }
@@ -43,16 +51,18 @@ exports.login = async (req, res) => {
     req.session.isLoggedIn = true;
     req.session.userType = 2; 
     req.session.user = {
-      id: admins._id,
-      email: admins.email,
-      type: admins.type
+      id: admin._id,
+      email: admin.email,
+      type: admin.type
     };
-    res.status(200).json({ success: true, type: admins.type });
+
+    res.status(200).json({ success: true, type: admin.type });
   } catch (error) {
     console.error(error);
     res.status(500).json({ success: false, message: "Server error" });
   }
 };
+
 
 exports.logout = async (req, res) => {
   try {

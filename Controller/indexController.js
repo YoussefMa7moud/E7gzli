@@ -214,7 +214,7 @@ exports.sendMessage = async (req, res) => {
 
   try {
     await newMessage.save();
-    res.redirect('/FeedBack'); 
+    return res.send('<script>alert("Message received successfully. Thank you!"); window.location.href = "/index";</script>');
   } catch (err) {
     res.status(500).json({ success: false, message: 'Error saving message.' });
   }
