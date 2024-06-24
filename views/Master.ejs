@@ -91,7 +91,7 @@
                   <td><%= Admins.Gender %></td>
                   <td><%= Admins.email %></td>
                   <td><%= Admins.Password %></td> 
-                  <td><button class="delete" data-user-id="<%= Admins.id %>">Delete</button></td>
+                  <td><button class="delete" id="ban" data-user-id="<%= Admins.id %>">Delete</button></td>
                 </tr>
               <% }); %>
               
@@ -154,7 +154,7 @@
                       <td><%= user.PhoneNumber %></td>
                       <td><%= new Date(user.DateOfBirth).toLocaleDateString() %></td>
                       <td><%= user.Gender%></td> 
-                      <td><button class="delete"id="ban" data-user-id="<%= user.id %>">Delete</button></td>
+                      <td><button class="delete" id="ban" data-user-id="<%= user.id %>">Delete</button></td>
                     </tr>
                     <% } %>
                   <% }); %>
@@ -196,12 +196,12 @@
                       <form action="/Master/Update-Activation" method="post">
                         <input type="hidden" name="_id" value="<%= user._id %>">
                         <td>
-                        <button type="submit" class="activate" id="accept_btn">Accept</button>
+                        <button type="submit" class="activate" id="accept_but">Accept</button>
                       </td>
                       </form>
                       <form method="post">
                         <td>
-                          <button class="delete"id="ban" data-user-id="<%= user.id %>">Reject</button>
+                          <button class="delete" id="ban" data-user-id="<%= user.id %>">Reject</button>
                       </form>
                     </td>
                   </tr>
