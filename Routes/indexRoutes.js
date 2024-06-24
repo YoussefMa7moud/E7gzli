@@ -26,8 +26,7 @@ router.get('/', (req, res) => res.render('index.ejs'));
 router.get('/Browse', controller.browseEvents, (req, res) => res.render('Browse.ejs'));
 router.get('/Store', controller.getProfile);
 router.get('/BookNow/:id',controller.getEventData);
-router.get('/browse',(req, res) => res.render('Browse.ejs'));
-router.get('/FeedBack',(req, res) => res.render('FeedBack.ejs'));
+
   
 router.get('/Store', controller.getProfile);
 router.post('/addpicture', controller.AddPICTURE);
