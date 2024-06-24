@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const fileUpload = require('express-fileupload');
 const app = express();
 const session = require('express-session');
-
+const MongoStore = require('connect-mongo');
 
 const masterRoutes = require('./Routes/masterRoutes');
 const adminRoutes = require('./Routes/adminRoutes');
@@ -20,7 +20,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(session({
   secret: 'your_secret_key', 
   resave: false,
-  saveUninitialized: false,
+  saveUninitialized: true,
+  store: MongoStore.create({
+    mongoUrl: "mongodb+srv://youssef2207740:Pi1p2TXCiVVEIT39@user-data.blnfrn5.mongodb.net/USER-DATA?retryWrites=true&w=majority&appName=USER-DATA",
+    collectionName: 'sessions'
+  }),
   cookie: { secure: false } 
 }));
 

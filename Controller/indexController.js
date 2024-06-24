@@ -73,12 +73,6 @@ exports.login = async (req, res) => {
       return res.status(401).json({ success: false, message: "Incorrect Email or Password" });
     }
 
-    // const isPasswordValid = await bcrypt.compare(password, user.Password);
-    // if (!isPasswordValid) {
-    //   return res.status(401).json({ success: false, message: "Incorrect Email or Password" });
-    // }
-
-
     req.session.isLoggedIn = true;
     req.session.user = {
       id: user._id,
@@ -92,6 +86,7 @@ exports.login = async (req, res) => {
     res.status(500).json({ success: false, message: "Server error" });
   }
 };
+
 
 exports.browseEvents = async (req, res) => {
   try {

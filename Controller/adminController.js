@@ -33,13 +33,7 @@ exports.login = async (req, res) => {
   try {
     const admins = await DATALOG.find({ email: email, type: 2 });
 
-    if (!admins.length) {
-      return res.status(401).json({ success: false, message: "Incorrect Email or Password" });
-    }
-
-    const admin = admins[0];
-
-    if (admin.Password !== password) {
+    if (admins.Password !== password) {
       return res.status(401).json({ success: false, message: "Incorrect Email or Password" });
     }
 
@@ -49,8 +43,8 @@ exports.login = async (req, res) => {
     // }
 
     req.session.isLoggedIn = true;
-    req.session.userType = 2; 
-    req.session.user = {
+    req.session.type = 2; 
+    req.session.admins = {
       id: admin._id,
       email: admin.email,
       type: admin.type

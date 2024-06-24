@@ -3,7 +3,7 @@ const router = express.Router();
 const controller = require('../Controller/masterController');
 
 const checkMaster = (req, res, next) => {
-  if (req.session.isLoggedIn && req.session.userType === 3) {
+  if ( req.session.userType === 3) {
     next();
   } else {
     res.status(403).send('Forbidden'); 
