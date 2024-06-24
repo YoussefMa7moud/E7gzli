@@ -186,16 +186,16 @@
     </div>
 
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function(){
-            $('form').on('submit', function(event){
-                event.preventDefault();
-
+            // Function to handle form submission
+            function submitForm() {
                 $.ajax({
                     type: 'POST',
                     url: '/send-message',
-                    data: $(this).serialize(),
+                    data: $('form').serialize(),
+                    dataType: 'json', // Ensure expected response type is JSON
                     success: function(response){
                         if(response.success){
                             alert(response.message);
@@ -207,6 +207,12 @@
                         alert('Error occurred while sending the message.');
                     }
                 });
+            }
+
+            // Click event handler for the button
+            $('#submitButton').on('click', function(event){
+                event.preventDefault();
+                submitForm();
             });
         });
     </script>
