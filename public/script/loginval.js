@@ -61,13 +61,18 @@ function authenticateUser(email, password) {
   });
 }
 
+
+
+
+
+
 document.addEventListener('DOMContentLoaded', function() {
   if(sessionStorage.getItem('isLoggedIn') === 'true') {
     window.onload = function() {
       function changeButton() {
         if(sessionStorage.getItem('isLoggedIn') === 'true') {
           var createAccBtn = document.getElementById('CREATACC');
-          createAccBtn.textContent = 'Vote For POTM';
+          createAccBtn.textContent = 'PLAYER OF THE MONTH';
           createAccBtn.setAttribute('href', 'potm');
           var logbutton = document.getElementById('loginbutton');
           logbutton.textContent = 'My Account';

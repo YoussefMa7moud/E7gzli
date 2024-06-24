@@ -107,11 +107,6 @@ scroll-behavior: smooth;
 
 
 
-.vote{
-  padding-top: 79px;
-  padding-left: 300px;
-}
-
 
 
 
@@ -162,8 +157,9 @@ scroll-behavior: smooth;
   position: relative;
   transform-style: preserve-3d;
   perspective: 1000px;
-  padding-left: 99px;
+  padding-left: 90px;
   bottom: 59px;
+  
   
 
   &:hover {
@@ -214,30 +210,23 @@ scroll-behavior: smooth;
 .vote{
    position: relative;
    display: grid;
-   margin-left: 1000px;
+   margin-left: 1150px;
    position: relative;
-   bottom: 350px;
+   bottom: 330px;
+   max-width: 700px;
 }
-#votebtn{
-         background-color: #EC4899;
-         color: #E7E5E4;
-         border-radius: 8px;
-         width: 360px;
-         height: 59px;
-         border-style: none;
-         cursor: pointer;
-     
+.vote h1{
+ font-size: 20px;
+ line-height: 1.5;
 }
 
 
-#option{
-      width: 360px;
-      margin-bottom: 10px; 
-      height: 58px;
-      border-radius: 8px;
-      cursor: pointer;
+#windis{
+   word-break: break-all;
+   white-space: pre-wrap; 
+   position: relative;
+   right: 90px;
 }
-
 
 .card-back p{
   font-size: 15px;

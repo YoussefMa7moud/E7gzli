@@ -48,8 +48,9 @@
           <img  src="<%= player.image %>" alt="Player <%= player.name %>">
           <div class="stats">
             <h2>⚽ Goals:  <%= player.goals %> </h2>
-            <h2>🥅 clean sheets: <%= player.cleansheets %></h2>
+            <h2>🥅 Played: <%= player.cleansheets %></h2>
             <h2>⚽ Assists:<%= player.assists %></h2>
+            <p id="windis"><%= player.description %></p>
           </div>
         </div>
       </div>
@@ -161,13 +162,7 @@
 
 
       <div class="vote">
-        <select id="option">
-          <option value="" disabled selected>Select a player</option>
-          <% for (const player of potmplayers) { %>
-            <option><%= player.name %></option>
-          <% } %>
-        </select>
-        <button id="votebtn" onclick="validate()">Vote</button>
+      <h1>The Player of the Month nominees are selected based on their outstanding real-life performances over the past month. A panel of experts, including coaches, analysts, former players, ensures a balanced choice. Winning this award highlights exceptional form and contributions during this period, though it doesn't necessarily mean the player is the best of the season.</h1>
       </div>
       
       
