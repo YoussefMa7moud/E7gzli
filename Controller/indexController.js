@@ -217,12 +217,33 @@ exports.sendMessage = async (req, res) => {
 
 
 
+
+
+
 exports.getFeedback = async (req, res) => {
   try {
-    const messages = await Message.find();
-    console.log(messages); 
-    res.render('FeedBack', { messages });
-  } catch (err) {
-    res.status(500).json({ success: false, message: 'Error fetching messages.' });
+    const page = parseInt(req.query.page) || 1;
+    const limit = 5;
+    const skip = (page - 1) * limit;
+
+    const messages = await Message.find().skip(skip).limit(limit);
+    const totalMessages = await Message.countDocuments();
+    const totalPages = Math.ceil(totalMessages / limit);
+
+    res.render('feedback', { messages, page, totalPages });
+  } catch (error) {
+    res.status(500).json({ success: false, message: 'Error fetching messages: ' + error.message });
+  }
+};
+
+
+
+exports.deletemessage = async (req, res) => {
+  try {
+    const messageid = req.params.id;
+    await Message.findByIdAndDelete(messageid);
+    res.json({ success: true, message: 'Message deleted successfully' });
+  } catch (error) {
+    res.status(500).json({ success: false, message: 'Error deleting message: ' + error.message });
   }
 };

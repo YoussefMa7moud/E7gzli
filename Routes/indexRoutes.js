@@ -20,6 +20,7 @@ router.get('/index', (req, res) => res.render('index.ejs'));
 router.get('/POTM', checkUser,(req, res) => res.render('potm.ejs'));
 router.get('/MyAccount',(req, res) => res.render('MyAccount.ejs'));
 router.get('/FeedBack', controller.getFeedback);
+router.delete('/FeedBack/Delete-Message/:id', controller.deletemessage);
 router.get('/', (req, res) => res.render('index.ejs'));
   // router.get('/BookNow', (req, res) => res.render('BookNow.ejs'));
 router.get('/Browse', controller.browseEvents, (req, res) => res.render('Browse.ejs'));

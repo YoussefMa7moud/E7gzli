@@ -1,0 +1,89 @@
+html,
+body {
+   padding: 0%;
+   margin: 0%;
+   background-color: #1C1917;
+   scroll-behavior: smooth;
+}
+
+
+#title{
+    color: white;
+    padding-left: 47%;
+}
+.card {
+    background-color: white;
+    width: 30%;
+    border-radius: 10px;
+    padding: 0px/ 60px 90px 0px;
+    display:flex; 
+    margin-bottom: 10px;
+    position: relative;
+    left: 34%;
+  }
+
+
+
+  .card h3{
+ 
+    padding-left: 9px;
+    word-break: break-all;
+    white-space: pre-wrap; 
+  }
+
+  #btn{
+    display: inline-block;
+    background-color: #EC4899;
+    color: #E7E5E4;
+    border-radius: 6px;
+    width: 120px;
+    height: 39px;
+    text-align: center;
+    line-height: 40px;
+    margin: 9px;
+    border: none;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+
+  }
+  #btn:hover{
+    cursor: pointer;
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.pagination a {
+    margin: 0 5px;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #007bff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+.pagination a.active {
+    background-color: #007bff;
+    color: white;
+    border: 1px solid #007bff;
+}
+.pagination a:hover {
+    background-color: #ddd;
+}
+
+
+.emp {
+    display: flex;
+    width: 600px;
+    color: white;
+    position: relative;
+    left: 37%;
+    top: 99px;
+  }
+  
+
+
+
+
+  
