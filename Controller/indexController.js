@@ -1,6 +1,7 @@
 const DATALOG = require('../MODELS/loginDB.js');
 const TICKETS = require('../MODELS/ADDTickets.js');
 const STORE = require('../MODELS/Store.js');
+const Message = require('../MODELS/Message.js');
 
 const path = require('path');
 const bcrypt = require('bcryptjs');
@@ -196,4 +197,30 @@ exports.GetPICTURE = (req, res) => {
           console.log(err);
           res.status(500).send('Error retrieving user data.');
       });
+};
+
+
+
+exports.sendMessage = async (req, res) => {
+  const userMessage = req.body.message;
+  const newMessage = new Message({ content: userMessage });
+
+  try {
+    await newMessage.save();
+    res.json({ success: true, message: 'Message received successfully Thank YOU' });
+  } catch (err) {
+    res.status(500).json({ success: false, message: 'Error saving message.' });
+  }
+};
+
+
+
+exports.getFeedback = async (req, res) => {
+  try {
+    const messages = await Message.find();
+    console.log(messages); 
+    res.render('FeedBack', { messages }); 
+  } catch (err) {
+    res.status(500).json({ success: false, message: 'Error fetching messages.' });
+  }
 };

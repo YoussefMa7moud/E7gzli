@@ -172,15 +172,44 @@
             </div>
     </section>
 
+    
+
     <div class="contact-container">
         <div class="contactus">
             <h1>Contact Us</h1>
-            <h2>Questions? we're here to help</h2>
-            <input type="text" placeholder="Your Message">
-            <button>Send Message</button>
+            <h2>Questions? We're here to help</h2>
+            <form action="/send-message" method="POST">
+                <input type="text" name="message" placeholder="Your Message" required>
+                <button type="submit">Send Message</button>
+            </form>
         </div>
     </div>
 
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('form').on('submit', function(event){
+                event.preventDefault();
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/send-message',
+                    data: $(this).serialize(),
+                    success: function(response){
+                        if(response.success){
+                            alert(response.message);
+                        } else {
+                            alert('Failed to send message.');
+                        }
+                    },
+                    error: function(){
+                        alert('Error occurred while sending the message.');
+                    }
+                });
+            });
+        });
+    </script>
 
 
 

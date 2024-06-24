@@ -41,9 +41,9 @@ function authenticateUser(email, password) {
       } else if (data.type === 3) {
         window.location.href = "/master"; 
       }
-      // else if(data.type=== 7){
-      //   window.location.href = "/master"; 
-      // }
+      else if(data.type=== 7){
+        window.location.href = "/FeedBack"; 
+      }
     } else {
       alert("Incorrect Email or Password"); 
     }
