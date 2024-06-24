@@ -407,6 +407,7 @@ select {
    width: 160px;
    height: 59px;
    border-style: none;
+   cursor: pointer;
 
 }
 

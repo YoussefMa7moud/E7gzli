@@ -20,25 +20,25 @@ exports.getMasters = async (req, res) => {
 
 exports.createAdmin = async (req, res) => {
   const { Fullname, Password, email, PhoneNumber, Gender, Num } = req.body;
+  
   try {
-  const newAdmin = new DATALOG({
-    Fullname,
-    Password,
-    email,
-    PhoneNumber,
-    Gender,
-    type: 2,
-    Num
-  });
+    const newAdmin = new DATALOG({
+      Fullname,
+      Password,
+      email,
+      PhoneNumber,
+      Gender,
+      type: 2,
+      Num
+    });
 
- 
+    // Save the new admin
     await newAdmin.save();
-    const Product = await STORE.find(); 
-    const Users = await DATALOG.find({ type: 1 });
-    const Admins = await DATALOG.find({ type: 2 });
-    res.render('Master', { Users, Admins, Product });
+
+
+    res.redirect('/Master');
   } catch (error) {
-    res.status(400).send('Error registering user: ' + error.message);
+    res.status(400).send('Error registering admin: ' + error.message);
   }
 };
 exports.login = async (req, res) => {
@@ -177,8 +177,8 @@ exports.activateuser = async (req, res) => {
     const activatedUsers = Users.filter(user => user.Activated === 1);
     const pendingUsers = Users.filter(user => user.Activated === 0);
 
-    res.render('Master', { Users: activatedUsers, Admins,Product });
-
+    // res.render('Master', { Users: activatedUsers, Admins,Product });
+    res.redirect('/Master');
   } catch (error) {
     console.error('Error updating record:', error);
     res.status(500).json({ success: false, error: 'An error occurred while updating the record' });

@@ -324,19 +324,7 @@ top: -500px;
   border-radius: 10px;
   box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
 }
-.Admin-history-container {
-  width: 100%;
-  margin: 100px;
-  position: relative;
-  bottom: 900px;
-  left: 500px;
-  background: #fff;
-  text-align: center;
-  border-radius: 10px;
-  padding: 50px;
-  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
-  display: none;
-}
+
 
 /* user section */
 
