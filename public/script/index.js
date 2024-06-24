@@ -15,3 +15,22 @@ function button_validate(){
     alert("Check your mail for confirmation on your account ")
   }
 }
+
+
+if(sessionStorage.getItem('isLoggedIn') === 'true'){
+  window.onload = function() {
+    function changeButton() {
+      if(sessionStorage.getItem('isLoggedIn') === 'true') {
+        var createAccBtn = document.getElementById('CREATACC');
+        createAccBtn.textContent = 'Vote For POTM';
+        createAccBtn.setAttribute('href', 'potm');
+        var logbutton = document.getElementById('loginbutton');
+        logbutton.textContent = 'My Account';
+        logbutton.onclick = function() {
+          logbutton.setAttribute('href', 'MyAccount');
+        };
+      }
+    }
+    changeButton();
+  }
+}

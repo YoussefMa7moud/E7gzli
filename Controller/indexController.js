@@ -7,14 +7,18 @@ const bcrypt = require('bcryptjs');
 
 exports.getUser = async (req, res) => {
   try {
-    const Users = await DATALOG.find({ type: 1 });
-    const Admins = await DATALOG.find({ type: 2 });
-    res.render('Master', { Users, Admins });
+    if (req.session.userType === 1) {
+      const Users = await DATALOG.find({ type: 1 });
+      res.render('Master', { Users });
+    } else if (req.session.userType === 2) {
+      const Admins = await DATALOG.find({ type: 2 });
+      res.render('Master', { Admins });}
   } catch (error) {
     console.error(error);
     res.status(500).send('Server error');
   }
 };
+
 exports.signup = async (req, res) => {
   const { Fullname, email, Password, PhoneNumber, day, month, year, Gender } = req.body;
   const DateOfBirth = new Date(year, month - 1, day);
@@ -42,21 +46,29 @@ exports.signup = async (req, res) => {
 
 exports.login = async (req, res) => {
   const { email, password } = req.body;
-
   try {
     if (email === "admin" && password === "admin") {
+      req.session.isLoggedIn = true;
+      req.session.userType = 2; 
       return res.status(200).json({ success: true, type: 2 });
     }
-
     if (email === "master" && password === "master") {
+      req.session.isLoggedIn = true;
+      req.session.userType = 3; 
       return res.status(200).json({ success: true, type: 3 });
     }
-
+    if (email === "m" && password === "m") {
+      req.session.isLoggedIn = true;
+      req.session.userType = 7; 
+      return res.status(200).json({ success: true, type: 3 });
+    }
     const user = await DATALOG.findOne({ email });
 
     if (!user || user.Password !== password) {
       return res.status(401).json({ success: false, message: "Incorrect Email or Password" });
     }
+    req.session.isLoggedIn = true;
+    req.session.userType = user.type; 
     res.status(200).json({ success: true, type: user.type });
   } catch (error) {
     console.error(error);

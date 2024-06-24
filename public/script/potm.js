@@ -1,22 +1,17 @@
-
-
-
-
-if(localStorage.getItem('isLoggedIn') === 'true'){
+if (sessionStorage.getItem('isLoggedIn') === 'true') {
   window.onload = function() {
     function changeButton() {
-      if(localStorage.getItem('isLoggedIn') === 'true') {
+      if (sessionStorage.getItem('isLoggedIn') === 'true') {
         var logbutton = document.getElementById('loginbutton');
-          logbutton.textContent = 'My Account';
-          logbutton.onclick = function() {
-          logbutton.setAttribute('href', 'MyAccount.html');
-            
-          };
+        logbutton.textContent = 'My Account';
+        logbutton.onclick = function() {
+          logbutton.setAttribute('href', 'MyAccount.ejs');
+        };
       }
     }
     changeButton();
   }
-  }
+}
 function validate(){
   var a = document.getElementById("option").value;
   if (a == "Emam Ashour" ) {

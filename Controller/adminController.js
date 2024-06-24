@@ -3,24 +3,27 @@ const TICKETS = require('../MODELS/ADDTickets.js');
 
 exports.adminPanel = async (req, res) => {
   try {
-    const events = await TICKETS.find();
-    events.forEach(event => {
-      event.totalTickets = event.cat1 + event.cat2 + event.cat3;
-    });
-    res.render('Admin.ejs', { events });
+    if (req.session.isLoggedIn && req.session.userType === 2) {
+      const events = await TICKETS.find();
+      events.forEach(event => {
+        event.totalTickets = event.cat1 + event.cat2 + event.cat3;
+      });
+      res.render('Admin.ejs', { events });
+    }
   } catch (error) {
     console.error(error);
-    res.status(500).send(error);
+    res.status(500).send('Server error');
   }
 };
 
 exports.deleteEvent = async (req, res) => {
   try {
-    await TICKETS.findByIdAndDelete(req.params.id);
-    res.json({ success: true });
+    if (req.session.isLoggedIn && req.session.userType === 2) {
+      await TICKETS.findByIdAndDelete(req.params.id);
+      res.json({ success: true });
     }
-     catch (error) {
-    res.status(500).json({ success: false });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
   }
 };
 
@@ -59,9 +62,11 @@ exports.logout = async (req, res) => {
 
 exports.addTickets = async (req, res) => {
   try {
-    const newTicket = new TICKETS(req.body);
-    await newTicket.save();
-    res.status(200).send(res.render('ADDED.ejs'));
+    if (req.session.isLoggedIn && req.session.userType === 2) {
+      const newTicket = new TICKETS(req.body);
+      await newTicket.save();
+      res.status(200).render('ADDED.ejs');
+    }
   } catch (error) {
     res.status(500).send(error.message);
   }

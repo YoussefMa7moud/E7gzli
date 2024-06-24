@@ -10,8 +10,8 @@ const checkAdmin = (req, res, next) => {
   }
 };
 router.post('/logout',controller.logout);
-router.get('/',controller.adminPanel);
-router.delete('/delete-event/:id', checkAdmin, controller.deleteEvent);
-router.post('/ADD-TICKETS', checkAdmin, controller.addTickets);
+router.get('/',checkAdmin,controller.adminPanel);
+router.delete('/delete-event/:id',controller.deleteEvent);
+router.post('/ADD-TICKETS', controller.addTickets);
 
 module.exports = router;

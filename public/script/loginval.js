@@ -31,15 +31,19 @@ function authenticateUser(email, password) {
   })
   .then(data => {
     if (data.success) {
-      localStorage.setItem('isLoggedIn', 'true'); 
+      sessionStorage.setItem('isLoggedIn', 'true');
+      sessionStorage.setItem('userType', data.type);
       
       if (data.type === 1) {
         window.location.href = "/index"; 
       } else if (data.type === 2) {
-        window.location.href = "/Admin"; 
+        window.location.href = "/admin"; 
       } else if (data.type === 3) {
-        window.location.href = "/Master"; 
+        window.location.href = "/master"; 
       }
+      // else if(data.type=== 7){
+      //   window.location.href = "/master"; 
+      // }
     } else {
       alert("Incorrect Email or Password"); 
     }
@@ -50,29 +54,26 @@ function authenticateUser(email, password) {
   });
 }
 
-if(localStorage.getItem('isLoggedIn') === 'true'){
-  window.onload = function() {
-    function changeButton() {
-      if(localStorage.getItem('isLoggedIn') === 'true') {
-        var createAccBtn = document.getElementById('CREATACC');
-        createAccBtn.textContent = 'Vote For POTM';
-        createAccBtn.setAttribute('href', 'potm');
-  
-  
-  
-  
-        var logbutton = document.getElementById('loginbutton');
-            logbutton.textContent = 'My Account';
-            logbutton.onclick = function() {
+
+document.addEventListener('DOMContentLoaded', function() {
+  if(sessionStorage.getItem('isLoggedIn') === 'true') {
+    window.onload = function() {
+      function changeButton() {
+        if(sessionStorage.getItem('isLoggedIn') === 'true') {
+          var createAccBtn = document.getElementById('CREATACC');
+          createAccBtn.textContent = 'Vote For POTM';
+          createAccBtn.setAttribute('href', 'potm');
+          var logbutton = document.getElementById('loginbutton');
+          logbutton.textContent = 'My Account';
+          logbutton.onclick = function() {
             logbutton.setAttribute('href', 'MyAccount');
-              
-            };
-          
+          };
+        }
       }
+      changeButton();
     }
-    changeButton();
   }
-  }
+});
   
   
   const passwordInput = document.querySelector('#pass');

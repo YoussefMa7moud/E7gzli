@@ -29,4 +29,14 @@ router.post('/addpicture', controller.AddPICTURE);
 router.post('/getpicture', controller.GetPICTURE);
 
 router.get('/BookNow/:id', controller.getEventData);
+
+app.get('/profile', (req, res) => {
+  if (req.session.isLoggedIn) {
+    res.render('MyAccount', {
+      user: req.session.user
+    });
+  } else {
+    res.redirect('/login');
+  }
+});
 module.exports = router;

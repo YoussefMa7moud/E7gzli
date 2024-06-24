@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E7gzli</title>
+    <link href="potm.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+<link rel="icon" href="/materials/Icon.png" type="image/x-icon">
+<script src="/script/potm.js"></script>
+</head>
+<body>
+
+
+
+    <div class="navbar">
+        <div class="LOGO">
+            <span class="material-symbols-outlined">
+                local_activity
+                </span>
+            <h1>E7gzli</h1>
+        </div>
+          <div class="left-A">
+          <a  href="/index">Home</a>
+          <a  href="/Browse">Browse</a>
+          <a  href="/Store">Store</a>
+         </div>
+
+         <div class="R-A">
+          <a id="loginbutton"  href="/Account">My Account</a>
+           </div>
+    </div>
+    
+
+
+
+    <div class="Starting-Home">
+      <% for (const player of potmplayers) { %>
+        <% if (player.nomineeNO === 4) { %>
+      <div class="Winner">
+        <h1>Last Month Winner: 👑<%= player.name %> (<%= player.nationality %>)👑</h1>
+        <div class="winner-content">
+          <img  src="<%= player.image %>" alt="Player <%= player.name %>">
+          <div class="stats">
+            <h2>⚽ Goals:  <%= player.goals %> </h2>
+            <h2>🥅 clean sheets: <%= player.cleansheets %></h2>
+            <h2>⚽ Assists:<%= player.assists %></h2>
+          </div>
+        </div>
+      </div>
+      <% } %>
+      <% } %>
+    
+  </div>
+  
+
+
+
+  
+    
+
+ 
+ 
+
+
+<div class="area">
+  <div class="votearea">
+    <div class="Title">
+    <h1>Current Nominees : </h1>
+    <div>
+
+   
+      <div class="card-wrapper">
+        <% for (const player of potmplayers) { %>
+          <% if (player.nomineeNO === 1) { %>
+            <div class="card">
+              <div class="card-front">
+                <img src="<%= player.image %>" alt="Player <%= player.name %>">
+              </div>
+              <div class="card-back">
+                <h3><%= player.name %> (<%= player.nationality %>)</h3>
+                <p><%= player.club %></p>
+                <br>
+                <p><%= player.description %></p>
+                <br>
+                <p>⚽ Goals: <%= player.goals %></p>
+                <br>
+                <p>⚽ Assists: <%= player.assists %></p>
+                <br>
+                <p>🥅 Played: <%= player.cleansheets %></p>
+              </div>
+            </div>
+          <% } %>
+        <% } %>
+      </div>
+
+
+
+      
+      
+
+
+  
+      
+      <div class="card-wrapper">
+        <% for (const player of potmplayers) { %>
+          <% if (player.nomineeNO === 2) { %>
+            <div class="card">
+              <div class="card-front">
+                <img src="<%= player.image %>" alt="Player <%= player.name %>">
+              </div>
+              <div class="card-back">
+                <h3><%= player.name %> (<%= player.nationality %>)</h3>
+                <p><%= player.club %></p>
+                <br>
+                <p><%= player.description %></p>
+                <br>
+                <p>⚽ Goals: <%= player.goals %></p>
+                <br>
+                <p>⚽ Assists: <%= player.assists %></p>
+                <br>
+                <p>🥅 Played: <%= player.cleansheets %></p>
+              </div>
+            </div>
+          <% } %>
+        <% } %>
+      </div>
+          
+    
+
+
+         
+      <div class="card-wrapper">
+        <% for (const player of potmplayers) { %>
+          <% if (player.nomineeNO === 3) { %>
+            <div class="card">
+              <div class="card-front">
+                <img src="<%= player.image %>" alt="Player <%= player.name %>">
+              </div>
+              <div class="card-back">
+                <h3><%= player.name %> (<%= player.nationality %>)</h3>
+                <p><%= player.club %></p>
+                <br>
+                <p><%= player.description %></p>
+                <br>
+                <p>⚽ Goals: <%= player.goals %></p>
+                <br>
+                <p>⚽ Assists: <%= player.assists %></p>
+                <br>
+                <p>🥅 Played: <%= player.cleansheets %></p>
+              </div>
+            </div>
+          <% } %>
+        <% } %>
+      </div>
+
+
+      <div class="vote">
+        <select id="option">
+          <option value="" disabled selected>Select a player</option>
+          <% for (const player of potmplayers) { %>
+            <option><%= player.name %></option>
+          <% } %>
+        </select>
+        <button id="votebtn" onclick="validate()">Vote</button>
+      </div>
+      
+      
+    
+
+</div>
+
+</body>
+</html>

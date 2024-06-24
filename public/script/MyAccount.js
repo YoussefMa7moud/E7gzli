@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
       })
       .then(response => {
         if (response.status === 200) {
-          localStorage.removeItem('isLoggedIn'); 
+          sessionStorage.removeItem('isLoggedIn'); 
           window.location.href = '/login'; 
         } else {
           throw new Error(`Logout failed with status: ${response.status}`);

@@ -1,11 +1,5 @@
 
 
-
-
-
-
-
-  
   function generateRandomCode(length) {
       var result = '';
       var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';

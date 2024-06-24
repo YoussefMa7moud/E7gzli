@@ -299,7 +299,7 @@
                       <td><%= new Date(user.DateOfBirth).toLocaleDateString() %></td>
                       <td><%= user.Gender%></td> 
                       <td><button onclick="toggleForm2()">View</button></td>
-                      <td><button class="delete" data-user-id="<%= user.id %>">Delete</button></td>
+                      <td><button class="delete"id="ban" data-user-id="<%= user.id %>">Delete</button></td>
                     </tr>
                     <% } %>
                   <% }); %>
@@ -309,9 +309,9 @@
         </div>
       </section>
       <section class="User">
-        <div class="Users-list" >
+        <div class="Users-list">
           <h1>Incoming User's Requests</h1>
-          <table class="table" >
+          <table class="table">
             <thead>
               <tr>
                 <th>ID</th>
@@ -321,37 +321,39 @@
                 <th>Phone Number</th>
                 <th>Date Of Birth</th>
                 <th>Gender</th>
-                <th>Accept Users</th>
-                <th>Reject Users</th>
+                <th>Accept</th>
+                <th>Reject</th>
               </tr>
             </thead>
+            
             <tbody>
               <% Users.forEach(function(user) { %>
-                <% if (user.Activated == 0) { %>
-                <tr>
-                  <td><%= user._id %></td> 
-                  <td><%= user.Fullname %></td>
-                  <td><%= user.email %></td>
-                  <td><%= user.Password %></td>
-                  <td><%= user.PhoneNumber %></td>
-                  <td><%= new Date(user.DateOfBirth).toLocaleDateString() %></td>
-                  <td><%= user.Gender%></td> 
-
-                  <form id="activation" action="/Master/Update-Activation" method="post">
-                    <input type="hidden" name="_id" value="<%= user._id %>">
+                <% if (user.Activated === 0) { %>
+                  <tr>
+                    <td><%= user._id %></td>
+                    <td><%= user.Fullname %></td>
+                    <td><%= user.email %></td>
+                    <td><%= user.Password %></td>
+                    <td><%= user.PhoneNumber %></td>
+                    <td><%= new Date(user.DateOfBirth).toLocaleDateString() %></td>
+                    <td><%= user.Gender %></td>
                     <td>
-                      <input type="number" name="Activated" placeholder=" ac" required></input>
-                    <button type="submit" class="activate" id="accept_but">Accept</button>
+                      <form action="/Master/Update-Activation" method="post">
+                        <input type="hidden" name="_id" value="<%= user._id %>">
+                        <td>
+                        <button type="submit" class="activate" id="accept_btn">Accept</button>
+                      </td>
+                      </form>
+                      <form method="post">
+                        <td>
+                        <button type="submit" class="delete" id="ban">Reject</button>
+                      </td>
+                      </form>
                     </td>
-                  </form>
-                  
-                  <td>
-                    <button class="delete" data-user-id="<%= user._id %>" id="ban">Reject</button>
-                  </td>
-                </tr>
+                  </tr>
                 <% } %>
               <% }); %>
-            </tbody> 
+            </tbody>
           </table>
         </div>
       </section>
@@ -768,6 +770,15 @@
         });
       
       });
+
+      // document.addEventListener('DOMContentLoaded', function() {
+      // const user = <%- JSON.stringify(user) %>;
+
+      // if (user) {
+      //   document.getElementById('name').value = user.Fullname || '';
+      //   document.getElementById('phone').value = user.PhoneNumber || '';
+      // }
+    // });
       </script>
       
 

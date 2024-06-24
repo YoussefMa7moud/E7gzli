@@ -1,3 +1,4 @@
+const { render } = require('ejs');
 const DATALOG = require('../MODELS/loginDB.js');
 const ADDPOTM = require('../MODELS/POTM.js')
 const STORE=require('../MODELS/Store.js');
@@ -147,24 +148,31 @@ exports.activateuser = async (req, res) => {
   const { _id } = req.body;
 
   try {
-    const existingRecord = await DATALOG.findOne({ _id });
-
-    if (existingRecord) {
-      const updateResult = await DATALOG.updateOne({ _id }, { $set: { Activated: 1 } });
-
-      if (updateResult.ok === 1) {
-        return res.status(200).json({ success: true, message: 'Record updated successfully' });
-      } else {
-        return res.status(500).json({ success: false, error: 'Failed to update record' });
-      }
-    } else {
+    const updatedUser = await DATALOG.findByIdAndUpdate(_id, { Activated: 1 }, { new: true });
+    if (!updatedUser) {
       return res.status(404).json({ success: false, error: 'Record not found' });
     }
+    const Users = await DATALOG.find();
+    const Admins = await DATALOG.find({ type: 2 });
+    const activatedUsers = Users.filter(user => user.Activated === 1);
+    const pendingUsers = Users.filter(user => user.Activated === 0);
+
+    res.render('Master', { Users: activatedUsers, Admins });
+
   } catch (error) {
     console.error('Error updating record:', error);
-    return res.status(500).json({ success: false, error: 'An error occurred while saving the record' });
+    res.status(500).json({ success: false, error: 'An error occurred while updating the record' });
   }
 };
 
 
 
+// exports.getInactiveUsers = async (req, res) => {
+//   try {
+//     const inactiveUsers = await DATALOG.find({ Activated: 0 });
+//     res.render('master', { Users: inactiveUsers });
+//   } catch (error) {
+//     console.error('Error fetching inactive users:', error);
+//     res.status(500).send('An error occurred while fetching inactive users');
+//   }
+// };
