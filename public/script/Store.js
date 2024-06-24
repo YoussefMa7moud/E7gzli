@@ -5,20 +5,34 @@ function expand(card) {
 }
 
 
-
-
-
- window.onload = function() {
-//   function changeButton() {
-//     if (localStorage.getItem('isLoggedIn') === 'true') {
-//         var logbutton = document.getElementById('loginbutton');
-//         logbutton.textContent = 'My Account';
-//         logbutton.onclick = function() {
+// if(sessionStorage.getItem('isLoggedIn') === 'true'){
+//     window.onload = function() {
+//       function changeButton() {
+//         if(sessionStorage.getItem('isLoggedIn') === 'true') {
+//           var logbutton = document.getElementById('loginbutton');
+//           logbutton.textContent = 'My Account';
+//           logbutton.onclick = function() {
 //             logbutton.setAttribute('href', 'MyAccount');
-//         };
+//           };
+//         }
+//       }
+//       changeButton();
 //     }
-// }
-// changeButton();
+//   }
+
+  if(sessionStorage.getItem('isLoggedIn') === 'true'){
+ window.onload = function() {
+    function changeButton() {
+    if(sessionStorage.getItem('isLoggedIn') === 'true') {
+        var logbutton = document.getElementById('loginbutton');
+        logbutton.textContent = 'My Account';
+        logbutton.onclick = function() {
+          logbutton.setAttribute('href', 'MyAccount');
+        };
+      }
+    }
+    changeButton();
+
 
    
     var Cart = document.getElementById('cart');
@@ -27,8 +41,9 @@ function expand(card) {
           alert('Login so you can add to cart');
           window.location.href = 'login';
       }
-  };
-    };
+  }
+  }
+}
 
 
     let openShopping = document.querySelector('.shopping');

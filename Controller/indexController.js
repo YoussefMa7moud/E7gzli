@@ -32,7 +32,7 @@ exports.signup = async (req, res) => {
   const newUser = new DATALOG({
     Fullname,
     email,
-    Password: hashedPassword,
+    Password,
     PhoneNumber,
     DateOfBirth,
     Gender,
@@ -45,7 +45,7 @@ exports.signup = async (req, res) => {
     const Admins = await DATALOG.find({ type: 2 });
     res.status(200).send(res.render('USADD.ejs'));
   } catch (error) {
-    res.status(400).send('Error registering user: ' + error.message);
+     res.status(400).send('Error registering user: ' + error.message);
   }
 };
 
@@ -72,6 +72,13 @@ exports.login = async (req, res) => {
     if (!user || user.Password !== password) {
       return res.status(401).json({ success: false, message: "Incorrect Email or Password" });
     }
+
+    // const isPasswordValid = await bcrypt.compare(password, user.Password);
+    // if (!isPasswordValid) {
+    //   return res.status(401).json({ success: false, message: "Incorrect Email or Password" });
+    // }
+
+
     req.session.isLoggedIn = true;
     req.session.user = {
       id: user._id,
@@ -207,7 +214,7 @@ exports.sendMessage = async (req, res) => {
 
   try {
     await newMessage.save();
-    res.json({ success: true, message: 'Message received successfully Thank YOU' });
+    res.redirect('/FeedBack'); 
   } catch (err) {
     res.status(500).json({ success: false, message: 'Error saving message.' });
   }
@@ -219,7 +226,7 @@ exports.getFeedback = async (req, res) => {
   try {
     const messages = await Message.find();
     console.log(messages); 
-    res.render('FeedBack', { messages }); 
+    res.render('FeedBack', { messages });
   } catch (err) {
     res.status(500).json({ success: false, message: 'Error fetching messages.' });
   }

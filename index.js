@@ -3,19 +3,18 @@ const mongoose = require('mongoose');
 const fileUpload = require('express-fileupload');
 const app = express();
 const session = require('express-session');
-const bodyParser = require('body-parser');
+
 
 const masterRoutes = require('./Routes/masterRoutes');
 const adminRoutes = require('./Routes/adminRoutes');
 const indexRoutes = require('./Routes/indexRoutes');
 const potmRoutes = require('./Routes/POTMRoutes');
-const voteRoutes = require('./Routes/voteRoutes');
+// const voteRoutes = require('./Routes/voteRoutes');
 
 
 
 app.use(fileUpload());
 app.use(express.json());
-app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(session({
@@ -34,7 +33,7 @@ app.use('/potm',potmRoutes);
 app.use('/master', masterRoutes);
 app.use('/admin', adminRoutes);
 app.use('/', indexRoutes);
-app.use('/vote', voteRoutes);
+// app.use('/vote', voteRoutes);
 // app.use('/', storeRoutes);
 
 

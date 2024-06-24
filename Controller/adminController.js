@@ -35,7 +35,18 @@ exports.login = async (req, res) => {
     if (!admins || admins.Password !== password) {
       return res.status(401).json({ success: false, message: "Incorrect Email or Password" });
     }
+    // const isPasswordValid = await bcrypt.compare(password, admins.Password);
+    // if (!isPasswordValid) {
+    //   return res.status(401).json({ success: false, message: "Incorrect Email or Password" });
+    // }
+
+    req.session.isLoggedIn = true;
     req.session.userType = 2; 
+    req.session.user = {
+      id: admins._id,
+      email: admins.email,
+      type: admins.type
+    };
     res.status(200).json({ success: true, type: admins.type });
   } catch (error) {
     console.error(error);
@@ -48,6 +59,7 @@ exports.logout = async (req, res) => {
     req.session.destroy(err => {
       if (err) {
         console.error('Error destroying session:', err);
+      res.render('index');
         return res.status(500).json({ success: false, message: 'Failed to logout' });
       }
       res.clearCookie('session-id'); 

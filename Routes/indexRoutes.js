@@ -4,7 +4,7 @@ const controller = require('../Controller/indexController');
 
 
 const checkUser = (req, res, next) => {
-    if (req.session.userType === 1) {
+    if (req.session.isLoggedIn && req.session.userType === 1) {
       next();
     } else {
       res.status(403).send('Forbidden'); 
@@ -31,16 +31,4 @@ router.post('/addpicture', controller.AddPICTURE);
 router.post('/getpicture', controller.GetPICTURE);
 
 router.post('/send-message', controller.sendMessage);
-
-router.get('/BookNow/:id', controller.getEventData);
-
-// app.get('/profile', (req, res) => {
-//   if (req.session.isLoggedIn) {
-//     res.render('MyAccount', {
-//       user: req.session.user
-//     });
-//   } else {
-//     res.redirect('/login');
-//   }
-// });
 module.exports = router;

@@ -21,10 +21,9 @@ exports.getMasters = async (req, res) => {
 exports.createAdmin = async (req, res) => {
   const { Fullname, Password, email, PhoneNumber, Gender, Num } = req.body;
   try {
-  const hashedPassword = await bcrypt.hash(Password, 10);
   const newAdmin = new DATALOG({
     Fullname,
-    Password: hashedPassword,
+    Password,
     email,
     PhoneNumber,
     Gender,
@@ -34,9 +33,10 @@ exports.createAdmin = async (req, res) => {
 
  
     await newAdmin.save();
+    const Product = await STORE.find(); 
     const Users = await DATALOG.find({ type: 1 });
     const Admins = await DATALOG.find({ type: 2 });
-    res.render('Master', { Users, Admins });
+    res.render('Master', { Users, Admins, Product });
   } catch (error) {
     res.status(400).send('Error registering user: ' + error.message);
   }
@@ -54,6 +54,21 @@ exports.login = async (req, res) => {
   } catch (error) {
     console.error(error);
     res.status(500).json({ success: false, message: "Server error" });
+  }
+};
+exports.logout = async (req, res) => {
+  try {
+    req.session.destroy(err => {
+      if (err) {
+        console.error('Error destroying session:', err);
+        return res.status(500).json({ success: false, message: 'Failed to logout' });
+      }
+      res.clearCookie('session-id'); 
+      res.status(200).json({ success: true, message: 'Logged out successfully' });
+    });
+  } catch (error) {
+    console.error('Error during logout:', error);
+    res.status(500).json({ success: false, message: 'Server error during logout' });
   }
 };
 exports.deleteAdmin = async (req, res) => {
@@ -158,10 +173,11 @@ exports.activateuser = async (req, res) => {
     }
     const Users = await DATALOG.find();
     const Admins = await DATALOG.find({ type: 2 });
+    const Product = await STORE.find();
     const activatedUsers = Users.filter(user => user.Activated === 1);
     const pendingUsers = Users.filter(user => user.Activated === 0);
 
-    res.render('Master', { Users: activatedUsers, Admins });
+    res.render('Master', { Users: activatedUsers, Admins,Product });
 
   } catch (error) {
     console.error('Error updating record:', error);
