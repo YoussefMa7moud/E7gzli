@@ -65,10 +65,10 @@
         <% if (event2.id === event.id) { %>
             <div class="Area">
                 <div class="stadium">
-                <% if (event2.type = '1') { %>
-                    <img src="/materials/stage.png" alt="Match Image">
-                <% } else if (event2.type = '2') { %>
-                    <img src="/materials/stadium-right.svg" alt="Event Image">
+                <% if (event2.type == '1') { %>
+                    <img src="/materials/stage.png" alt="event Image">
+                <% } else if (event2.type == '2') { %>
+                    <img src="/materials/stadium-right.svg" alt="match Image">
                 <% } %>
     
                 <form id="formation" method="POST" action="/BookNow/buy-tickets">

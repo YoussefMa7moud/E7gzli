@@ -18,6 +18,7 @@ router.post('/Creat-admin', controller.createAdmin);
 router.post('/ADD-POTM',controller.ADDPOTM);
 router.delete('/delete-event/:id', controller.deleteAdmin);
 router.delete('/Delete-Admin/:id', controller.deleteAdmin);
+router.delete('/Delete-product/:id', controller.deleteproduct);
 router.post('/Update-Activation', controller.activateuser);
 router.post('/logout',controller.logout);
 router.post('/addpicture', controller.AddPICTURE);

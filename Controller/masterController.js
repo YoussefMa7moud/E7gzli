@@ -4,6 +4,7 @@ const ADDPOTM = require('../MODELS/POTM.js')
 const STORE=require('../MODELS/Store.js');
 const bcrypt = require('bcryptjs');
 const path = require('path');
+const { Store } = require('express-session');
 
 exports.getMasters = async (req, res) => {
   try {
@@ -152,7 +153,7 @@ exports.ADDPOTM = async (req, res) => {
     const Product = await STORE.find();
     const Users = await DATALOG.find({ type: 1 });
     const Admins = await DATALOG.find({ type: 2 });
-    res.render('Master', { Users, Admins, Product, potmplayers }); 
+    res.redirect('/Master#POTM');
   } catch (error) {
     res.status(500).json({ error: 'An error occurred while saving the record' });
   }
@@ -238,4 +239,17 @@ exports.GetPICTURE = (req, res) => {
           console.log(err);
           res.status(500).send('Error retrieving user data.');
       });
+    };
+
+
+
+    exports.deleteproduct = async (req, res) => {
+      try {
+        if (req.session.isLoggedIn && req.session.type === 3) {
+          await STORE.findByIdAndDelete(req.params.id);
+          res.json({ success: true });
+        }
+      } catch (error) {
+        res.status(500).json({ success: false, message: error.message });
+      }
     };
