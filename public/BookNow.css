@@ -284,6 +284,7 @@ form input{
       padding: 20px;
       height:1000px;
       top: 100px;
+      padding-bottom: 300px;
    }
 
    .stadium img {
@@ -319,6 +320,12 @@ form input{
       bottom: 100px;
    }
 
+   .Buttonsxx{
+      position: relative;
+      top: 280px;
+      right: 54px;
+      
+   }
    .output {
       right: 0;
       bottom: 30px;
