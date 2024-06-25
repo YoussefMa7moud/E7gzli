@@ -316,9 +316,42 @@ exports.buyticket = async (req, res) => {
       totalAmount: totalAmount,
     });
     await historyEntry.save();
+    const existingEvent = await TICKETS.findById(ticketId);
+    if (!existingEvent) {
+      console.log(`Event with ID ${ticketId} was deleted after purchase.`);
+      
+
+      await History.deleteOne({ _id: historyEntry._id });
+      
+      // Optionally, you can log or handle the deletion of history
+      console.log(`History entry for event ${ticketId} deleted.`);
+    }
    res.render("SUCCESSB");
   } catch (err) {
     console.error('Error processing request:', err);
     res.status(500).json({ error: 'Internal server error' });
   }
 };
+
+
+exports.renderMyAccount = async (req, res) => {
+  try {
+    if (!req.session.isLoggedIn || !req.session.user || !req.session.user.id) {
+      return res.status(401).send('User not authenticated');
+    }
+
+    const user = await DATALOG.findById(req.session.user.id);
+
+    if (!user) {
+      return res.status(404).send('User not found');
+    }
+    const purchaseHistory = await History.find({ userId: req.session.user.id });
+
+    res.render('MyAccount', { user, purchaseHistory }); 
+  } catch (error) {
+    console.error('Error fetching user data:', error);
+    res.status(500).send('Server error');
+  }
+};
+
+

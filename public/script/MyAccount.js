@@ -31,37 +31,28 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 document.addEventListener("DOMContentLoaded", function() {
-    let past = document.getElementById("past");
-    let container1 = document.getElementById("past-tickets");
-    let ongoing = document.getElementById("ongoing");
-    let container2 = document.getElementById("ongoing-tickets");
-    let info = document.getElementById("info");
-    let container3 = document.getElementById("my-info");
-
-    
-    // Initially hide all containers
-    container1.style.display = "none";
-    container2.style.display = "none";
-    
-
-    past.addEventListener("click", function() {
-      container1.style.display = "block";
-      container2.style.display = "none";
-      container3.style.display = "none";
-    });
-
-    ongoing.addEventListener("click", function() {
-      container2.style.display = "block";
-      container1.style.display = "none";
-      container3.style.display = "none";
-    });
-
-    info.addEventListener("click", function() {
-      container3.style.display = "block";
-      container2.style.display = "none";
-      container1.style.display = "none";
-    });
+  let container1 = document.getElementById("ongoing-tickets");
+  let container2 = document.getElementById("my-info");
+  container2.style.display = "none";
+  document.getElementById("ongoing").addEventListener("click", function(event) {
+    event.preventDefault();
+    showContainer(container1);
+    hideContainer(container2);
+  });
+  document.getElementById("info").addEventListener("click", function(event) {
+    event.preventDefault(); 
+    showContainer(container2);
+    hideContainer(container1);
+  });
+  function showContainer(container) {
+    container.style.display = "block";
+  }
+  function hideContainer(container) {
+    container.style.display = "none";
+  }
 });
+
+
 
 
 

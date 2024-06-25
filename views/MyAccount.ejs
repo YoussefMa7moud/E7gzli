@@ -38,10 +38,6 @@
 					
 					<span>Ongoing Tickets</span>
 				</a>
-				<a id="past" href="#">
-					
-					<span>Past Tickets</span>
-				</a>
 				<a id="info" href="#">
 					
 					<span>Update Info</span>
@@ -52,134 +48,36 @@
 			</nav>
 			
 		</div>
+	</div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-        
-		<div id="past-tickets" class="past-tickets">
-            <div class="card">
-                <div class="side_img">
-                        <img id="pic" src="/materials/finishedevent.jpeg">
-                </div>
-                <div class="side_info">
-                    <div class="info2">
-                        <span>CAF CHAMPIONS LEAGUE Al ahly VS sundowns</span>
-                        <span>(SEMI-FINAL)</span> <br>
-                         <i class="fa-solid fa-calendar"></i>
-                         <span>Date: 1/1/2024</span>     
-                         <span>Location: CAIRO STADIUM</span>                
+	<div id="ongoing-tickets" class="ongoing-tickets">
+    <% if (purchaseHistory && purchaseHistory.length > 0) { %>
+        <% purchaseHistory.forEach(historyItem => { %>
+            <div class="ticket">
+                <div class="left">
+                    <div class="image">
+                        <img src="<%= historyItem.eventImage %>" alt="Event Image">
                     </div>
-                    <div class="button_dist2">
-                        <a id="finishbtn" class="booking-btn2">Ended</a>
+                    <div class="ticket-info">
+                        <p class="date">
+                            <span><%= historyItem.timestamp.toLocaleDateString('en-US', { weekday: 'long' }) %></span>
+                            <span class="month"><%= historyItem.timestamp.toLocaleDateString('en-US', { month: 'short' }) %></span>
+                            <span><%= historyItem.timestamp.getFullYear() %></span>
+                        </p>
+                        <div class="show-name">
+                            <h1><%= historyItem.eventName %></h1>
+                            <h2><%= historyItem.eventDescription %></h2>
+                        </div>
                     </div>
                 </div>
             </div>
-            
-
-        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div id="ongoing-tickets" class="ongoing-tickets">
-    
-            <h1>Your ongoing tickets :</h1>
-            <div class="ticket created-by-anniedotexe">
-	<div class="left">
-		<div class="image">
-			<p class="admit-one">
-				<span></span>
-				<span></span>
-				<span></span>
-			</p>
-			<div class="ticket-number">
-				<p>
-					#20030220
-				</p>
-			</div>
-		</div>
-		<div class="ticket-info">
-			<p class="date">
-				<span>TUESDAY</span>
-				<span class="june-29">June 5</span>
-				<span>2024</span>
-			</p>
-			<div class="show-name">
-				<h1>Wegz</h1>
-				<h2>Come Back</h2>
-			</div>
-			<div class="time">
-				<p>8:00 PM <span>TO</span> 11:00 PM</p>
-				<p>DOORS <span>@</span> 7:00 PM</p>
-			</div>
-			
-				<span class="separator"><i class="far fa-smile"></i></span><span>Salt Lake City, Utah</span>
-			</p>
-		</div>
-	</div>
-	<div class="right">
-		<p class="admit-one">
-			<span></span>
-			<span></span>
-			<span></span>
-		</p>
-		<div class="right-info-container">
-			<div class="show-name">
-				<h1>Manara</h1>
-			</div>
-			<div class="time">
-				<p>8:00 PM <span>TO</span> 11:00 PM</p>
-				<p>DOORS <span>@</span> 7:00 PM</p>
-			</div>
-			<div class="barcode">
-				<img src="https://external-preview.redd.it/cg8k976AV52mDvDb5jDVJABPrSZ3tpi1aXhPjgcDTbw.png?auto=webp&s=1c205ba303c1fa0370b813ea83b9e1bddb7215eb" alt="QR code">
-			</div>
-			<p class="ticket-number">
-				#20030220
-			</p>
-		</div>
-	</div>
+        <% }); %>
+    <% } else { %>
+        <p>No tickets purchased yet.</p>
+    <% } %>
 </div>
-			
-	</div>
 
-</div>
 
 
 
@@ -216,21 +114,17 @@
     <div class="Update-info">
         <h2>Update Your Info</h2>
 
-<form>
-  <label for="name">Name:</label><br>
-  <input type="text" id="name" name="name"><br>
-  
-  <label for="oldpassword">Old Password:</label><br>
-  <input type="password" id="oldpassword" name="oldpassword"><br>
-  
-  <label for="newpassword">New Password:</label><br>
-  <input type="password" id="newpassword" name="newpassword"><br>
-  
-  <label for="phone">Phone Number:</label><br>
-  <input type="number" id="phone" name="PhoneNumber"><br>
-  
-  <button >Update</button>
-</form> 
+
+				<form action="/MyAccount" method="POST">
+					<label for="name">Name:</label><br>
+					<input type="text" id="name" name="name" value="<%= user.Fullname %>"><br>
+					
+					<label for="email">Email:</label><br>
+					<input type="text" id="email" name="email" value="<%= user.email %>"><br>
+					
+					<label for="PhoneNumber">Phone Number:</label><br>
+					<input type="text" id="PhoneNumber" name="PhoneNumber" value="<%= user.PhoneNumber %>"><br>
+				</form>
 
     </div>
 </div>
