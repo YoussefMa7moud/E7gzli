@@ -2,7 +2,7 @@ const DATALOG = require('../MODELS/loginDB.js');
 const TICKETS = require('../MODELS/ADDTickets.js');
 const STORE = require('../MODELS/Store.js');
 const Message = require('../MODELS/Message.js');
-
+const History=require('../MODELS/History.js');
 const path = require('path');
 const bcrypt = require('bcryptjs');
 
@@ -240,5 +240,85 @@ exports.deletemessage = async (req, res) => {
     res.json({ success: true, message: 'Message deleted successfully' });
   } catch (error) {
     res.status(500).json({ success: false, message: 'Error deleting message: ' + error.message });
+  }
+};
+
+
+
+
+
+exports.buyticket = async (req, res) => {
+  console.log('Params:', req.params);
+  const { cardHolderName, cardNumber, cvv, cat3Quantity, cat2Quantity, cat1Quantity } = req.body;
+  const userId = req.session.user.id;
+  const ticketId = req.params.id;
+
+  try {
+    // Validate and parse quantities
+    const cat3Qty = parseInt(cat3Quantity, 10);
+    const cat2Qty = parseInt(cat2Quantity, 10);
+    const cat1Qty = parseInt(cat1Quantity, 10);
+
+    if (isNaN(cat3Qty) || isNaN(cat2Qty) || isNaN(cat1Qty)) {
+      return res.status(400).json({ message: 'Invalid ticket quantities' });
+    }
+
+    // Find the user by ID
+    const user = await DATALOG.findById(userId);
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    // Hash the sensitive information
+    const hashedCardHolderName = await bcrypt.hash(cardHolderName, 10);
+    const hashedCardNumber = await bcrypt.hash(cardNumber, 10);
+    const hashedCvv = await bcrypt.hash(cvv, 10);
+
+    // Update user's card details
+    user.cardHolderName = hashedCardHolderName;
+    user.cardNumber = hashedCardNumber;
+    user.cvv = hashedCvv;
+
+    // Save updated user object
+    await user.save();
+
+    console.log('ticketId:', ticketId);
+    const event = await TICKETS.findById(ticketId);
+    console.log('Event:', event);
+    if (!event) {
+      console.error(`Event not found for id: ${ticketId}`);
+      return res.status(404).json({ message: 'Event not found' });
+    }
+
+    // Calculate the total amount
+    const totalAmount = (cat3Qty * event.cat3price) + (cat2Qty * event.cat2price) + (cat1Qty * event.cat1price);
+
+   
+    if (event.cat3quantity < cat3Qty || event.cat2quantity < cat2Qty || event.cat1quantity < cat1Qty) {
+      return res.status(400).json({ message: 'Not enough tickets available' });
+    }
+
+    // Decrement ticket quantities
+    event.cat3quantity -= cat3Qty;
+    event.cat2quantity -= cat2Qty;
+    event.cat1quantity -= cat1Qty;
+
+    // Save the updated event object
+    await event.save();
+
+    const historyEntry = new History({
+      userId: userId,
+      eventId: ticketId,
+      timestamp: new Date(),
+      cat3Quantity: cat3Qty,
+      cat2Quantity: cat2Qty,
+      cat1Quantity: cat1Qty,
+      totalAmount: totalAmount,
+    });
+    await historyEntry.save();
+   res.render("SUCCESSB");
+  } catch (err) {
+    console.error('Error processing request:', err);
+    res.status(500).json({ error: 'Internal server error' });
   }
 };

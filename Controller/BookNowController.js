@@ -1,33 +1,21 @@
-const DATALOG = require('../MODELS/loginDB.js');
+// const DATALOG = require('../MODELS/loginDB.js');
 
-exports.buyticket = async (req, res) => {
-  const { cardHolderName, cardNumber, cvv } = req.body;
+// exports.buyticket= async(req, res)=> {
+//     const { cardHolderName, cardNumber, cvv } = req.body;
 
-  try {
+//     try {
+//         let userData = await DATALOG.getUserByCardDetails(cardHolderName, cardNumber, cvv);
 
-    const { _id } = req.body;
-    const existingRecord = await DATALOG.findOne({ _id });
+//         if (userData) {
+//             await DATALOG.updateUserData(userData.id, { cardHolderName, cardNumber, cvv });
+//             res.status(200).json({ message: 'User data updated successfully.' });
+//         } else {
+//             userData = await DATALOG.addUserData({ cardHolderName, cardNumber, cvv });
+//             res.status(201).json({ message: 'User data added successfully.', userData });
+//         }
+//     } catch (err) {
+//         console.error('Error processing request:', err);
+//         res.status(500).json({ error: 'Internal server error' });
+//     }
+// };
 
-    if (existingRecord) {
-      await DATALOG.updateOne({ _id }, {
-        $set: {
-          cardHolderName,
-          cardNumber,
-          cvv
-        },
-      });
-    } else {
-      const newTicket = new DATALOG({
-        cardHolderName,
-        cardNumber,
-        cvv
-      });
-      await newTicket.save();
-    }
-
-    const tick = await DATALOG.find();
-    res.render('CONFIRMPURCHES', { tick });
-  } catch (error) {
-    res.status(500).json({ error: 'An error occurred while saving the record' });
-  }
-};

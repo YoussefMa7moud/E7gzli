@@ -4,6 +4,7 @@ const fileUpload = require('express-fileupload');
 const app = express();
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
+const bodyParser = require('body-parser');
 
 const masterRoutes = require('./Routes/masterRoutes');
 const adminRoutes = require('./Routes/adminRoutes');
@@ -12,7 +13,7 @@ const potmRoutes = require('./Routes/POTMRoutes');
 // const voteRoutes = require('./Routes/voteRoutes');
 
 
-
+app.use(bodyParser.json());
 app.use(fileUpload());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

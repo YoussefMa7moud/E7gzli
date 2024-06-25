@@ -1,9 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const controller = require('../Controller/indexController');
-
-
-
+const bodyParser = require('body-parser');
 
 router.post('/signup', controller.signup);
 router.get('/login', (req, res) => res.render('login.ejs'));
@@ -19,7 +17,7 @@ router.get('/', (req, res) => res.render('index.ejs'));
 router.get('/Browse', controller.browseEvents, (req, res) => res.render('Browse.ejs'));
 router.get('/Store', controller.getProfile);
 router.get('/BookNow/:id',controller.getEventData);
-
+router.post('/BuyTicket/:id', controller.buyticket);
   
 router.get('/Store', controller.getProfile);
 router.post('/addpicture', controller.AddPICTURE);

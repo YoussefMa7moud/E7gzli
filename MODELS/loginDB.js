@@ -45,11 +45,11 @@ const loginSchema = new mongoose.Schema({
         required:false,
     },
     cardNumber:{
-        type:Number,
+        type: String,
         required:false,
     },
     cvv:{
-        type:Number,
+        type:String,
         required:false,
     }
 });
