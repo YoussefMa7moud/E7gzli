@@ -304,11 +304,6 @@ scroll-behavior: smooth;
     text-align: center;
  }
 
- .vote {
-    padding-top: 20px;
-    padding-left: 0;
-    text-align: center;
- }
 
  .area {
   padding-right:10px;
@@ -350,25 +345,31 @@ scroll-behavior: smooth;
     width: 100%;
  }
 
- #countdown {
-    width: 120%;
-    text-align: center;
- }
-
- #option {
-    width: 200px;
-    margin-bottom: 10px;
-    height: 60px;
- }
-
- #votebtn {
-    width: 200px;
-    height: 60px;
- }
 
  .vote{
    position: relative;
    right: 935px;
    top: 5px;
+  
  }
+
+
+
+ .vote h1{
+
+   font-size: 30px;
+   position: relative;
+   right:70%;
+   text-align: center;
+}
+
+
+#windis{
+
+   font-size: 17px;
+   position: relative;
+   left: 4px;
+}
+
+
 }
