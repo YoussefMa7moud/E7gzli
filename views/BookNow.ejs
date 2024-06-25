@@ -56,9 +56,9 @@
         <% if (event2.id === event.id) { %>
             <div class="Area">
                 <div class="stadium">
-                <% if (event2.type = '1') { %>
+                <% if (event2.type == '1') { %>
                     <img src="/materials/stage.png" alt="Match Image">
-                <% } else if (event2.type = '2') { %>
+                <% } else if (event2.type == '2') { %>
                     <img src="/materials/stadium-right.svg" alt="Event Image">
                 <% } %>
     
@@ -104,6 +104,7 @@
                       <button id="BN" type="submit" >Buy Now</button>
                     </div>
                   
+                    <div class="output">
                     <label for="cardHolderName">Card Holder Name:</label><br>
                     <input type="text" id="cardHolderName" name="cardHolderName" required><br>
                   
@@ -112,6 +113,7 @@
                   
                     <label for="cvv">CVV:</label><br>
                     <input type="number" id="cvv" name="cvv" required><br>
+                  </div>
                   </form>
               
                

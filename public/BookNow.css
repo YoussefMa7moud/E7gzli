@@ -179,19 +179,19 @@ scroll-behavior: smooth;
 
  .output{
    position: relative;
-   right: 30%;
-   bottom: 500px;
+   right: 28%;
+   bottom: 380px;
    margin-right: 199px;
    
  }
 
  .output input{
    
-   border-radius: 6px;
+   border-radius: 2px;
    width: 15%; 
    height:30px; 
    text-decoration: none;
-   cursor: pointer;
+   cursor:auto;
    position: relative;
 
  }
@@ -202,11 +202,7 @@ scroll-behavior: smooth;
  }
  
 
-#timer{
-   color: green;
-   font-size: 40px;
-   margin-bottom: 30px;
-}
+
 
 #Titleps{
    font-size: 15px;
@@ -234,6 +230,13 @@ form label{
 form input{
    font-size:20px;
 }
+
+
+
+
+
+
+
 @media only screen and (max-width: 844px) and (min-width: 375px) {
    .navbar {
       width:360px;
