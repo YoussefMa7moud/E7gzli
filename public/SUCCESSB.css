@@ -1,0 +1,19 @@
+.emp {
+    display: flex;
+    width: 600px;
+    color: white;
+    position: relative;
+    right: 99px;
+    top: 40px;
+    }
+    .h1{
+    display:grid;
+    width: 1000px;
+    color: white;
+    position: relative;
+    right: 50px;
+    top: 40px;
+    }
+    #code {
+        color: white;
+    }
