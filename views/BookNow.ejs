@@ -45,15 +45,6 @@
                 </span>
             <h1>E7gzli</h1>
         </div>
-          <div class="left-A">
-          <a  href="/index">Home</a>
-          <a  href="/Browse">Browse</a>
-          <a  href="/Store">Store</a>
-         </div>
-
-         <div class="R-A">
-            <a id="loginbutton"  href="login">Login</a>
-           </div>
     </div>
 
 
@@ -65,62 +56,63 @@
         <% if (event2.id === event.id) { %>
             <div class="Area">
                 <div class="stadium">
-                <% if (event2.type == '1') { %>
-                    <img src="/materials/stage.png" alt="event Image">
-                <% } else if (event2.type == '2') { %>
-                    <img src="/materials/stadium-right.svg" alt="match Image">
+                <% if (event2.type = '1') { %>
+                    <img src="/materials/stage.png" alt="Match Image">
+                <% } else if (event2.type = '2') { %>
+                    <img src="/materials/stadium-right.svg" alt="Event Image">
                 <% } %>
     
-                <form id="formation" method="POST" action="/BookNow/buy-tickets">
-                <div class="cat">
-                    <label id="Cat3" for="cat3">CAT 3: <span id="price3"><%= event2.cat3price %></span> EGP</label>
-                    <select name="NUMBER" id="NO3" onchange="calculatePayment()">
+                <form id="formation" method="POST" action="/BuyTicket/<%= event2._id %>">
+                    <div class="cat">
+                      <label id="Cat3" for="cat3">CAT 3: <span id="price3"><%= event2.cat3price %></span> EGP</label>
+                      <select name="cat3Quantity" id="NO3" onchange="calculatePayment()">
                         <option value="0">0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
-                    </select>
-                </div>
-    
-                <div class="cat">
-                    <label id="Cat2" for="cat2">CAT 2: <span id="price2"><%= event2.cat2price %></span> EGP</label>
-                    <select name="NUMBER" id="NO2" onchange="calculatePayment()">
+                      </select>
+                    </div>
+                  
+                    <div class="cat">
+                      <label id="Cat2" for="cat2">CAT 2: <span id="price2"><%= event2.cat2price %></span> EGP</label>
+                      <select name="cat2Quantity" id="NO2" onchange="calculatePayment()">
                         <option value="0">0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
-                    </select>
-                </div>
-    
-                <div class="cat">
-                    <label id="Cat1" for="cat1">CAT 1: <span id="price1"><%= event2.cat1price %></span> EGP</label>
-                    <select name="NUMBER" id="NO1" onchange="calculatePayment()">
+                      </select>
+                    </div>
+                  
+                    <div class="cat">
+                      <label id="Cat1" for="cat1">CAT 1: <span id="price1"><%= event2.cat1price %></span> EGP</label>
+                      <select name="cat1Quantity" id="NO1" onchange="calculatePayment()">
                         <option value="0">0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
-                    </select>
-                </div>
-                <div class="Payment">
-                    <h1 id="Paymenth1">Total = 0 EGP</h1>
-                </div>
-            </div>
-        
-            <form id="formation" method="POST" action="/BookNow/buy-tickets">
-                <div class="Buttons">
-                  <a href="/Browse" id="CN">Cancel</a>
-                  <button id="BN" type="submit">Buy Now</button>
-                </div>
-              
-                <label for="cardHolderName">Card Holder Name:</label><br>
-                <input type="text" id="cardHolderName" name="cardHolderName" required><br>
-              
-                <label for="cardNumber">Card Number:</label><br>
-                <input type="number" id="cardNumber" name="cardNumber" required><br>
-              
-                <label for="cvv">CVV:</label><br>
-                <input type="number" id="cvv" name="cvv" required><br>
-              </form>
+                      </select>
+                    </div>
+                  
+                    <div class="Payment">
+                      <h1 id="Paymenth1">Total = 0 EGP</h1>
+                    </div>
+                  
+                    <input type="hidden" name="ticketId" value="<%= event2._id %>">
+                    
+                    <div class="Buttons">
+                      <a href="/Browse" id="CN">Cancel</a>
+                      <button id="BN" type="submit" >Buy Now</button>
+                    </div>
+                  
+                    <label for="cardHolderName">Card Holder Name:</label><br>
+                    <input type="text" id="cardHolderName" name="cardHolderName" required><br>
+                  
+                    <label for="cardNumber">Card Number:</label><br>
+                    <input type="number" id="cardNumber" name="cardNumber" required><br>
+                  
+                    <label for="cvv">CVV:</label><br>
+                    <input type="number" id="cvv" name="cvv" required><br>
+                  </form>
               
                
 
